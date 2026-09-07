@@ -953,6 +953,7 @@ body.lock{overflow:hidden}
 .ghero{padding:clamp(20px,3vw,32px) 0 clamp(34px,4vw,52px)}
 .ghero h1{font-size:clamp(34px,4.8vw,62px);line-height:1;letter-spacing:-.045em;
   margin-bottom:26px;max-width:20ch}
+.gimg{margin-bottom:clamp(24px,3.5vw,44px)}
 .ghero__lead{font-size:clamp(17px,1.4vw,19.5px);color:var(--ink-2);max-width:46ch}
 .answer{
   max-width:62ch;padding:22px 26px;border-radius:var(--r-img);

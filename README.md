@@ -23,28 +23,48 @@ python3 -m http.server 4207
 
 ## Arborescence
 
-29 pages indexables, environ 22 500 mots.
+34 pages indexables, environ 28 100 mots.
 
-| URL | Rôle | Mots |
-|---|---|---|
-| `/` | accueil, marque et « couvreur Nonancourt » | 1 020 |
-| 4 pages service | intention transactionnelle | 850 à 1 000 |
-| 12 pages `couvreur-<commune>/` | intention locale | 580 à 640 |
-| `/guides/` + **10 guides** | intention informationnelle, haut de tunnel | 890 à 1 270 |
-| `/plan-du-site/` | orientation et maillage | |
-| `/404.html`, `/mentions-legales.html` | noindex | |
+| Type | Pages | Mots | Images |
+|---|---|---|---|
+| Accueil | 1 | 1 020 | 23 |
+| **Pages métier** | **9** | 8 340 | 9 |
+| Pages commune | 12 | 8 130 | 12 |
+| Guides + hub | 11 | 10 600 | **10** |
+| Plan du site, 404, mentions | 3 | | |
 
-**Guides** : prix d'une réfection (avec calculateur de surface de rampant), fuite de
-toiture, démoussage, aides et TVA, autorisation d'urbanisme, quelle tuile choisir,
-isoler sa toiture, tempête et assurance, entretien annuel, fenêtre de toit.
+**Métiers** : rénovation de toiture · zinguerie et gouttières · nettoyage et
+démoussage · dépannage et urgence · **charpente** · **isolation de toiture** ·
+**recherche de fuite** · **fenêtre de toit** · **bardage**.
 
-Les seuils de qualité du métier sont tenus partout. **Pas de service × ville** :
-48 pages quasi identiques seraient traitées comme des pages satellites, et le gain
-de volume ne compense pas le risque de dilution sur les 29 autres.
+Les cinq derniers ont été ajoutés après constat : « charpente » était citée
+340 fois sur le site, « isolation » 244, « solins » 66, « velux » 48, sans
+aucune page dédiée. Chacune de ces prestations est une intention de recherche
+distincte, et les pages service dédiées comptent parmi les facteurs de
+classement du pack local.
+
+**Communes** : Nonancourt, Dreux, Vernouillet, Saint-Rémy-sur-Avre, Anet,
+Ivry-la-Bataille, Verneuil d'Avre et d'Iton, Tillières-sur-Avre, Brezolles,
+Nogent-le-Roi, Breteuil, Évreux.
+
+**Guides** : prix d'une réfection (avec calculateur de surface de rampant),
+fuite de toiture, démoussage, aides et TVA, autorisation d'urbanisme, quelle
+tuile choisir, isoler sa toiture, tempête et assurance, entretien annuel,
+fenêtre de toit.
+
+Chaque guide porte désormais son propre bandeau illustré. **Pas de service ×
+ville** : ce serait 108 pages quasi identiques, traitées comme des pages
+satellites.
 
 Chaque page porte son `title` (60 caractères maximum), sa `meta description`
-(120 à 158), son fil d'Ariane, son JSON-LD et un maillage croisé. Aucun titre ni
-aucune description n'est dupliqué sur les 29 pages.
+(120 à 158), son fil d'Ariane, son JSON-LD et un maillage croisé. Aucun titre
+ni aucune description n'est dupliqué sur les 34 pages.
+
+### Prestations volontairement sans page
+
+`hydrofuge de toiture` et `étanchéité de toit plat` sont de bons mots-clés, mais
+le site actuel de WM ne dit nulle part qu'il les propose. Pas de page pour une
+prestation invérifiable. Deux pages à créer en une heure si Wesley confirme.
 
 ## Les trois intentions couvertes
 

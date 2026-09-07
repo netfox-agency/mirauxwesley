@@ -313,6 +313,350 @@ SERVICES = [
               "Le jour même pour une fuite active dans notre rayon habituel. Nous vous disons au "
               "téléphone à quelle heure nous passons, pas « dans la journée ».")],
     ),
+    dict(
+        slug="charpente",
+        pitch="Contrôle, reprise de pièces, renfort et charpente traditionnelle.",
+        nav="Charpente",
+        h1=("<em>Charpente</em> :", "contrôle, reprise, renfort"),
+        title="Charpentier à Nonancourt (27) et Dreux · WM Couverture",
+        desc="Contrôle de charpente, remplacement de pièces attaquées, renfort et charpente "
+             "traditionnelle à Nonancourt, Dreux et Verneuil. Devis gratuit après visite.",
+        hero="charpente-ancienne-sous-toiture.webp",
+        heroalt="Charpente ancienne en chêne vue depuis les combles, avant reprise",
+        lead="La charpente porte tout le reste. On ne la voit qu'une fois la couverture déposée, "
+             "et c'est là que se joue une bonne partie du budget d'une réfection.",
+        specs=[("Contrôle", "Inspection pièce par pièce dès la dépose : pannes, chevrons, sablières."),
+               ("Reprise", "Remplacement des seules pièces attaquées, chiffré à l'unité."),
+               ("Renfort", "Moisage, jambe de force, entretoise quand la portée l'exige."),
+               ("Traditionnelle", "Charpente neuve en chêne ou en résineux, assemblée sur place."),
+               ("Traitement", "Curatif contre les insectes à larves xylophages et les champignons.")],
+        alerte_t="Ce qui doit vous alerter",
+        alerte=["De la sciure fine au sol des combles, en petits tas réguliers.",
+                "Des trous de sortie de quelques millimètres dans le bois.",
+                "Une pièce qui s'effrite ou se creuse quand on appuie avec un tournevis.",
+                "Des taches sombres et cotonneuses : c'est un champignon, pas de l'humidité.",
+                "Une panne qui fléchit visiblement, ou une ligne de faîtage qui ondule."],
+        mat_t="Les cinq pièces qui posent problème",
+        mat=[("Les pieds de chevrons",
+              "C'est là que ça commence presque toujours. L'about du chevron repose sur la "
+              "sablière, au point le plus exposé aux infiltrations de rive. On le découvre "
+              "attaqué en déposant la couverture, et il se répare par greffe sans toucher au reste."),
+             ("La sablière",
+              "La pièce horizontale posée sur le mur, qui reçoit tous les chevrons. Si elle a "
+              "pris l'eau par un débord mal protégé, la reprise est plus lourde : il faut "
+              "soulager la charpente pour la remplacer."),
+             ("L'entrait et les pannes",
+              "Les grandes pièces porteuses. Une flèche visible signale une surcharge ou une "
+              "section devenue insuffisante. On renforce par moisage plutôt que de remplacer, "
+              "c'est plus rapide et souvent aussi solide."),
+             ("Autour de la cheminée",
+              "L'humidité d'un solin fatigué descend le long du conduit et attaque les bois au "
+              "contact. C'est un foyer classique, et invisible depuis le sol."),
+             ("Les fermettes industrielles",
+              "Sur les pavillons des années soixante à quatre-vingt-dix, la charpente est en "
+              "fermettes. Elle est saine dans la quasi-totalité des cas, mais on ne peut pas y "
+              "toucher pour aménager les combles sans une étude. Nous vous le disons franchement.")],
+        prix_t="Ce qui fait varier le prix",
+        prix=["**Le nombre de pièces** réellement à reprendre, qui n'est connu qu'une fois la "
+              "couverture déposée. C'est pour cela qu'un bon devis chiffre un prix unitaire.",
+              "**L'accessibilité** : intervenir depuis les combles ou depuis le toit ne demande "
+              "ni le même temps ni le même matériel.",
+              "**L'essence et la section** du bois, et le fait qu'il faille du sur-mesure ou du "
+              "standard.",
+              "**Le traitement** : un curatif se facture au mètre carré de bois traité, et il "
+              "n'a de sens qu'une fois les pièces mortes retirées.",
+              "**La nécessité d'étayer** pendant l'intervention, sur les grandes portées."],
+        budget="Nous ne chiffrons jamais une charpente sans être montés voir. Sur une réfection, "
+               "la reprise est chiffrée séparément et à l'unité, pour que vous sachiez exactement "
+               "à quoi vous vous engagez si le bois réserve des surprises.",
+        faq=[("Faut-il tout refaire quand une pièce est attaquée ?",
+              "Presque jamais. On remplace la pièce ou on greffe la partie morte. Une dépose "
+              "complète de charpente est rare et se voit tout de suite au premier coup d'œil."),
+             ("Le traitement des bois, c'est utile ?",
+              "Curatif, oui, quand il y a une attaque active. Préventif sur une charpente saine "
+              "et sèche, l'intérêt est plus discutable et cela se discute au cas par cas."),
+             ("On peut aménager les combles sous des fermettes ?",
+              "C'est possible mais cela suppose de reprendre la structure avec une étude. Nous "
+              "ne le faisons pas à l'improvisation, et nous vous dirons si c'est déraisonnable."),
+             ("Combien de temps dure une charpente ?",
+              "Plusieurs siècles si elle reste sèche et ventilée. Ce qui la tue, c'est l'eau : "
+              "une couverture qui fuit pendant deux hivers fait plus de dégâts que cinquante ans "
+              "de service normal."),
+             ("Vous faites de la charpente neuve ?",
+              "Oui, traditionnelle, pour une extension, un auvent, une dépendance ou une "
+              "réfection lourde.")],
+    ),
+    dict(
+        slug="isolation-toiture",
+        pitch="Combles perdus, sous rampants ou par l'extérieur au moment de la réfection.",
+        nav="Isolation de toiture",
+        h1=("<em>Isolation</em> de toiture", "et de combles"),
+        title="Isolation de toiture et combles (27)",
+        desc="Isolation des combles perdus, sous rampants ou par l'extérieur à Nonancourt, Dreux "
+             "et Évreux. Traitée au moment de la réfection de toiture. Devis gratuit.",
+        hero="combles-avant-isolation-sous-rampants.webp",
+        heroalt="Combles dégagés sous charpente, prêts à recevoir l'isolation",
+        lead="La chaleur monte : un toit mal isolé est le premier poste de déperdition d'une "
+             "maison. Et c'est au moment où la couverture se refait que l'isolation coûte le "
+             "moins cher à poser correctement.",
+        specs=[("Combles perdus", "Soufflage de laine sur le plancher, une journée, effet immédiat."),
+               ("Sous rampants", "Isolation entre et sous chevrons, quand les combles sont aménagés."),
+               ("Par l'extérieur", "Isolant posé sur les chevrons pendant la réfection, sans perte de hauteur."),
+               ("Toit plat", "Isolation et étanchéité sur les extensions et les garages."),
+               ("Ventilation", "Écran HPV, lame d'air continue, entrées basses et sortie en faîtage.")],
+        alerte_t="Les signes d'une isolation qui ne fait plus son travail",
+        alerte=["Un étage glacial en hiver et invivable en été, alors que le bas est correct.",
+                "De la neige qui fond plus vite sur votre toit que sur celui du voisin.",
+                "Un isolant tassé, noirci ou humide quand on regarde dans les combles.",
+                "Des traces sombres sur les chevrons, signe de condensation.",
+                "Une isolation posée lors d'une campagne à un euro, sans lame d'air ventilée."],
+        mat_t="Quelle méthode pour quelle situation",
+        mat=[("Combles perdus, couverture saine",
+              "Soufflage de laine sur le plancher des combles. Une journée de travail, le coût le "
+              "plus bas du bâtiment pour le gain thermique obtenu. C'est le premier geste à faire "
+              "quand il n'a jamais été fait."),
+             ("Combles aménagés, couverture saine",
+              "Isolation sous rampants, par l'intérieur. On perd quelques centimètres sous plafond "
+              "et il faut refaire les finitions, mais on ne touche pas au toit."),
+             ("Couverture à refaire",
+              "Isolation par l'extérieur, sur les chevrons, sous la couverture neuve. Aucune perte "
+              "de hauteur, aucun pont thermique au droit des chevrons, et les combles restent "
+              "habitables pendant le chantier. C'est techniquement la meilleure solution, et elle "
+              "n'est accessible qu'à ce moment-là."),
+             ("L'erreur qui coûte cher",
+              "Isoler sans ventiler. La vapeur d'eau de la maison se condense sur la sous-toiture "
+              "froide, mouille l'isolant qui n'isole plus rien, et attaque la charpente. Le "
+              "désordre met deux à cinq ans à se voir et coûte plus cher que l'isolation.")],
+        prix_t="Ce qui fait varier le prix",
+        prix=["**La méthode** : un soufflage en combles perdus et un sarking par l'extérieur ne "
+              "jouent pas dans la même catégorie.",
+              "**La résistance thermique visée**, qui décide de l'épaisseur et donc du volume "
+              "d'isolant.",
+              "**L'isolant retenu** : laine minérale, laine de bois, polyuréthane. Le dernier "
+              "isole plus à épaisseur égale, ce qui compte en sarking.",
+              "**L'accès aux combles**, et le fait qu'il faille les vider ou non avant.",
+              "**Les travaux induits** : reprise des finitions, déplacement de l'électricité, "
+              "surélévation des rives en isolation par l'extérieur."],
+        budget="Nous chiffrons l'isolation séparément de la couverture, pour que vous voyiez ce "
+               "que chaque poste vous coûte. C'est aussi ce qui permet de savoir ce qui relève de "
+               "la rénovation énergétique et ce qui n'en relève pas.",
+        faq=[("Refaire ma toiture me donne-t-il droit à une aide ?",
+              "La couverture seule, non : ce n'est pas un geste de rénovation énergétique. "
+              "L'isolation réalisée en même temps, oui, sous conditions."),
+             ("Quelle épaisseur d'isolant faut-il ?",
+              "C'est la résistance thermique qui compte, pas l'épaisseur brute. Elle doit figurer "
+              "sur le devis, c'est le seul chiffre comparable d'une entreprise à l'autre."),
+             ("Peut-on isoler par l'extérieur sans refaire la couverture ?",
+              "Non, il faut déposer. C'est pour cela que les deux se font ensemble, sinon vous "
+              "payez deux fois la dépose et l'échafaudage."),
+             ("Mon isolation a été faite à un euro, faut-il tout refaire ?",
+              "Pas systématiquement. On monte regarder : si la lame d'air existe et que l'isolant "
+              "est sec, il n'y a rien à faire. S'il est tassé ou humide, il ne sert plus à rien."),
+             ("L'isolation par l'extérieur surélève-t-elle le toit ?",
+              "De quelques centimètres, oui. Il faut adapter les rives, les solins et parfois la "
+              "sortie de cheminée. C'est prévu au devis.")],
+    ),
+    dict(
+        slug="recherche-de-fuite",
+        pitch="Inspection du toit, des solins, des noues et des pénétrations.",
+        nav="Recherche de fuite",
+        h1=("<em>Recherche</em> de fuite", "sur toiture"),
+        title="Recherche de fuite toiture · Dreux",
+        desc="Recherche de fuite et d'infiltration sur toiture à Nonancourt, Dreux et "
+             "Saint-Rémy-sur-Avre. Inspection des solins, noues et pénétrations. Devis gratuit.",
+        hero="depannage-toiture-depose-tuiles-urgence.webp",
+        heroalt="Toiture en cours d'inspection, tuiles déposées pour localiser une infiltration",
+        lead="Une fuite apparaît rarement là où elle entre. L'eau court le long d'un chevron ou "
+             "d'un liteau avant de tomber, et la tache au plafond peut être à plusieurs mètres "
+             "du vrai point d'entrée.",
+        specs=[("Sur le toit", "Inspection des tuiles, des rives, du faîtage et des recouvrements."),
+               ("Points singuliers", "Solins de cheminée, noues, abergements, sorties de VMC."),
+               ("Dans les combles", "Lecture des traces sur les bois pour remonter au point d'entrée."),
+               ("Test à l'eau", "Arrosage méthodique zone par zone quand la cause reste incertaine."),
+               ("Compte rendu", "Photos et explication écrite de ce qui a été trouvé.")],
+        alerte_t="Ce qu'il faut nous dire au téléphone",
+        alerte=["Depuis quand ça coule, et si c'est continu ou seulement par forte pluie.",
+                "Si l'eau apparaît par vent d'ouest ou quelle que soit la direction.",
+                "L'endroit exact de la tache, et s'il y a une cheminée ou un velux au-dessus.",
+                "Si des travaux ont été faits récemment sur le toit ou la façade.",
+                "L'âge approximatif de la couverture, même en ordre de grandeur."],
+        mat_t="D'où viennent les fuites, dans l'ordre de fréquence",
+        mat=[("Le solin de cheminée",
+              "Première cause, de très loin. Le mastic sèche, se rétracte, et l'eau passe entre la "
+              "maçonnerie et la couverture. C'est le premier endroit que nous regardons, et c'est "
+              "souvent le dernier."),
+             ("Une tuile déplacée ou fendue",
+              "Un coup de vent soulève une tuile, la suivante ne recouvre plus. Sans écran de "
+              "sous-toiture, l'eau tombe directement sur le plancher des combles. Réparation "
+              "rapide dès que le point est trouvé."),
+             ("La noue",
+              "L'angle rentrant entre deux versants concentre l'eau de tout le toit. Encrassée par "
+              "les feuilles ou percée par la corrosion, elle déborde sous la couverture au premier "
+              "gros orage."),
+             ("Les pénétrations",
+              "Sortie de VMC, chatière, passage d'antenne, fenêtre de toit. Chaque trou volontaire "
+              "dans la couverture est un point à contrôler quand le reste ne donne rien."),
+             ("La gouttière",
+              "Une gouttière bouchée déborde vers l'arrière, sous la première rangée de tuiles. "
+              "L'eau mouille le mur et le bas de charpente, et on croit à une fuite de toiture.")],
+        prix_t="Ce qui fait varier le prix",
+        prix=["**Le temps de recherche** : une fuite évidente se trouve en vingt minutes, une "
+              "infiltration capricieuse demande un test à l'eau méthodique.",
+              "**L'accès** : hauteur, pente, nécessité d'un échafaudage ou d'une nacelle.",
+              "**L'urgence** : une intervention un dimanche ne se facture pas comme un mardi.",
+              "**La réparation** qui suit, chiffrée à part une fois la cause connue.",
+              "**Le rapport écrit** si vous en avez besoin pour une assurance ou une vente."],
+        budget="La recherche se facture au temps passé, et nous annonçons un ordre de grandeur au "
+               "téléphone avant de nous déplacer. La réparation qui suit fait l'objet d'un devis "
+               "gratuit, pour que vous décidiez en connaissance de cause.",
+        faq=[("Vous trouvez toujours la fuite ?",
+              "Presque toujours au premier passage. Quand l'eau circule longtemps sous la "
+              "couverture, nous reprenons les points de pénétration un par un jusqu'à isoler la "
+              "cause."),
+             ("La tache est loin de la cheminée, est-ce quand même elle ?",
+              "Très souvent, oui. L'eau suit la pente d'un chevron avant de tomber. C'est pour "
+              "cela que la recherche se fait sur le toit et dans les combles, pas depuis le salon."),
+             ("Peut-on chercher sous la pluie ?",
+              "C'est même parfois le meilleur moment pour observer, depuis l'intérieur. Monter "
+              "sur un toit mouillé, en revanche, est dangereux et nous attendons une accalmie."),
+             ("Faut-il une caméra thermique ?",
+              "Sur une toiture en pente, rarement : l'observation et le test à l'eau suffisent. "
+              "Méfiez-vous de qui vous vend d'emblée du matériel sophistiqué."),
+             ("Et si la fuite ne vient pas du toit ?",
+              "Ça arrive : une remontée par la façade, une condensation, une fuite de plomberie. "
+              "Nous vous le dirons plutôt que de vous facturer une réparation inutile.")],
+    ),
+    dict(
+        slug="fenetre-de-toit",
+        pitch="Pose et remplacement de fenêtres de toit, raccord à la couverture.",
+        nav="Fenêtre de toit",
+        h1=("Pose de <em>fenêtre</em>", "de toit"),
+        title="Pose de fenêtre de toit · Nonancourt",
+        desc="Pose et remplacement de fenêtres de toit à Nonancourt, Dreux et Anet. Raccord à la "
+             "couverture, écran de sous-toiture, volet extérieur. Devis gratuit.",
+        hero="pose-fenetre-de-toit-velux.webp",
+        heroalt="Fenêtre de toit posée dans une couverture en tuile, raccord terminé",
+        lead="Une fenêtre de toit est un trou volontaire dans une couverture. Ce qui la rend "
+             "étanche n'est pas le châssis, c'est le raccord à la couverture. C'est là que naît "
+             "la quasi-totalité des infiltrations.",
+        specs=[("Pose", "Dépose locale, adaptation des liteaux, costière adaptée au matériau."),
+               ("Étanchéité", "Raccord à l'écran de sous-toiture et collerette pare-vapeur intérieure."),
+               ("Remplacement", "Dépose de l'ancien châssis et pose d'un neuf, souvent en une journée."),
+               ("Volet extérieur", "Posé en même temps, sans surcoût de main-d'œuvre."),
+               ("Réparation", "Reprise d'un raccord qui fuit ou d'une condensation autour du cadre.")],
+        alerte_t="Les signes d'une pose ratée",
+        alerte=["De l'eau qui apparaît en haut du cadre dès qu'il pleut avec du vent.",
+                "De la condensation permanente sur le pourtour intérieur.",
+                "Une tache brune sur la finition intérieure, en général en angle.",
+                "Un châssis qui ferme mal ou qui grince, signe d'un cadre déformé.",
+                "Un raccord visiblement bricolé au mastic depuis le toit."],
+        mat_t="Ce qui se joue à la pose",
+        mat=[("La costière, adaptée au matériau",
+              "Un kit de raccordement prévu pour de la tuile mécanique posé sur de l'ardoise fuit. "
+              "Chaque matériau et chaque hauteur d'onde a le sien. C'est le premier point à "
+              "vérifier sur un devis."),
+             ("Le raccord à l'écran de sous-toiture",
+              "L'écran doit être découpé et raccordé proprement autour du châssis. Sans ça, l'eau "
+              "qui passerait sous une tuile n'a plus de chemin d'évacuation et entre directement."),
+             ("La collerette pare-vapeur",
+              "Côté intérieur. Sans elle, la vapeur d'eau de la maison se condense dans l'isolant "
+              "autour du cadre. Vous croirez à une fuite alors que c'est de la condensation, et "
+              "aucune reprise sur le toit ne la corrigera."),
+             ("Le bon moment pour poser",
+              "Pendant une réfection, si la toiture doit être refaite : l'échafaudage est déjà là "
+              "et le raccord se fait proprement dans la foulée. Sur une couverture en fin de vie, "
+              "ne posez rien : vous investissez dans un châssis à redéposer dans trois ans.")],
+        prix_t="Ce qui fait varier le prix",
+        prix=["**La dimension** du châssis, et le fait qu'il faille ou non modifier le chevronnage.",
+              "**Le matériau de couverture**, qui décide de la costière et du temps de raccord.",
+              "**Le vitrage** : standard, phonique, sécurité, retardateur d'effraction.",
+              "**Le volet ou le store**, extérieur ou intérieur, manuel ou motorisé.",
+              "**Les finitions intérieures**, souvent oubliées des devis : habillage, plaque, peinture."],
+        budget="Comptez une journée par châssis sur une toiture existante, moins si c'est fait "
+               "pendant une réfection. Le devis est gratuit et détaille séparément le châssis, la "
+               "pose et les finitions.",
+        faq=[("Faut-il une autorisation pour poser une fenêtre de toit ?",
+              "Oui, une déclaration préalable, systématiquement : l'aspect extérieur change. Et "
+              "des distances s'appliquent par rapport à la limite du voisin quand la fenêtre crée "
+              "une vue."),
+             ("Et pour remplacer une fenêtre existante ?",
+              "Si les dimensions et l'aspect sont identiques, en général non. Dès que la taille ou "
+              "la teinte change, oui."),
+             ("Ma fenêtre de toit fuit, faut-il la changer ?",
+              "Rarement. Dans la grande majorité des cas c'est le raccord à la couverture ou la "
+              "condensation autour du cadre. Nous cherchons dans cet ordre avant de proposer un "
+              "remplacement."),
+             ("Volet roulant ou store intérieur ?",
+              "Le volet extérieur est nettement plus efficace contre la chaleur d'été, et il se "
+              "pose sans surcoût de main-d'œuvre si c'est fait en même temps."),
+             ("Sur quelle pente peut-on poser ?",
+              "La plupart des modèles demandent entre 15 et 90 degrés. En dessous il existe des "
+              "solutions spécifiques, plus coûteuses.")],
+    ),
+    dict(
+        slug="bardage",
+        pitch="Habillage de pignon, de sous-face et de façade en bois ou en composite.",
+        nav="Bardage",
+        h1=("<em>Bardage</em> et", "habillage de pignon"),
+        title="Bardage et habillage de pignon (27)",
+        desc="Pose de bardage bois ou composite, habillage de pignon et de sous-face à "
+             "Nonancourt, Dreux et Verneuil. Ventilation respectée. Devis gratuit.",
+        hero="rive-de-toiture-debord-termine.webp",
+        heroalt="Débord de toiture et habillage de rive terminés sur un pavillon",
+        lead="Le bardage protège une façade exposée et rattrape un pignon fatigué sans le "
+             "reprendre en maçonnerie. C'est un travail de couvreur autant que de façadier : "
+             "tout se joue sur la ventilation et le raccord au toit.",
+        specs=[("Pignon", "Habillage complet d'un mur exposé, souvent au nord ou à l'ouest."),
+               ("Sous-face", "Habillage du dessous de débord de toit, en PVC ou en bois."),
+               ("Ossature", "Tasseaux et contre-lattage pour créer la lame d'air ventilée."),
+               ("Finitions", "Bavettes, profils d'angle, arrêts, raccords aux menuiseries."),
+               ("Isolation", "Possible derrière le bardage, en isolation par l'extérieur.")],
+        alerte_t="Quand un bardage devient la bonne réponse",
+        alerte=["Un pignon exposé aux pluies d'ouest qui reste humide et se dégrade.",
+                "Un enduit qui cloque, se décolle ou se fissure sur toute une façade.",
+                "Une envie d'isoler par l'extérieur sans toucher à l'intérieur.",
+                "Une sous-face de débord abîmée, où les oiseaux entrent dans les combles.",
+                "Une extension à raccorder visuellement au bâtiment existant."],
+        mat_t="Les matériaux et ce qu'ils impliquent",
+        mat=[("Bois massif",
+              "Douglas, mélèze, red cedar. Le plus chaleureux, et le seul qui grise naturellement "
+              "sans entretien si l'essence est bien choisie. Il travaille avec l'humidité : la "
+              "pose doit lui laisser du jeu."),
+             ("Bois composite",
+              "Aspect bois, sans entretien et sans variation dimensionnelle notable. Plus cher à "
+              "l'achat, mais on ne le retouche jamais. Bon choix sur un pignon difficile d'accès."),
+             ("PVC et cellulaire",
+              "Le plus économique, surtout en sous-face de débord où il est presque invisible. "
+              "Sur une grande façade visible, l'aspect est moins convaincant."),
+             ("Le point qui compte plus que le matériau",
+              "La lame d'air ventilée derrière le bardage. Sans elle, l'humidité reste piégée "
+              "contre le mur et le bardage devient un piège au lieu d'une protection. C'est ce "
+              "qu'on regarde en premier sur un devis concurrent.")],
+        prix_t="Ce qui fait varier le prix",
+        prix=["**La surface** et la hauteur, qui décident de l'échafaudage.",
+              "**Le matériau** retenu, du PVC au bois massif il y a un facteur trois.",
+              "**Le sens de pose** : à claire-voie, à recouvrement, à rainure et languette.",
+              "**Les points singuliers** : angles, tableaux de fenêtres, raccords au toit.",
+              "**L'isolation** ajoutée derrière, si vous en profitez pour la traiter."],
+        budget="Le bardage se chiffre au mètre carré posé, échafaudage compris. Nous venons "
+               "mesurer et nous vous montrons deux options de matériau chiffrées, plutôt qu'un "
+               "seul devis à prendre ou à laisser.",
+        faq=[("Faut-il une autorisation pour un bardage ?",
+              "Oui, une déclaration préalable : l'aspect extérieur change. En secteur protégé, "
+              "le matériau et la teinte peuvent être imposés."),
+             ("Le bois demande-t-il de l'entretien ?",
+              "Si vous acceptez qu'il grise, non. Si vous voulez conserver la teinte d'origine, "
+              "il faut un saturateur tous les deux à quatre ans selon l'exposition."),
+             ("Peut-on barder seulement un pignon ?",
+              "Oui, c'est même le cas le plus fréquent : on traite le mur le plus exposé et on "
+              "laisse le reste en enduit."),
+             ("Bardage et isolation extérieure, c'est la même chose ?",
+              "Non, mais l'un permet l'autre. L'isolant se pose contre le mur, le bardage vient "
+              "par-dessus avec sa lame d'air."),
+             ("Qui pose le bardage, un couvreur ou un façadier ?",
+              "Les deux le font. L'avantage du couvreur, c'est le raccord au toit, aux débords et "
+              "aux rives, qui est précisément l'endroit où les bardages prennent l'eau.")],
+    ),
 ]
 
 # ───────────────────────────────────────────────────────────── communes ────
@@ -649,6 +993,7 @@ VILLES = [
 GUIDES = [
     dict(
         slug="prix-refection-toiture",
+        img="chantier-charpente-ecran-sous-toiture.webp", imgalt="Chantier de réfection : charpente et écran de sous-toiture posés",
         nav="Prix d'une réfection de toiture",
         title="Prix d'une réfection de toiture au m2",
         desc="Une réfection de toiture coûte 100 à 300 € le m² de rampant selon les comparateurs. Ce qui fait varier ce prix, et comment comparer deux devis.",
@@ -782,6 +1127,7 @@ GUIDES = [
     ),
     dict(
         slug="fuite-toiture-que-faire",
+        img="toiture-alteree-lichens.webp", imgalt="Toiture ancienne altérée, couverte de lichens",
         nav="Fuite de toiture : que faire",
         title="Fuite de toiture : que faire en urgence",
         desc="Les bons gestes en cas de fuite de toiture, comment limiter les dégâts avant "
@@ -864,6 +1210,7 @@ GUIDES = [
     ),
     dict(
         slug="demoussage-toiture-frequence",
+        img="tuiles-mousse-vegetation.webp", imgalt="Tuiles envahies de mousse et de végétation",
         nav="Démousser son toit : quand et comment",
         title="Démoussage de toiture : quand et comment",
         desc="À quelle fréquence démousser une toiture, quelle méthode, faut-il un hydrofuge. "
@@ -945,6 +1292,7 @@ GUIDES = [
     ),
     dict(
         slug="aides-renovation-toiture",
+        img="tuiles-neuves-alignees.webp", imgalt="Tuiles neuves alignées sur une couverture refaite",
         nav="Aides et TVA pour refaire son toit",
         title="Aides et TVA pour refaire sa toiture",
         desc="TVA à 5,5 % ou 10 %, MaPrimeRénov', CEE, éco-PTZ : les dispositifs qui existent "
@@ -1034,6 +1382,7 @@ GUIDES = [
     ),
     dict(
         slug="declaration-prealable-toiture",
+        img="toiture-tuile-rouge-motif.webp", imgalt="Toiture en tuile rouge, motif régulier",
         nav="Faut-il une autorisation",
         title="Refaire son toit : quelle autorisation ?",
         desc="Quand une déclaration préalable est obligatoire pour des travaux de toiture, ce que "
@@ -1113,6 +1462,7 @@ GUIDES = [
     ),
     dict(
         slug="choisir-materiau-couverture",
+        img="tuiles-anciennes-patinees.webp", imgalt="Tuiles anciennes patinées par le temps",
         nav="Quelle tuile choisir",
         title="Quelle tuile ou ardoise choisir",
         desc="Tuile mécanique, tuile plate, ardoise, bac acier, zinc : durée de vie, pente "
@@ -1198,6 +1548,7 @@ GUIDES = [
     ),
     dict(
         slug="isolation-toiture-par-exterieur",
+        img="combles-avant-isolation-sous-rampants.webp", imgalt="Combles dégagés avant pose de l'isolation sous rampants",
         nav="Isoler sa toiture",
         title="Isoler sa toiture : dedans ou dehors",
         desc="Combles perdus, sous rampants ou sarking par l'extérieur : quelle isolation de toiture choisir, quand la faire et les pièges de ventilation.",
@@ -1271,6 +1622,7 @@ GUIDES = [
     ),
     dict(
         slug="toiture-tempete-assurance",
+        img="toiture-tuile-lumiere-rasante.webp", imgalt="Toiture en tuile éclairée en lumière rasante",
         nav="Tempête : assurance et démarches",
         title="Toiture et tempête : les démarches",
         desc="Tuiles arrachées, faîtage descellé, arbre tombé : que couvre l'assurance, dans "
@@ -1345,6 +1697,7 @@ GUIDES = [
     ),
     dict(
         slug="entretien-toiture-annuel",
+        img="tuiles-mousse-vegetation.webp", imgalt="Mousse installée sur une couverture mal entretenue",
         nav="Entretenir sa toiture",
         title="Entretien de toiture : le calendrier annuel",
         desc="Que vérifier sur son toit et à quelle saison : gouttières, solins, tuiles, mousse. "
@@ -1414,6 +1767,7 @@ GUIDES = [
     ),
     dict(
         slug="poser-fenetre-de-toit",
+        img="pose-fenetre-de-toit-velux.webp", imgalt="Fenêtre de toit posée dans une couverture en tuile",
         nav="Poser une fenêtre de toit",
         title="Poser une fenêtre de toit",
         desc="Fenêtre de toit ou lucarne, autorisation, raccordement à la couverture : ce qu'il faut vérifier avant de faire percer son toit.",
@@ -2011,6 +2365,10 @@ def render_guide(g):
     </div>
   </div>
 </section>""",
+        (f'<div class="wrap"><figure class="frame frame--wide gimg reveal">'
+         f'<img src="{PRE}assets/img/{g["img"]}" alt="{g["imgalt"]}" '
+         f'width="1680" height="720" loading="lazy" decoding="async"></figure></div>'
+         if g.get("img") else ""),
         estimateur() if g.get("estim") else "",
         f'<div class="wrap prose">{secs}</div>',
         f"""<section class="local">

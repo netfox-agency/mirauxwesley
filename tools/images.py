@@ -63,7 +63,7 @@ def derivatives(regen=True):
     return made
 
 
-IMG_RE = re.compile(r'<img\b[^>]*?src="((?:\.\./)?)assets/img/([A-Za-z0-9@._-]+\.webp)"[^>]*?>', re.S)
+IMG_RE = re.compile(r'<img\b[^>]*?src="((?:\.\./)*)assets/img/([A-Za-z0-9@._-]+\.webp)"[^>]*?>', re.S)
 
 
 def sizes_for(html, pos):
