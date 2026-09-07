@@ -4,36 +4,39 @@
    ========================================================================= */
 
 :root{
-  --paper:#F4F1EA;
-  --paper-2:#E7DFCF;
+  /* Base Apple : neutres tres clairs, encre #1D1D1F, un seul accent.
+     Les noms --brass* sont conserves pour ne rien casser ailleurs. */
+  --paper:#FBFBFD;
+  --paper-2:#F5F5F7;
   --card:#FFFFFF;
-  --ink:#14181B;
-  --ink-2:#3D474D;
-  --muted:#555E64;
-  --slate:#182229;
-  --slate-2:#22303A;
-  --brass:#B07C2E;
-  --brass-ink:#7E561B;   /* laiton assombri : 5,76:1 sur le papier, 4,90:1 sur papier-2, AA */
-  --brass-lt:#D7B172;
-  --rule:rgba(20,24,27,.17);
-  --rule-lt:rgba(255,255,255,.16);
+  --ink:#1D1D1F;
+  --ink-2:#424245;
+  --muted:#6E6E73;
+  --slate:#0B0B0C;      /* les sections sombres passent au noir, pas au bleu-gris */
+  --slate-2:#151517;
+  --brass:#A8481B;      /* cuivre : 5,63:1 sur le fond, blanc dessus 5,82:1 */
+  --brass-ink:#A8481B;
+  --brass-lt:#E8A87C;
+  --brass-soft:rgba(168,72,27,.08);
+  --rule:rgba(0,0,0,.08);
+  --rule-2:rgba(0,0,0,.14);
+  --rule-lt:rgba(255,255,255,.14);
 
-  --f-dis:'Archivo',system-ui,sans-serif;
-  --f-txt:'Inter Tight',system-ui,sans-serif;
-  --f-ser:'Instrument Serif',Georgia,serif;
+  /* SF Pro en natif, Inter Tight deja auto-hebergee en secours */
+  --f-dis:-apple-system,'SF Pro Display',BlinkMacSystemFont,'Inter Tight',system-ui,sans-serif;
+  --f-txt:-apple-system,'SF Pro Text',BlinkMacSystemFont,'Inter Tight',system-ui,sans-serif;
+  --f-ser:var(--f-dis);
 
   --wrap:1240px;
   --gut:clamp(20px,5vw,64px);
-  --r:18px;
-  --r-img:8px;
-  --r-sm:4px;
-  --ease:cubic-bezier(.2,.7,.25,1);
+  --r:26px;             /* cartes */
+  --r-img:22px;         /* media */
+  --r-sm:12px;          /* champs, vignettes */
+  --ease:cubic-bezier(.32,.72,0,1);   /* sans rebond */
 
-  --sh-btn:0 1px 2px rgba(20,24,27,.12), 0 4px 6px rgba(20,24,27,.09),
-           0 10px 14px rgba(20,24,27,.06), 0 20px 28px rgba(20,24,27,.05),
-           inset 0 1px 0 rgba(255,255,255,.16);
-  --sh-img:0 2px 4px rgba(20,24,27,.05), 0 12px 26px rgba(20,24,27,.09),
-           0 34px 60px rgba(20,24,27,.09);
+  --sh-btn:0 1px 2px rgba(0,0,0,.06), 0 8px 24px -6px rgba(0,0,0,.14);
+  --sh-img:0 8px 24px -6px rgba(0,0,0,.08), 0 24px 56px -12px rgba(0,0,0,.14);
+  --sh-card:0 1px 2px rgba(0,0,0,.04), 0 8px 24px -8px rgba(0,0,0,.10);
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -50,12 +53,12 @@ img{max-width:100%;display:block;height:auto}
 picture{display:contents}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-h1,h2,h3{font-family:var(--f-dis);font-weight:700;letter-spacing:-.035em;line-height:1.03;margin:0}
-h1 em,h2 em,h3 em{font-family:var(--f-ser);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--brass-ink)}
-/* l'italique Instrument Serif a des approches negatives : on rend l'air */
-/* l'italique Instrument Serif a des approches negatives : on rend l'air,
-   partout ou l'esperluette sert de liaison (accueil et titres de pages) */
-.chap__body h3 em,.chap__head h3 em,.phero h1 em{margin:0 .1em 0 .05em}
+h1,h2,h3{font-family:var(--f-dis);font-weight:600;letter-spacing:-.03em;line-height:1.06;margin:0;text-wrap:balance}
+/* Le <em> ne change plus ni la police, ni la couleur, ni la casse : un titre
+   Apple tient sur une seule graisse et une seule encre. Le balisage reste,
+   il ne porte plus de decor. */
+h1 em,h2 em,h3 em{font-family:inherit;font-style:normal;font-weight:inherit;
+  letter-spacing:inherit;color:inherit}
 p{margin:0}
 ::selection{background:var(--brass);color:#fff}
 
@@ -1220,3 +1223,90 @@ body.lock{overflow:hidden}
   .plan__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:640px){.plan__grid{grid-template-columns:1fr}}
+
+/* =========================================================================
+   COUCHE APPLE
+   Posee en fin de feuille : meme specificite, elle gagne par l'ordre.
+   Principe directeur : la soustraction. Pas de carte quand un filet suffit,
+   pas de filet quand du blanc suffit. L'accent uniquement sur l'action.
+   ========================================================================= */
+
+/* --- typographie : approche liee a la taille, jamais une valeur unique --- */
+.hero__h1,.phero h1,.ghero h1{letter-spacing:-.035em;line-height:1.04;font-weight:600}
+.sec-head h2,.chap__body h3,.avis__head h2,.prose__s h2{letter-spacing:-.028em}
+body{letter-spacing:0;font-weight:400}
+.eyebrow{
+  /* un label colore au-dessus de chaque section, c'est le tic de gabarit :
+     il reste pour le reperage, il ne crie plus */
+  color:var(--muted);font-weight:500;letter-spacing:.06em;font-size:12.5px;
+}
+
+/* --- boutons : pilule, accent sur l'action seule, reponse au pointer-down - */
+.btn{border-radius:100px;font-weight:500;letter-spacing:-.01em;
+  transition:transform .12s ease-out,background-color .25s,box-shadow .25s}
+.btn:active{transform:scale(.972)}
+.btn--dark{--bg:var(--ink);--fg:#fff;box-shadow:var(--sh-btn)}
+.btn--brass{--bg:var(--brass);--fg:#fff}
+.btn--brass:hover{--bg:#C2541F}
+.btn--ghost{box-shadow:inset 0 0 0 1px var(--rule-2);background:transparent}
+.btn--ghost:hover{box-shadow:inset 0 0 0 1px rgba(0,0,0,.28);background:rgba(0,0,0,.03)}
+
+/* --- surfaces : ombre diffuse plutot que bordure --- */
+.form,.calc__form,.answer,.devis__form{border-radius:var(--r);box-shadow:var(--sh-card)}
+.answer{border-top:0;box-shadow:var(--sh-card)}
+.answer__t{color:var(--muted)}
+.frame,.shot,.phero__img,.gal__i,.hubfeat__img{border-radius:var(--r-img)}
+.shot--detail{border-radius:18px;border-width:5px}
+.f input,.f textarea{border-radius:14px;background:var(--paper-2);border-color:transparent}
+.f-chips span{border-radius:100px}
+
+/* --- materiaux : la barre flotte au-dessus du contenu --- */
+.nav__in,.drawer{
+  background:rgba(251,251,253,.72);
+  backdrop-filter:saturate(180%) blur(22px);
+  -webkit-backdrop-filter:saturate(180%) blur(22px);
+  box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 32px -8px rgba(0,0,0,.10);
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav__in,.drawer{background:#FBFBFD;backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+
+/* --- exergue : le serif italique disparait, il reste l'echelle --- */
+.pullq p{font-family:var(--f-dis);font-style:normal;font-weight:500;
+  letter-spacing:-.035em;line-height:1.1;color:var(--ink)}
+.pullq p::before{color:var(--brass);font-weight:400}
+
+/* --- sections sombres : noir, pas bleu-gris --- */
+.ba,.urgence,.gcta,.foot,.quote{background:var(--slate)}
+.foot{background:#0B0B0C}
+
+/* --- filets : Apple prefere le blanc au trait --- */
+.specs>div,.svc__list li,.mesh__list li,.toc__l a{border-color:var(--rule)}
+
+/* le mot en italique serif du H1 d'accueil avait sa propre regle */
+.hero__h1 .it{font-family:inherit;font-style:normal;font-weight:inherit;
+  color:inherit;letter-spacing:inherit;padding-right:0}
+.hero__h1{font-weight:600;line-height:1.02;letter-spacing:-.038em}
+/* le masque de reveal coupait les jambages : on lui rend la place */
+.hero__h1 .line{padding-bottom:.08em;margin-bottom:-.08em}
+.marquee__track{font-weight:500;letter-spacing:-.02em}
+
+/* --- l'accent redescend sur l'action seule ------------------------------ */
+/* Reproche de Becker mot pour mot : « du bleu partout, un label colore
+   au-dessus de chaque section, la seconde moitie de chaque titre coloree ».
+   Le cuivre ne reste que sur ce qui se clique. */
+.specs dt,.zone__index li::marker,.f-chips legend,.facts__row b{color:var(--muted)}
+.zone__index a::before,.zone__index li::before{color:var(--muted)}
+.chap__num{color:var(--rule-2);font-weight:500}
+.faq__list summary svg,.faq__list summary::after{color:var(--muted)}
+.ticks li::before{color:var(--muted)}
+/* les titres des sections sombres suivaient la meme regle de decor */
+.ba__head h2 em,.urgence__txt h2 em,.gcta h2 em,.quote blockquote em{color:inherit}
+.foot__col h3{color:rgba(255,255,255,.55)}
+
+/* la pastille de verre tombait a 3,7:1 sur les eclats clairs de la photo :
+   materiau plus dense, texte legerement plus gras (vibrance Apple) */
+.glass{background:rgba(12,15,18,.62);font-weight:500;letter-spacing:.005em;
+  -webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px)}
+@media (prefers-reduced-transparency:reduce){.glass{background:rgba(12,15,18,.9);backdrop-filter:none}}
+.hubfeat__k{color:var(--muted)}

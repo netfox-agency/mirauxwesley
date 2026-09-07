@@ -1938,7 +1938,6 @@ def head(title, desc, canon, jsonld, ogimg="couvreur-nonancourt-longere-tuile-ne
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{DOMAIN}/assets/img/{ogimg}">
-<link rel="preload" href="{PRE}assets/fonts/archivo-normal-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{PRE}assets/fonts/inter-tight-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{PRE}assets/fonts.css">
 <link rel="stylesheet" href="{PRE}assets/style.css">
