@@ -1,0 +1,10 @@
+{
+  // Site statique : aucun build. Cloudflare sert la racine du dépôt telle quelle.
+  // "name" doit correspondre exactement au nom du projet dans le dashboard.
+  "name": "mirauxwesley",
+  "compatibility_date": "2026-09-02",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  }
+}
