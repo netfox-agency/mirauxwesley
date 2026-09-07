@@ -2017,21 +2017,48 @@ def crumb(label, extra=None):
 </nav>"""
 
 
-def page_hero(eyebrow, h1a, h1b, lead, img, alt):
+def page_hero(eyebrow, h1a, h1b, lead, img, alt, urgent=False):
+    """urgent : sur les pages ou le visiteur a un toit ouvert, le telephone
+    passe en action principale. C'est l'appel qui convertit, pas le formulaire."""
+    tel = (f'<a class="btn btn--dark" href="tel:{TEL_HREF}" data-track="call">{PHONE}{TEL_TXT}</a>'
+           if urgent else
+           f'<a class="btn btn--ghost" href="tel:{TEL_HREF}" data-track="call">{PHONE}{TEL_TXT}</a>')
+    devis = ('<a class="btn btn--ghost" href="#devis">Demander un devis</a>' if urgent else
+             '<a class="btn btn--dark" href="#devis">Demander mon devis gratuit</a>')
+    cta = (tel + devis) if urgent else (devis + tel)
     return f"""<section class="phero">
   <div class="wrap phero__grid">
     <div>
       <p class="eyebrow reveal">{eyebrow}</p>
       <h1 class="reveal" data-d="1">{h1a}<br>{h1b}</h1>
       <p class="phero__lead reveal" data-d="2">{lead}</p>
-      <div class="phero__cta reveal" data-d="3">
-        <a class="btn btn--dark" href="#devis">Demander mon devis gratuit</a>
-        <a class="btn btn--ghost" href="tel:{TEL_HREF}" data-track="call">{PHONE}{TEL_TXT}</a>
-      </div>
+      <div class="phero__cta reveal" data-d="3">{cta}</div>
+      <!-- Un clic paye atterrissait ici sans une seule preuve : ni les annees,
+           ni les avis, ni les horaires. Meme bloc que la page d'accueil. -->
+      <ul class="hero__trust phero__trust reveal" data-d="4">
+        <li><b data-count="14">14</b> ans d'expérience</li>
+        <li><span class="stars stars--big" aria-label="cinq étoiles">★★★★★</span> Avis Google</li>
+        <li><b>7</b>j/7, de 8 h à 21 h</li>
+      </ul>
     </div>
     <figure class="frame phero__img reveal" data-d="2">
       <img src="{PRE}assets/img/{img}" alt="{alt}" width="1600" height="1200" fetchpriority="high" decoding="async">
     </figure>
+  </div>
+</section>"""
+
+
+def facts_row():
+    """Reassurance juste sous le hero : la page d'accueil l'avait, les pages
+    d'atterrissage des annonces non."""
+    return """<section class="facts facts--slim">
+  <div class="wrap">
+    <ul class="facts__row">
+      <li class="reveal"><b>Devis gratuit</b><span>nous venons mesurer et nous chiffrons</span></li>
+      <li class="reveal" data-d="1"><b>Paiement en plusieurs fois</b><span>sur les gros chantiers</span></li>
+      <li class="reveal" data-d="2"><b>7 j/7, 8 h à 21 h</b><span>et la nuit en cas de fuite</span></li>
+      <li class="reveal" data-d="3"><b>Père en fils</b><span>celui qui chiffre monte sur le toit</span></li>
+    </ul>
   </div>
 </section>"""
 
@@ -2299,7 +2326,9 @@ def render_service(s):
         nav(s["slug"]),
         '<main id="main">',
         crumb(s["nav"]),
-        page_hero("Prestation", s["h1"][0], s["h1"][1], s["lead"], s["hero"], s["heroalt"]),
+        page_hero("Prestation", s["h1"][0], s["h1"][1], s["lead"], s["hero"], s["heroalt"],
+                  urgent=s["slug"] in ("depannage-toiture", "recherche-de-fuite")),
+        facts_row(),
         f"""<section class="detail">
   <div class="wrap detail__grid">
     <div><h2 class="reveal">Ce que <em>nous faisons</em></h2>{specs(s["specs"], "specs specs--wide")}</div>
@@ -2350,6 +2379,7 @@ def render_ville(v):
         crumb("Couvreur à " + v["ville"]),
         page_hero(f'{v["ville"]} · {v["cp"]} · {dist}', "Couvreur à", f'<em>{v["ville"]}</em>',
                   v["intro"], v["photo"], v["photoalt"]),
+        facts_row(),
         f"""<section class="detail">
   <div class="wrap detail__grid">
     <div>

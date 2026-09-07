@@ -466,6 +466,15 @@ p{margin:0}
 .urgence__txt h2 em{color:var(--brass-lt)}
 .urgence__txt p:last-child{color:rgba(255,255,255,.72);font-size:17px}
 
+/* reassurance et preuve sur les pages interieures ------------------------ */
+/* .facts sans le paragraphe d'intro de l'accueil : on garde la rangee seule. */
+.facts--slim{padding-block:clamp(22px,3vw,34px)}
+.phero__trust{margin-top:clamp(22px,3vw,32px)}
+@media (max-width:760px){
+  .phero__trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
+  .phero__trust li:nth-child(2){grid-column:1/-1;order:-1}
+}
+
 /* --------------------------------------------------- hub guides ------- */
 /* Un guide en vedette puis neuf lignes illustrees : les images existaient
    deja, la page ne les montrait pas. Volontairement en lignes et non en
@@ -941,6 +950,13 @@ body.lock{overflow:hidden}
 .phero__lead{font-size:clamp(16.6px,1.3vw,18.6px);color:var(--ink-2);max-width:44ch;margin-bottom:30px}
 .phero__cta{display:flex;flex-wrap:wrap;gap:12px}
 .phero__img{aspect-ratio:4/3}
+/* Avec la preuve et la reassurance ajoutees, la colonne texte a grandi et la
+   photo laissait un grand vide dessous. Sur large, elle prend la hauteur. */
+@media (min-width:1081px){
+  .phero__grid{align-items:stretch}
+  .phero__img{aspect-ratio:auto;min-height:clamp(400px,40vw,600px);height:100%}
+  .phero__img img{width:100%;height:100%;object-fit:cover}
+}
 
 /* corps éditorial ------------------------------------------------------- */
 .detail{padding:clamp(46px,6vw,80px) 0;border-top:1px solid var(--rule)}
