@@ -27,6 +27,9 @@ SIZES = [
     ('ba__',         '(max-width:1240px) 92vw, 1112px'),
     ('about__media', '(max-width:1080px) 88vw, 34vw'),
     ('gal__i',       '(max-width:760px) 46vw, (max-width:1080px) 30vw, 23vw'),
+    ('hubrow__img',  '112px'),
+    ('hubfeat__img', '(max-width:760px) 92vw, 46vw'),
+    ('band__bg',     '100vw'),
     ('quote__bg',    '100vw'),
     ('urgence__bg',  '100vw'),
 ]
@@ -66,8 +69,12 @@ def derivatives(regen=True):
 IMG_RE = re.compile(r'<img\b[^>]*?src="((?:\.\./)*)assets/img/([A-Za-z0-9@._-]+\.webp)"[^>]*?>', re.S)
 
 
-def sizes_for(html, pos):
-    """Cherche la classe de contexte la plus proche en amont du <img>."""
+def sizes_for(html, pos, tag=""):
+    """Une classe portee par le <img> lui-meme fait autorite ; sinon on cherche
+    la classe de contexte la plus proche en amont."""
+    for key, val in SIZES:
+        if key in tag:
+            return val
     window = html[max(0, pos - 700):pos]
     best, best_at = DEFAULT_SIZES, -1
     for key, val in SIZES:
@@ -97,7 +104,7 @@ def rewrite(path, made):
         variants = made[fname]
         srcset_w = ', '.join(f'{pre}assets/img/r/{base}-{w}.webp {w}w' for w, _ in variants)
         srcset_a = ', '.join(f'{pre}assets/img/r/{base}-{w}.avif {w}w' for w, _ in variants)
-        sz = sizes_for(html, m.start())
+        sz = sizes_for(html, m.start(), tag)
         newtag = re.sub(r'\ssizes="[^"]*"', '', tag)
         newtag = newtag.replace('<img', f'<img sizes="{sz}" srcset="{srcset_w}"', 1)
         pic = (f'<picture><source type="image/avif" sizes="{sz}" srcset="{srcset_a}">'

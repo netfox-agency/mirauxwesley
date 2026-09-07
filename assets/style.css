@@ -5,17 +5,17 @@
 
 :root{
   --paper:#F4F1EA;
-  --paper-2:#EDE8DD;
+  --paper-2:#E7DFCF;
   --card:#FFFFFF;
   --ink:#14181B;
   --ink-2:#3D474D;
-  --muted:#5D676D;
+  --muted:#555E64;
   --slate:#182229;
   --slate-2:#22303A;
   --brass:#B07C2E;
-  --brass-ink:#8A5E1E;   /* laiton assombri : 5,03:1 sur le papier, AA */
+  --brass-ink:#7E561B;   /* laiton assombri : 5,76:1 sur le papier, 4,90:1 sur papier-2, AA */
   --brass-lt:#D7B172;
-  --rule:rgba(20,24,27,.13);
+  --rule:rgba(20,24,27,.17);
   --rule-lt:rgba(255,255,255,.16);
 
   --f-dis:'Archivo',system-ui,sans-serif;
@@ -465,6 +465,125 @@ p{margin:0}
 .urgence__txt h2{font-size:clamp(28px,3.8vw,48px);margin-bottom:16px}
 .urgence__txt h2 em{color:var(--brass-lt)}
 .urgence__txt p:last-child{color:rgba(255,255,255,.72);font-size:17px}
+
+/* --------------------------------------------------- hub guides ------- */
+/* Un guide en vedette puis neuf lignes illustrees : les images existaient
+   deja, la page ne les montrait pas. Volontairement en lignes et non en
+   grille de cartes symetriques. */
+.hubfeat{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  gap:clamp(20px,3vw,44px);align-items:center;
+  margin:clamp(24px,3.4vw,40px) 0 clamp(30px,4vw,52px);
+  padding-bottom:clamp(28px,3.6vw,44px);border-bottom:1px solid var(--rule);
+  color:inherit;
+}
+.hubfeat__img{margin:0;border-radius:var(--r-img);overflow:hidden;aspect-ratio:16/9;
+  box-shadow:var(--sh-img)}
+.hubfeat__img picture{display:block;width:100%;height:100%}
+.hubfeat__img img{width:100%;height:100%;object-fit:cover;
+  transition:transform .7s var(--ease)}
+.hubfeat:hover .hubfeat__img img{transform:scale(1.04)}
+.hubfeat__k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brass-ink);font-weight:700;margin-bottom:10px}
+.hubfeat__txt h2{font-size:clamp(25px,3.2vw,40px);margin-bottom:12px;text-wrap:balance}
+.hubfeat__d{color:var(--muted);font-size:16.6px;line-height:1.6;margin-bottom:16px;
+  max-width:46ch}
+.hubfeat:hover .link-arrow{color:var(--ink)}
+
+.hub__list.hub__list--img a{display:grid;grid-template-columns:112px minmax(0,1fr) 28px;
+  gap:clamp(14px,2vw,26px);align-items:center}
+/* images.py emballe les <img> dans un <picture> : c'est lui l'element de
+   grille, il doit donc porter la taille et le recadrage. */
+.hub__list--img picture{display:block;width:112px;aspect-ratio:16/10;
+  border-radius:var(--r-sm);overflow:hidden}
+.hubrow__img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s var(--ease)}
+.hub__list--img a:hover .hubrow__img{transform:scale(1.05)}
+.hub__list--img .hubrow__t b{font-family:var(--f-dis);font-size:clamp(18px,1.9vw,23px);
+  font-weight:600;letter-spacing:-.035em;color:var(--ink)}
+.hub__list--img .hubrow__t>span{font-size:15.2px;color:var(--muted);line-height:1.55}
+.hubrow__t{display:grid;gap:3px;min-width:0}
+@media (max-width:760px){
+  .hubfeat{grid-template-columns:1fr;gap:16px}
+  .hub__list.hub__list--img a{grid-template-columns:78px minmax(0,1fr) 22px;gap:14px}
+  .hub__list--img picture{width:78px}
+  /* .svc__list span{display:none} en mobile masquait aussi l'enveloppe du
+     titre : on la reaffiche, on ne cache que la description. */
+  .hub__list.hub__list--img .hubrow__t{display:grid}
+  .hub__list.hub__list--img .hubrow__t>span{display:none}
+}
+
+/* --------------------------------------------------- bandeau ---------- */
+/* Les pages interieures n'avaient qu'une seule image, en haut, puis des
+   milliers de pixels de texte. Ce bandeau coupe le mur a mi-parcours et
+   remet un point d'appel sous les yeux. Degrade par le bas facon bande
+   basse : jamais de voile global qui assombrit toute la photo. */
+.band{
+  position:relative;overflow:hidden;isolation:isolate;
+  min-height:clamp(300px,36vw,440px);display:flex;align-items:flex-end;
+  padding:clamp(26px,4vw,44px) 0;
+}
+.band__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
+  object-position:50% 46%}
+/* mesure sur les pixels reels : le cartouche laiton tombait a 2,1:1 sur les
+   parties claires de la photo. On renforce la bande basse, sans jamais poser
+   de voile global sur l'image. */
+.band::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top, rgba(13,17,20,.95) 0%, rgba(13,17,20,.88) 30%,
+             rgba(13,17,20,.64) 54%, rgba(13,17,20,.16) 80%, rgba(13,17,20,0) 100%)}
+.band__in{color:#fff;display:grid;gap:14px;justify-items:start;max-width:720px}
+/* Le cartouche etait en laiton clair : mesure sur les pixels reels, il
+   tombait a 2,6:1 sur les eclats de la photo. En blanc il passe l'AA quelle
+   que soit l'image, et l'ombre porte le reste. Meme recette que .gal__cap. */
+.band__k{font-size:12.4px;letter-spacing:.14em;text-transform:uppercase;
+  color:#fff;font-weight:700;
+  text-shadow:0 1px 3px rgba(10,13,15,.9), 0 0 16px rgba(10,13,15,.75)}
+.band__p{font-family:var(--f-dis);font-weight:700;letter-spacing:-.03em;
+  font-size:clamp(23px,3.2vw,36px);line-height:1.12;color:#fff;text-wrap:balance;
+  text-shadow:0 1px 4px rgba(10,13,15,.62)}
+.band .btn--ghost{color:#fff;box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.42);
+  background:rgba(255,255,255,.06);backdrop-filter:blur(6px)}
+.band .btn--ghost:hover{box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.8);
+  background:rgba(255,255,255,.13)}
+@media (max-width:760px){
+  .band{min-height:340px}
+  .band .btn{width:100%;justify-content:center}
+}
+
+/* --------------------------------------------------- sommaire ---------- */
+/* Un guide fait 6 000 px : sans sommaire, le lecteur qui arrive de Google ne
+   sait pas ce que la page couvre ni ou aller. */
+.toc{margin-top:clamp(20px,3vw,30px);padding-top:20px;border-top:1px solid var(--rule)}
+.toc__t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  font-weight:700;margin-bottom:12px}
+.toc__l{list-style:none;margin:0;padding:0;counter-reset:toc;
+  columns:2;column-gap:clamp(24px,4vw,56px)}
+.toc__l li{counter-increment:toc;break-inside:avoid;margin-bottom:2px}
+.toc__l a{display:flex;gap:12px;align-items:baseline;padding:9px 0;
+  font-size:16px;color:var(--ink-2);border-bottom:1px solid var(--rule);
+  transition:color .22s}
+.toc__l a::before{content:counter(toc,decimal-leading-zero);
+  font-family:var(--f-ser);font-size:14px;color:var(--brass-ink);flex:none}
+.toc__l a:hover{color:var(--ink)}
+@media (max-width:760px){.toc__l{columns:1}.toc__l a{padding:12px 0}}
+
+/* --------------------------------------------------- exergue ----------- */
+/* Casse une fois le rythme titre-a-gauche / texte-a-droite qui tenait toute
+   la page, avec de la typographie plutot qu'une image de plus. */
+.pullq{
+  padding:clamp(38px,5.4vw,74px) 0;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+/* nettement au-dessus de l'echelle des h2 (38 px), sinon elle se lit comme
+   un titre de plus au lieu de casser le rythme */
+.pullq p{
+  font-family:var(--f-ser);font-style:italic;font-weight:400;
+  font-size:clamp(29px,4.6vw,56px);line-height:1.16;letter-spacing:-.018em;
+  color:var(--ink);max-width:26ch;text-wrap:balance;position:relative;
+}
+.pullq p::before{content:"\201C";position:absolute;left:-.52em;top:-.06em;
+  color:var(--brass);font-size:1.05em;line-height:1}
+@media (max-width:760px){.pullq p{max-width:none}.pullq p::before{position:static;margin-right:.06em}}
 
 /* --------------------------------------------------- galerie ---------- */
 .gal{padding:clamp(64px,9vw,110px) 0}

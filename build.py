@@ -993,6 +993,7 @@ VILLES = [
 GUIDES = [
     dict(
         slug="prix-refection-toiture",
+        cle="Un toit ne se mesure pas au sol. Il se mesure en rampant.",
         img="couvreur-pose-tuiles-refection.webp", imgalt="Couvreur posant des tuiles neuves sur les liteaux d'une toiture en réfection",
         nav="Prix d'une réfection de toiture",
         title="Prix d'une réfection de toiture au m2",
@@ -1127,6 +1128,7 @@ GUIDES = [
     ),
     dict(
         slug="fuite-toiture-que-faire",
+        cle="La tache au plafond n'est presque jamais sous la fuite.",
         img="toiture-alteree-lichens.webp", imgalt="Toiture ancienne altérée, couverte de lichens",
         nav="Fuite de toiture : que faire",
         title="Fuite de toiture : que faire en urgence",
@@ -1210,6 +1212,7 @@ GUIDES = [
     ),
     dict(
         slug="demoussage-toiture-frequence",
+        cle="La mousse ne salit pas la tuile. Elle la fait éclater.",
         img="tuiles-mousse-vegetation.webp", imgalt="Tuiles envahies de mousse et de végétation",
         nav="Démousser son toit : quand et comment",
         title="Démoussage de toiture : quand et comment",
@@ -1292,6 +1295,7 @@ GUIDES = [
     ),
     dict(
         slug="aides-renovation-toiture",
+        cle="Refaire un toit, c'est de l'entretien. L'isoler, c'est de la rénovation énergétique.",
         img="toits-village-normand-aides.webp", imgalt="Toits d'ardoise et cheminées de brique d'un bourg normand",
         nav="Aides et TVA pour refaire son toit",
         title="Aides et TVA pour refaire sa toiture",
@@ -1382,6 +1386,7 @@ GUIDES = [
     ),
     dict(
         slug="declaration-prealable-toiture",
+        cle="À l'identique, on ne déclare pas. Dès que l'aspect change, on déclare.",
         img="mairie-declaration-prealable-toiture.webp", imgalt="Mairie de village avec sa toiture d'ardoise, où se dépose la déclaration préalable",
         nav="Faut-il une autorisation",
         title="Refaire son toit : quelle autorisation ?",
@@ -1462,6 +1467,7 @@ GUIDES = [
     ),
     dict(
         slug="choisir-materiau-couverture",
+        cle="C'est la pente qui choisit le matériau, pas le catalogue.",
         img="tuiles-anciennes-patinees.webp", imgalt="Tuiles anciennes patinées par le temps",
         nav="Quelle tuile choisir",
         title="Quelle tuile ou ardoise choisir",
@@ -1548,6 +1554,7 @@ GUIDES = [
     ),
     dict(
         slug="isolation-toiture-par-exterieur",
+        cle="Le bon moment pour isoler, c'est quand la couverture est déjà déposée.",
         img="combles-avant-isolation-sous-rampants.webp", imgalt="Combles dégagés avant pose de l'isolation sous rampants",
         nav="Isoler sa toiture",
         title="Isoler sa toiture : dedans ou dehors",
@@ -1622,6 +1629,7 @@ GUIDES = [
     ),
     dict(
         slug="toiture-tempete-assurance",
+        cle="Ne pas protéger aggrave le dommage, et peut réduire l'indemnisation.",
         img="ciel-orage-sur-toitures.webp", imgalt="Ciel d'orage au-dessus de toitures de maisons",
         nav="Tempête : assurance et démarches",
         title="Toiture et tempête : les démarches",
@@ -1697,6 +1705,7 @@ GUIDES = [
     ),
     dict(
         slug="entretien-toiture-annuel",
+        cle="Un contrôle par an, c'est ce qui coûte le moins cher sur la vie du toit.",
         img="cheminees-toiture-controle.webp", imgalt="Cheminées en brique sur une toiture en tuile, sous un ciel nuageux",
         nav="Entretenir sa toiture",
         title="Entretien de toiture : le calendrier annuel",
@@ -1767,6 +1776,7 @@ GUIDES = [
     ),
     dict(
         slug="poser-fenetre-de-toit",
+        cle="Le point critique n'est pas la fenêtre. C'est son raccord à la couverture.",
         img="pose-fenetre-de-toit-velux.webp", imgalt="Fenêtre de toit posée dans une couverture en tuile",
         nav="Poser une fenêtre de toit",
         title="Poser une fenêtre de toit",
@@ -1838,6 +1848,56 @@ GUIDES = [
               "s'installe au moment de la pose sans surcoût de main-d'œuvre.")],
         cta=("Demander un devis fenêtre de toit", "renovation-toiture"),
     ),
+]
+
+# Seconde image de chaque prestation, pour couper le mur de texte a mi-page.
+# Jamais celle du hero, et toujours le sujet de la page.
+BANDS = {
+ "renovation-toiture":  ("apres-refection-toiture-longere-tuile-neuve.webp",
+   "Longère entièrement recouverte en tuile neuve",
+   "Une réfection menée jusqu'au bout",
+   "Dépose complète, écran de sous-toiture, liteaunage, couverture neuve. Le toit repart pour quarante ans."),
+ "zinguerie-gouttieres": ("tuile-neuve-rive-zinguee-detail.webp",
+   "Détail d'une rive zinguée sur une couverture neuve",
+   "C'est la zinguerie qui décide où part l'eau",
+   "Une descente bouchée ou un solin fendu suffit à abîmer un mur en deux hivers."),
+ "demoussage-toiture":  ("tuiles-mousse-vegetation.webp",
+   "Tuiles envahies de mousse et de végétation",
+   "La mousse retient l'eau contre la tuile",
+   "Elle gèle, elle fait éclater la terre cuite, et le problème finit dans la charpente."),
+ "depannage-toiture":   ("ciel-orage-sur-toitures.webp",
+   "Ciel d'orage au-dessus des toitures",
+   "Une toiture qui prend l'eau n'attend pas lundi",
+   "Nous mettons d'abord hors d'eau, puis nous revenons faire la réparation au calme."),
+ "charpente":           ("charpente-auvent-chene-maison-pierre.webp",
+   "Charpente d'auvent en chêne sur une maison en pierre",
+   "La charpente porte tout le reste",
+   "On ne la voit qu'une fois la couverture déposée, et c'est là que se joue une bonne partie du budget."),
+ "isolation-toiture":   ("renovation-toiture-charpente-liteaux-neufs.webp",
+   "Écran de sous-toiture et liteaux neufs posés sur une charpente",
+   "Le bon moment pour isoler, c'est pendant la réfection",
+   "L'échafaudage est déjà là, la couverture est déposée : l'isolation ne coûte jamais aussi peu."),
+ "recherche-de-fuite":  ("toiture-alteree-lichens.webp",
+   "Toiture ancienne altérée par les lichens",
+   "La tache au plafond n'est presque jamais sous la fuite",
+   "L'eau circule sur la charpente avant de tomber. On cherche le point d'entrée, pas le point d'arrivée."),
+ "fenetre-de-toit":     ("toiture-tuile-brune-fenetre-de-toit.webp",
+   "Fenêtre de toit posée dans une couverture en tuile brune",
+   "Une fenêtre de toit, c'est d'abord un raccord",
+   "Le châssis se pose vite. Ce qui tient dans le temps, c'est le raccord à la couverture."),
+ "bardage":             ("corps-de-ferme-pierre-depose-couverture.webp",
+   "Pignon d'un corps de ferme en pierre pendant la dépose de la couverture",
+   "Le pignon prend la pluie avant le reste",
+   "Un bardage bien posé protège le mur et se raccorde proprement à la couverture."),
+}
+
+# Bandeaux des pages communes : quatre vues du secteur, en rotation, pour ne
+# pas reservir la photo deja utilisee en haut de la page.
+BANDS_VILLE = [
+ ("toitures-tuile-lucarnes.webp", "Toitures en tuile et lucarnes alignées"),
+ ("toits-village-normand-aides.webp", "Toits d'ardoise et cheminées de brique d'un bourg normand"),
+ ("apres-refection-toiture-longere-tuile-neuve.webp", "Longère recouverte en tuile neuve"),
+ ("couvreur-nonancourt-longere-tuile-neuve.webp", "Longère avec une couverture neuve en tuile rouge"),
 ]
 
 ETAPES = [
@@ -2010,6 +2070,44 @@ def prix_block(title, items, note):
 def specs(items, cls="specs"):
     rows = "".join(f"<div><dt>{t}</dt><dd>{d}</dd></div>" for t, d in items)
     return f'<dl class="{cls} reveal">{rows}</dl>'
+
+
+def band(img, alt, kicker, phrase):
+    """Bandeau photo pleine largeur qui coupe le mur de texte au milieu des pages
+    interieures, et redonne un point d'appel a mi-parcours."""
+    return f"""<section class="band reveal">
+  <img class="band__bg" src="{PRE}assets/img/{img}" alt="{alt}"
+       width="1680" height="720" loading="lazy" decoding="async">
+  <div class="wrap band__in">
+    <p class="band__k">{kicker}</p>
+    <p class="band__p">{phrase}</p>
+    <a class="btn btn--ghost btn--lg" href="tel:{TEL_HREF}" data-track="call">{PHONE}{TEL_TXT}</a>
+  </div>
+</section>"""
+
+
+def slugify(t):
+    import unicodedata
+    t = unicodedata.normalize("NFKD", re.sub(r"<[^>]+>", "", t))
+    t = "".join(c for c in t if not unicodedata.combining(c)).lower()
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", t)).strip("-")[:48]
+
+
+def sommaire(sections):
+    """Sur un guide de 6 000 px, le lecteur arrive de Google sans savoir ce que la
+    page couvre. Le sommaire le lui dit et lui donne des points d'entree."""
+    li = "".join('<li><a href="#%s">%s</a></li>' % (slugify(t), re.sub(r"<[^>]+>", "", t))
+                 for t, _ in sections)
+    return f"""<nav class="toc reveal" data-d="3" aria-label="Sommaire du guide">
+  <p class="toc__t">Au sommaire</p>
+  <ol class="toc__l">{li}</ol>
+</nav>"""
+
+
+def pullq(txt):
+    """Une phrase mise au serif, en grand, pour casser une fois le rythme
+    titre-a-gauche / texte-a-droite qui tient toute la page."""
+    return f'<aside class="pullq reveal"><p>{txt}</p></aside>'
 
 
 def etapes():
@@ -2212,6 +2310,7 @@ def render_service(s):
     </div>
   </div>
 </section>""",
+        (band(*BANDS[s["slug"]]) if s["slug"] in BANDS else ""),
         mat_block(s["mat_t"], s["mat"]),
         prix_block(s["prix_t"], s["prix"], s["budget"]),
         etapes(),
@@ -2228,7 +2327,12 @@ def render_service(s):
 def render_ville(v):
     canon = v["slug"] + "/"
     dist = ("notre atelier" if v["km"] is None else f"à {v['km']} km de l'atelier")
+    dist_p = ("dans la commune de l'atelier" if v["km"] is None
+              else f"à {v['km']} km de l'atelier")
     autour = "".join(f"<li>{c}</li>" for c in v["autour"])
+    # on tourne sur quatre vues du secteur, en evitant celle deja en haut de page
+    bi = [x for x in BANDS_VILLE if x[0] != v["photo"]]
+    bimg, balt = bi[[x["slug"] for x in VILLES].index(v["slug"]) % len(bi)]
     svc = "".join(
         f'<li><a href="{PRE}{x["slug"]}/"><b>{x["nav"]}</b><span>{x["pitch"]}</span>{ARROW}</a></li>'
         for x in SERVICES)
@@ -2268,6 +2372,8 @@ def render_ville(v):
   </div>
 </section>""",
         mat_block(f'Ce que nous faisons le plus <em>à {v["ville"]}</em>', v["focus"], "deep deep--alt"),
+        band(bimg, balt, f'Couvreur à {v["ville"]}',
+             f'Un toit à voir {dist_p}, un devis à faire chiffrer : nous nous déplaçons.'),
         etapes(),
         avis_pair(AVIS[1], AVIS[3]),
         faq_block(v["faq"]),
@@ -2341,10 +2447,13 @@ def render_guide(g):
           % (jstr(g["title"]), jstr(g["desc"]), DOMAIN, canon, DOMAIN, DOMAIN,
              faq_ld, DOMAIN, DOMAIN, jstr(g["nav"])))
 
-    secs = "".join(
-        '<section class="prose__s reveal"><h2>%s</h2><div class="prose__b">%s</div></section>'
-        % (t, "".join("<p>%s</p>" % x.replace("{PRE}", PRE) for x in ps))
-        for t, ps in g["sections"])
+    blocs = ['<section class="prose__s reveal" id="%s"><h2>%s</h2><div class="prose__b">%s</div></section>'
+             % (slugify(t), t, "".join("<p>%s</p>" % x.replace("{PRE}", PRE) for x in ps))
+             for t, ps in g["sections"]]
+    # la phrase cle vient couper le rythme titre-a-gauche / texte-a-droite
+    if g.get("cle") and len(blocs) > 2:
+        blocs.insert(len(blocs) // 2, pullq(g["cle"]))
+    secs = "".join(blocs)
     svc = next(x for x in SERVICES if x["slug"] == g["cta"][1])
     autres = "".join(
         f'<li><a href="{PRE}guides/{x["slug"]}/">{x["nav"]}<span>{ARROW}</span></a></li>'
@@ -2363,6 +2472,7 @@ def render_guide(g):
       <p class="answer__t">En bref</p>
       <p>{g["court"]}</p>
     </div>
+    {sommaire(g["sections"])}
   </div>
 </section>""",
         (f'<div class="wrap"><figure class="frame frame--wide gimg reveal">'
@@ -2483,10 +2593,26 @@ def render_hub():
     global PRE
     PRE = "../"
     canon = "guides/"
+    # La page vendait dix guides sans montrer une seule image, alors que chacun
+    # a deja son bandeau. Premier guide en vedette, les neuf autres en lignes
+    # illustrees : un index de magazine, pas une grille de cartes.
+    f = GUIDES[0]
+    vedette = f"""<a class="hubfeat reveal" href="{PRE}guides/{f["slug"]}/">
+      <figure class="hubfeat__img"><img src="{PRE}assets/img/{f["img"]}" alt="{f["imgalt"]}"
+        width="1680" height="720" loading="lazy" decoding="async"></figure>
+      <div class="hubfeat__txt">
+        <p class="hubfeat__k">À lire en premier</p>
+        <h2>{f["nav"]}</h2>
+        <p class="hubfeat__d">{f["desc"]}</p>
+        <span class="link-arrow">Lire le guide {ARROW}</span>
+      </div>
+    </a>"""
     items = "".join(
-        f'<li class="reveal" data-d="{min(i,3)}"><a href="{PRE}guides/{g["slug"]}/">'
-        f'<b>{g["nav"]}</b><span>{g["desc"]}</span>{ARROW}</a></li>'
-        for i, g in enumerate(GUIDES))
+        f'<li class="reveal" data-d="{min(i, 3)}"><a href="{PRE}guides/{g["slug"]}/">'
+        f'<img class="hubrow__img" src="{PRE}assets/img/{g["img"]}" alt="{g["imgalt"]}" '
+        f'width="1680" height="720" loading="lazy" decoding="async">'
+        f'<span class="hubrow__t"><b>{g["nav"]}</b><span>{g["desc"]}</span></span>{ARROW}</a></li>'
+        for i, g in enumerate(GUIDES[1:]))
     ld = ('{"@context":"https://schema.org","@graph":[' + ld_business() + ','
           '{"@type":"CollectionPage","name":"Guides toiture","url":"%s/guides/",'
           '"inLanguage":"fr-FR","about":{"@id":"%s/#business"}},'
@@ -2520,7 +2646,8 @@ def render_hub():
         chez nos clients. Ils sont écrits par des couvreurs qui montent sur les toits de l'Eure
         depuis quatorze ans, pas par un rédacteur.</p>
     </div>
-    <ul class="svc__list hub__list">{items}</ul>
+    {vedette}
+    <ul class="svc__list hub__list hub__list--img">{items}</ul>
   </div>
 </section>""",
         devis("Une question sur <em>votre toit</em> ?",

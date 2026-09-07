@@ -264,6 +264,13 @@ les mots porteurs, Inter Tight pour le texte.
 
 Règles tenues pour éviter le rendu « template » :
 
+- **quatre respirations par page interieure**, parce que les pages n'avaient
+  qu'une image en haut puis des milliers de pixels de texte : bandeau photo
+  pleine largeur a mi-parcours (prestations et communes), sommaire a ancres
+  et phrase en exergue au serif (guides), index illustre (hub des guides) ;
+- **deux beiges reellement distincts** : `--paper` et `--paper-2` etaient a
+  1,08 de rapport, l'alternance de sections ne se voyait pas. Portee a 1,17,
+  avec `--muted` et `--brass-ink` assombris du meme cran pour tenir l'AA ;
 - **aucun bloc de cartes répété** : filets horizontaux, listes de spécifications
   (terme à gauche, définition à droite), index numéroté ;
 - **trois chapitres de prestations aux compositions différentes** : diptyque décalé,
