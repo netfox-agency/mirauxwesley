@@ -53,7 +53,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 h1,h2,h3{font-family:var(--f-dis);font-weight:700;letter-spacing:-.035em;line-height:1.03;margin:0}
 h1 em,h2 em,h3 em{font-family:var(--f-ser);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--brass-ink)}
 /* l'italique Instrument Serif a des approches negatives : on rend l'air */
-.chap__body h3 em,.chap__head h3 em{margin:0 .1em 0 .05em}
+/* l'italique Instrument Serif a des approches negatives : on rend l'air,
+   partout ou l'esperluette sert de liaison (accueil et titres de pages) */
+.chap__body h3 em,.chap__head h3 em,.phero h1 em{margin:0 .1em 0 .05em}
 p{margin:0}
 ::selection{background:var(--brass);color:#fff}
 

@@ -129,11 +129,11 @@ SERVICES = [
         slug="zinguerie-gouttieres",
         pitch="Gouttières, chéneaux, solins, rives et isolation sous toiture.",
         nav="Zinguerie et gouttières",
-        h1=("Zinguerie <em>&amp;</em> gouttières", "dans l'Eure et le Drouais"),
+        h1=("Zinguerie <em>&amp;</em>&nbsp;gouttières", "dans l'Eure et le Drouais"),
         title="Zinguerie et gouttières · Nonancourt, Dreux · WM Couverture",
         desc="Pose et réparation de gouttières, chéneaux, descentes et solins à Nonancourt, Dreux et Anet. Nettoyage de chéneaux, isolation. Devis gratuit.",
-        hero="zinguerie-descente-gouttiere-zinc.webp",
-        heroalt="Descente de gouttière en zinc le long d'un débord de toiture",
+        hero="zinguerie-souche-zinc-toiture.webp",
+        heroalt="Souche de cheminée habillée en zinc sur une toiture en tuiles plates patinées",
         lead="La zinguerie décide où part l'eau. Une descente bouchée ou un solin fendu suffit "
              "à abîmer un mur en deux hivers. Nous posons, réparons et entretenons.",
         specs=[("Évacuation", "Gouttières pendantes ou havraises, chéneaux, naissances, descentes."),
@@ -194,7 +194,7 @@ SERVICES = [
         slug="demoussage-toiture",
         pitch="Nettoyage haute pression et traitement anti-mousse professionnel.",
         nav="Nettoyage et démoussage",
-        h1=("Nettoyage <em>&amp;</em> démoussage", "de toiture dans l'Eure"),
+        h1=("Nettoyage <em>&amp;</em>&nbsp;démoussage", "de toiture dans l'Eure"),
         title="Démoussage de toiture · Nonancourt, Dreux · WM Couverture",
         desc="Nettoyage haute pression et traitement anti-mousse des toitures à Nonancourt, "
              "Dreux, Verneuil et Évreux. Purge de gouttières, entretien annuel. Devis gratuit.",

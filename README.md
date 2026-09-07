@@ -238,7 +238,8 @@ illustrer les guides et les ambiances, jamais à prouver un chantier :
 | Fichier | Pexels | Usage |
 |---|---|---|
 | `charpente-ancienne-sous-toiture.webp` | 31763539 | second visuel du chapitre 01 |
-| `zinguerie-descente-gouttiere-zinc.webp` | 25682676 | bandeau du chapitre 02 |
+| `zinguerie-souche-zinc-bandeau.webp` | 33078486 | bandeau du chapitre 02 |
+| `zinguerie-souche-zinc-toiture.webp` | 33078486 | hero de la page zinguerie |
 | `combles-avant-isolation-sous-rampants.webp` | 9043415 | page isolation + guide isolation |
 | `toitures-tuile-lucarnes.webp` | 19808100 | fond de la bande citation |
 | `tuiles-anciennes-patinees.webp` | 209266 | guide choisir son matériau |
@@ -250,9 +251,15 @@ illustrer les guides et les ambiances, jamais à prouver un chantier :
 | `couvreur-pose-tuiles-refection.webp` | 31771166 | guide prix d'une réfection |
 | `toits-village-normand-aides.webp` | 33137471 | guide aides et TVA |
 
-Trois visuels ont été remplacés parce qu'ils ne tenaient pas : une calculatrice
-générique, une maison neuve à ossature bois étrangère à une réfection, et deux
-techniciens en tenue industrielle qui n'évoquaient en rien une déclaration en mairie.
+Quatre visuels ont été remplacés parce qu'ils ne tenaient pas : une calculatrice
+générique, une maison neuve à ossature bois étrangère à une réfection, deux
+techniciens en tenue industrielle qui n'évoquaient en rien une déclaration en
+mairie, et une descente de gouttière contre un mur surexposé où l'on ne voyait
+aucune gouttière, alors qu'elle occupait le grand bandeau du chapitre 02 de
+l'accueil **et** le hero de la page zinguerie, qui reçoit des annonces.
+
+Ces emplacements-là **illustrent un métier**, ils ne prouvent pas un chantier :
+la règle « photo réelle » ne s'y applique pas, et la plus belle image gagne.
 
 À remplacer par des photos de WM dès qu'il en fournit d'équivalentes.
 
