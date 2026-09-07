@@ -44,9 +44,14 @@ on paie trois mois d'apprentissage pour rien.
 
 | # | Campagne | Groupes d'annonces | Part | ~€/jour | Rayon |
 |---|---|---|---|---|---|
-| 1 | **Entretien** | Démoussage · Nettoyage toiture · Gouttières | **45 %** | 5,40 € | 35 km |
-| 2 | **Urgence & réparation** | Fuite · Dépannage · Tempête | **47 %** | 5,60 € | 25 km |
-| 3 | **Marque** | WM Couverture | **8 %** | 1,00 € | 40 km |
+| 1 | **Entretien** | Démoussage · Nettoyage toiture · Gouttières | **47 %** | 5,65 € | 35 km |
+| 2 | **Urgence & réparation** | Fuite · Dépannage · Tempête | **25 %** | 3,00 € | 25 km |
+| 3 | **Réfection** | Rénovation de toiture · Devis couvreur | **20 %** | 2,40 € | 35 km |
+| 4 | **Marque** | WM Couverture | **8 %** | 1,00 € | 40 km |
+
+> Cette répartition est le résultat du modèle économique ci-dessous, pas d'une
+> intuition. Ma première version mettait 47 % sur l'urgence : le calcul montre
+> que c'était l'erreur d'allocation la plus coûteuse du plan.
 
 ### Pourquoi l'entretien passe devant l'urgence
 
@@ -67,21 +72,81 @@ Une fois là-haut, il constate l'état réel de la couverture et devise. Le lead
 démoussage n'est pas seulement un petit chantier, c'est une porte d'entrée vers
 la réfection, payée au prix d'un clic à 1,50 €.
 
-### Ce que je ne lance pas au démarrage, et pourquoi
+### La réfection, à petite dose dès le départ
 
-**Pas de campagne « rénovation » ni « réfection de toiture ».** Le clic y coûte 3
-à 6 €, les comparateurs nationaux enchérissent fort, et le cycle de décision se
-compte en semaines. À 12 €/jour, cette campagne consommerait un tiers du budget
-pour produire un devis par mois, sans rien de visible au tableau de bord.
+J'avais d'abord reporté cette campagne au mois 3, au motif que le clic y coûte 3
+à 6 € et que le cycle est long. Le modèle économique montre que c'était une
+erreur : avec 2 % de transformation suffisants pour être rentable, c'est la ligne
+la moins risquée du compte.
 
-Elle s'ouvre **au mois 3**, avec 20 à 25 % du budget, une fois que le compte a de
-l'historique de conversions et un bon niveau de qualité. C'est une décision de
-séquencement, pas un abandon.
+Elle prend donc **20 % du budget dès le lancement**, soit 2,40 €/jour. À ce
+niveau elle produit environ **une demande par mois**, ce qui est peu en volume
+mais représente à elle seule 648 € de marge attendue. Un seul chantier signé
+rembourse dix-huit mois de publicité.
+
+Ce qu'il faut dire à l'artisan pour éviter le malentendu : **cette campagne-là ne
+fera pas sonner le téléphone toutes les semaines.** Elle est là pour le gros
+chantier occasionnel, pendant que l'entretien fait le volume.
 
 **Pas de Display, pas de Partenaires du Réseau de Recherche, pas de Performance
 Max.** À ce budget, ce sont des fuites, pas des canaux.
 
 ---
+
+## Économie unitaire : ce que vaut réellement un lead
+
+Sans ce calcul, une allocation n'est qu'une opinion. Hypothèses au milieu de
+fourchette, **à recaler avec les vrais chiffres de WM après quatre semaines**.
+
+| Prestation | Chantier moyen | Profit | Transfo lead → chantier | **Valeur d'un lead** | CPC | CPL | **ROAS** |
+|---|---|---|---|---|---|---|---|
+| **Réfection** | 12 000 € | 3 000 € | 18 % | **540 €** | 4,20 € | 60 € | **9,0 x** |
+| **Démoussage** | 1 100 € | 440 € | 35 % | **209 €** | 1,90 € | 21 € | **9,9 x** |
+| **Gouttières** | 750 € | 262 € | 40 % | **130 €** | 1,90 € | 21 € | **6,2 x** |
+| **Fuite / urgence** | 420 € | 168 € | 45 % | **121 €** | 3,00 € | 30 € | **4,0 x** |
+| **Marque** | mix | 750 € | 50 % | 375 € | 0,40 € | 3 € | très élevé |
+
+La valeur du lead démoussage et du lead fuite inclut l'**escalade** : ces deux
+prestations font monter WM sur le toit, où il constate l'état réel de la
+couverture et devise. Compté prudemment à 55 € et 45 € par lead.
+
+### Le taux de transformation minimum pour être rentable
+
+C'est le chiffre qui décide de tout, et il n'est pas intuitif.
+
+| Prestation | Il suffit de transformer… | Lecture |
+|---|---|---|
+| **Réfection** | **2,0 %** des leads | un seul chantier paie 50 leads |
+| Démoussage | 4,8 % | très confortable |
+| Gouttières | 8,0 % | confortable |
+| **Fuite / urgence** | **17,9 %** | **la ligne fragile du plan** |
+
+**L'urgence est la seule campagne qui peut perdre de l'argent.** Petit chantier
+et clic cher : il faut transformer près d'un lead sur cinq pour seulement
+rentrer dans ses frais. C'est jouable, parce qu'un particulier avec une fuite
+est très motivé, mais ça ne supporte aucune approximation.
+
+À l'inverse, la réfection est d'une tolérance extrême : 2 % suffisent. C'est
+mathématiquement la campagne la moins risquée du compte, même si elle produit
+peu de leads.
+
+### Ce que le modèle a changé dans le plan
+
+| | Allocation initiale | **Retenue** | Écart |
+|---|---|---|---|
+| Demandes par mois | 24,1 | 23,0 | −1,1 |
+| Marge nette générée | 3 094 € | **3 536 €** | **+441 €** |
+| dont demandes démoussage | 5,1 | **6,0** | +0,9 |
+| Retour sur dépense | 8,6 x | **9,8 x** | |
+
+Pour une demande de moins par mois, on gagne 441 € de marge, **et** le moteur de
+la preuve rapide, le démoussage, monte de 5,1 à 6,0 demandes. Il n'y a pas
+d'arbitrage à faire : la nouvelle répartition est meilleure sur les deux tableaux.
+
+> La marge de la campagne de marque est volontairement divisée par quatre dans
+> ce calcul. Ces clients auraient trouvé WM de toute façon : la campagne les
+> protège d'un concurrent qui achèterait son nom, elle ne les crée pas. Un
+> modèle qui compte ces conversions à 100 % se ment à lui-même.
 
 ## Réglages, un par un
 
@@ -121,8 +186,8 @@ appelle depuis son téléphone. Le desktop sert à comparer, le mobile à appele
 
 **Au lancement : « Maximiser les clics » avec un plafond de CPC.**
 
-- Entretien : plafond **1,80 €**
-- Urgence : plafond **2,80 €**
+- Entretien : plafond **2,20 €**
+- Urgence : plafond **3,20 €**
 - Marque : plafond **0,40 €**
 
 Pourquoi pas Maximiser les conversions ou un CPA cible tout de suite : ces
@@ -330,12 +395,15 @@ code n'est nécessaire.
 Hypothèses : CPC moyen 1,80 € sur l'entretien, 2,60 € sur l'urgence, taux de
 conversion de la page entre 7 et 10 %.
 
-| Campagne | Budget/mois | Clics | CPL | **Demandes** |
-|---|---|---|---|---|
-| Entretien | 162 € | ~90 | ~20 € | **8** |
-| Urgence | 169 € | ~65 | ~29 € | **5,5** |
-| Marque | 29 € | ~90 | ~10 € | **3** |
-| **Total à 12 €/jour** | **360 €** | **~245** | **~22 €** | **~16 demandes** |
+| Campagne | Budget/mois | Clics | Demandes | Chantiers | Marge nette |
+|---|---|---|---|---|---|
+| Entretien | 169 € | ~89 | **8,0** | 2,9 | 1 513 € |
+| Urgence | 90 € | ~30 | **3,0** | 1,4 | 362 € |
+| Réfection | 72 € | ~17 | **1,2** | 0,2 | 648 € |
+| Marque | 29 € | ~72 | **10,8** | 5,4 | 1 012 € |
+| **Total à 12 €/jour** | **360 €** | **~208** | **~23 demandes** | | **~3 536 €** |
+
+Retour sur dépense attendu : **9,8 fois la mise**, marge nette contre budget.
 
 **Fourchette honnête : 10 à 20 demandes par mois.** En bas de fourchette si le
 CPC monte ou si le suivi est mal posé, en haut si le taux de conversion des
@@ -355,6 +423,92 @@ deux révéleront une toiture en fin de vie. C'est là que se trouve la réfecti
 plusieurs milliers d'euros, achetée au prix d'un clic à 1,50 €.
 
 ---
+
+## Le risque de finir à zéro, chiffré
+
+La question mérite un chiffre, pas une promesse. Simulation sur 14 jours à
+12 €/jour, 20 000 tirages, avec de la variabilité sur le coût du clic et sur le
+taux de conversion.
+
+| Scénario | Probabilité de **zéro** demande | Médiane | Fourchette 10-90 % |
+|---|---|---|---|
+| Central : clic à 2 €, page qui convertit à 8 % | **0,7 %** | 5 | 2 à 8 |
+| Zone rurale, moitié moins de clics disponibles | 0,8 % | 5 | 2 à 8 |
+| Clic cher à 3 €, conversion 6 % | 9 % | 2 | 1 à 5 |
+| **Page qui convertit mal (3 %)** | **18 %** | 2 | 0 à 3 |
+| Compte en validation pendant 4 jours | 3 % | 3 | 1 à 6 |
+| **Tout va mal en même temps** | **34 %** | 1 | 0 à 2 |
+
+**Ce que ça dit.** Si la campagne dépense normalement et que la page convertit
+correctement, finir à zéro est quasi impossible. Le risque ne vient pas du
+ciblage ni des mots-clés : **il vient de la page et du suivi.**
+
+Une page qui convertit à 3 % au lieu de 8 % fait passer le risque de zéro de
+1 % à 18 %. C'est le facteur qui pèse le plus lourd, et de loin.
+
+### Les quatre causes réelles d'un zéro, par ordre de probabilité
+
+**1. Le formulaire n'envoie rien.** Aujourd'hui la clé Web3Forms est un
+placeholder : les demandes partent dans le vide. C'est la première cause
+possible, et elle est entièrement sous notre contrôle. Cinq minutes de travail.
+
+**2. Le suivi n'est pas posé.** Les appels arrivent mais rien n'est compté.
+L'artisan verra « zéro conversion » sur un tableau de bord alors que son
+téléphone a sonné. Impossible d'optimiser, et impossible de prouver que ça marche.
+
+**3. Le compte est en validation.** Un compte Google Ads neuf met un à quatre
+jours à faire approuver ses annonces, parfois plus si le moyen de paiement est
+en cours de vérification. Sur une fenêtre de quinze jours, ça peut en manger
+quatre.
+
+**4. Le volume est trop mince.** C'est ma vraie incertitude, et je l'assume :
+je n'ai pas pu mesurer le volume de recherche réel de la zone, le jeton
+d'accès au planificateur de mots-clés étant limité. Nonancourt fait environ
+2 000 habitants ; c'est le rayon élargi qui apporte le volume, pas la commune.
+
+### Ce que j'ai changé dans le plan pour couvrir ce risque
+
+- **Plafonds de CPC relevés** : 2,20 € sur l'entretien au lieu de 1,80, 3,20 €
+  sur l'urgence au lieu de 2,80. Mieux vaut apparaître et baisser ensuite que
+  rester invisible une semaine faute d'enchérir assez.
+- **Règle de décision au jour 4** : si les impressions sont faméliques alors que
+  le budget n'est pas consommé, passer les trois mots-clés cœur
+  (`démoussage toiture`, `nettoyage toiture`, `fuite toiture`) en requête large,
+  et seulement ceux-là, avec la liste d'exclusions déjà en place. Vérification
+  quotidienne du rapport sur les termes de recherche pendant une semaine.
+- **Créer le compte et soumettre les annonces à validation trois à cinq jours
+  avant** le début de la fenêtre d'observation, pour que la validation ne mange
+  pas le compteur.
+
+### Les leviers de volume, à ne tirer que si le manque est constaté
+
+Le budget est fixe. Aucun de ces leviers n'ajoute un euro : ils redistribuent les
+mêmes 12 € sur un public plus large. Les tirer sans nécessité dilue la pertinence
+et fait acheter des demandes moins bonnes. On ne les active que si le rapport du
+jour 4 montre des impressions faméliques **avec un budget non consommé**.
+
+| Ordre | Levier | Coût caché |
+|---|---|---|
+| 1 | Requête large sur les 3 mots-clés cœur uniquement | demande une surveillance quotidienne des termes de recherche |
+| 2 | Ajouter 3 ou 4 communes aux déclinaisons | faible |
+| 3 | Élargir le rayon de l'entretien de 35 à 45 km | trajets plus longs, marge réduite sur un démoussage |
+| 4 | Remonter les plafonds de CPC par paliers de 20 % | moins de clics pour le même budget |
+
+Le rayon arrive volontairement en troisième : sur une prestation à faible ticket
+comme le démoussage, le temps de route mange la marge. Tant que le volume tient
+à 35 km, on n'y touche pas.
+
+### La promesse honnête à faire à l'artisan
+
+Pas « des demandes dès demain ». La formulation juste est :
+
+> **Premiers appels attendus entre le 7e et le 10e jour.** Les quinze premiers
+> jours servent à calibrer : on coupe ce qui ne marche pas, on renforce ce qui
+> marche. Le vrai bilan se lit à la fin du premier mois complet.
+
+Et on lui montre les clics et les appels dès la première semaine, pas seulement
+les chantiers signés. Un artisan qui voit vingt clics et deux appels le jour 8
+comprend que la machine tourne.
 
 ## À faire avant d'activer, dans l'ordre
 
@@ -377,6 +531,57 @@ paiement par client, décocher le partage avec le compte administrateur, et donn
 un accès **Standard** et non « facturation seulement », qui est cassé sur mobile.
 
 ---
+
+## Kit de lancement, jour par jour
+
+### J-7 à J-5 · avant de toucher à Google Ads
+
+- [ ] Site en ligne, les quatre pages de destination répondent
+- [ ] Clé Web3Forms posée, **un envoi de test reçu dans la boîte mail**
+- [ ] Compte Google Ads créé, RIB enregistré, facturation vérifiée
+- [ ] Fiche Google liée au compte Ads
+- [ ] Google Tag Manager posé sur le site
+
+### J-4 · le suivi, avant tout le reste
+
+- [ ] Les 4 actions de conversion créées : appel depuis l'annonce, appel depuis
+      le site, envoi de formulaire, clic sur le numéro
+- [ ] **Test réel** : remplir le formulaire soi-même, appeler depuis un mobile,
+      et vérifier que la conversion remonte dans Google Ads sous 24 h
+- [ ] Une conversion qui ne remonte pas au test ne remontera pas non plus en vrai
+
+### J-3 · import et validation
+
+- [ ] Import des 4 CSV dans Google Ads Editor, campagnes **en pause**
+- [ ] Zones, calendrier, ajustements d'enchères, assets posés à la main
+- [ ] Réseau Display et partenaires **décochés**
+- [ ] Annonces soumises à validation : compter 1 à 4 jours
+
+### J0 · activation
+
+- [ ] Toutes les annonces approuvées avant d'activer
+- [ ] Budget à 12 €/jour, pas plus, pas moins
+- [ ] Prévenir l'artisan : **il va recevoir des appels, qu'il décroche**
+
+### J+1 à J+3 · le travail qui compte
+
+Rapport sur les termes de recherche, **tous les matins**. Chaque requête hors
+sujet devient une exclusion. Compter 10 à 20 exclusions la première semaine.
+
+### J+4 · le point de décision
+
+Si les impressions sont faméliques **et** le budget non consommé, tirer les
+leviers de volume dans l'ordre listé plus haut. Sinon, ne rien toucher.
+
+### J+7 à J+10 · premiers appels attendus
+
+Vérifier que la conversion est enregistrée, pas seulement que le téléphone a
+sonné. C'est le moment où l'on montre les premiers chiffres à l'artisan.
+
+### J+30 · le vrai bilan
+
+Coût, demandes, coût par demande, chantiers signés, marge. Et surtout : recaler
+le modèle économique avec **ses vrais chiffres** à lui, pas mes hypothèses.
 
 ## Les trois premières semaines
 

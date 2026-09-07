@@ -159,3 +159,51 @@ XXX-XXX-XXXX,Search_Marque,Marque,wm couverture,Exact,Enabled
 XXX-XXX-XXXX,Search_Marque,Marque,wm couverture nonancourt,Exact,Enabled
 XXX-XXX-XXXX,Search_Marque,Marque,miraux couverture,Exact,Enabled
 XXX-XXX-XXXX,Search_Marque,Marque,wm couvreur,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,refection toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,refection toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,refaire toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,refaire toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,refaire sa toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,refaire sa toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,changer toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,changer toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toit,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toit,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,remplacement toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,remplacement toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,entreprise renovation toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,entreprise renovation toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,prix refection toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,prix refection toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture nonancourt,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture nonancourt,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture dreux,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture dreux,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture vernouillet,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture vernouillet,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture saint remy sur avre,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Renovation-Toiture,renovation toiture saint remy sur avre,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,devis couvreur,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,devis couvreur,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,devis toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,devis toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,devis renovation toiture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,devis renovation toiture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur devis gratuit,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur devis gratuit,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,entreprise couverture,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,entreprise couverture,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur nonancourt,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur nonancourt,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur dreux,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur dreux,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur vernouillet,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur vernouillet,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur saint remy sur avre,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur saint remy sur avre,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur anet,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur anet,Phrase,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur verneuil sur avre,Exact,Enabled
+XXX-XXX-XXXX,Search_Refection_Nonancourt,Devis-Couvreur,couvreur verneuil sur avre,Phrase,Enabled
