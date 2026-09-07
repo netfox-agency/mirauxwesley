@@ -8,7 +8,6 @@ apprentissage
 stage
 devenir couvreur
 auto entrepreneur
-gratuit
 pas cher
 moins cher
 low cost
@@ -35,7 +34,9 @@ panneau solaire
 solaire
 ramonage
 ramoneur
-fenetre
+fenetre pvc
+porte fenetre
+fenetre double vitrage
 veranda
 piscine
 peinture
