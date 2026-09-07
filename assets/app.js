@@ -121,7 +121,11 @@
   function setDrawer(open) {
     burger.setAttribute('aria-expanded', String(open));
     drawer.hidden = !open;
+    // le tiroir défile tout seul : on bloque la page derrière pour éviter
+    // que le doigt entraîne le fond au lieu du menu
+    document.body.classList.toggle('lock', open);
     burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    if (open) drawer.scrollTop = 0;
   }
   burger.addEventListener('click', function () {
     setDrawer(burger.getAttribute('aria-expanded') !== 'true');
