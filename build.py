@@ -993,7 +993,7 @@ VILLES = [
 GUIDES = [
     dict(
         slug="prix-refection-toiture",
-        img="chantier-charpente-ecran-sous-toiture.webp", imgalt="Chantier de réfection : charpente et écran de sous-toiture posés",
+        img="couvreur-pose-tuiles-refection.webp", imgalt="Couvreur posant des tuiles neuves sur les liteaux d'une toiture en réfection",
         nav="Prix d'une réfection de toiture",
         title="Prix d'une réfection de toiture au m2",
         desc="Une réfection de toiture coûte 100 à 300 € le m² de rampant selon les comparateurs. Ce qui fait varier ce prix, et comment comparer deux devis.",
@@ -1292,7 +1292,7 @@ GUIDES = [
     ),
     dict(
         slug="aides-renovation-toiture",
-        img="calcul-aides-tva-toiture.webp", imgalt="Calculatrice et tableau de chiffres pour estimer le coût des travaux",
+        img="toits-village-normand-aides.webp", imgalt="Toits d'ardoise et cheminées de brique d'un bourg normand",
         nav="Aides et TVA pour refaire son toit",
         title="Aides et TVA pour refaire sa toiture",
         desc="TVA à 5,5 % ou 10 %, MaPrimeRénov', CEE, éco-PTZ : les dispositifs qui existent "
@@ -1382,7 +1382,7 @@ GUIDES = [
     ),
     dict(
         slug="declaration-prealable-toiture",
-        img="plan-chantier-declaration-prealable.webp", imgalt="Deux artisans consultant un plan sur un chantier",
+        img="mairie-declaration-prealable-toiture.webp", imgalt="Mairie de village avec sa toiture d'ardoise, où se dépose la déclaration préalable",
         nav="Faut-il une autorisation",
         title="Refaire son toit : quelle autorisation ?",
         desc="Quand une déclaration préalable est obligatoire pour des travaux de toiture, ce que "
@@ -2163,7 +2163,7 @@ def ld_business():
             'nettoyage et demoussage. Depannage 24 h/24.",'
             '"telephone":"+33624592677","url":"%s/","image":[%s],"priceRange":"%s",'
             '"currenciesAccepted":"EUR","paymentAccepted":"Especes, cheque, virement",'
-            '"foundingDate":"2011","knowsLanguage":"fr-FR"%s,'
+            '"foundingDate":"2012","knowsLanguage":"fr-FR"%s,'
             '"address":{"@type":"PostalAddress","streetAddress":"Route de Saint-Remy",'
             '"postalCode":"27320","addressLocality":"Nonancourt","addressRegion":"Normandie",'
             '"addressCountry":"FR"},'
@@ -2685,6 +2685,16 @@ def sync_home():
     html = re.sub(r'<ol class="zone__index([^"]*)"([^>]*)>.*?</ol>',
                   lambda m: f'<ol class="zone__index{m.group(1)}"{m.group(2)}>\n        {li}\n      </ol>',
                   html, count=1, flags=re.S)
+
+    # pied de page : regenere depuis foot() pour qu'il ne derive plus quand on
+    # ajoute une prestation, une commune ou un guide (il en manquait cinq).
+    global PRE
+    keep, PRE = PRE, ""
+    footer = foot()
+    PRE = keep
+    footer = footer[:footer.index("</footer>") + len("</footer>")]
+    html = re.sub(r'<footer class="foot">.*?</footer>',
+                  lambda m: footer, html, count=1, flags=re.S)
     open(path, "w").write(html)
 
 

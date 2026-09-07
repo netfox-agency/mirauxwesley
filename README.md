@@ -222,21 +222,37 @@ proposition cohérente avec l'implantation, **à faire valider par l'artisan**.
 
 **Preuve : les photos du client.** Les visuels de chantier viennent de son propre
 site (récupérés via l'API REST WordPress), recadrés et réencodés en webp. Ce sont
-eux qui portent la galerie, l'avant / après et le hero.
+eux qui portent le hero, la section « la maison », l'avant / après et la galerie.
 
-Le couple avant / après (`avant-longere.webp` et `apres-longere.webp`) est la même
-longère, recadrée pour que la ligne de toit coïncide de part et d'autre de la
-poignée du comparateur.
+La galerie « Nos chantiers » ne contient **que** des photos de WM : la légende de la
+section affirme que ce sont leurs toits, on n'y met donc rien d'autre. Une photo
+d'illustration y avait glissé, elle en a été retirée.
 
-**Illustration : quatre photos Pexels** (libres, sans attribution obligatoire),
-choisies pour ce projet uniquement, jamais utilisées sur un autre site de l'agence :
+Le couple avant / après est la même longère, recadrée pour que la ligne de toit
+coïncide de part et d'autre de la poignée du comparateur.
+
+**Illustration : photos Pexels** (libres, sans attribution obligatoire), choisies pour
+ce projet uniquement, jamais utilisées sur un autre site de l'agence. Elles servent à
+illustrer les guides et les ambiances, jamais à prouver un chantier :
 
 | Fichier | Pexels | Usage |
 |---|---|---|
-| `amb-charpente.webp` | 31763539 | second visuel du chapitre 01 |
-| `zinguerie-descente.webp` | 25682676 | bandeau du chapitre 02 |
-| `amb-combles.webp` | 9043415 | galerie, combles avant isolation |
-| `amb-toits.webp` | 19808100 | fond de la bande citation |
+| `charpente-ancienne-sous-toiture.webp` | 31763539 | second visuel du chapitre 01 |
+| `zinguerie-descente-gouttiere-zinc.webp` | 25682676 | bandeau du chapitre 02 |
+| `combles-avant-isolation-sous-rampants.webp` | 9043415 | page isolation + guide isolation |
+| `toitures-tuile-lucarnes.webp` | 19808100 | fond de la bande citation |
+| `tuiles-anciennes-patinees.webp` | 209266 | guide choisir son matériau |
+| `tuiles-mousse-vegetation.webp` | 5993912 | guide fréquence de démoussage |
+| `toiture-alteree-lichens.webp` | 32004262 | guide fuite de toiture |
+| `cheminees-toiture-controle.webp` | 34661110 | guide entretien annuel |
+| `ciel-orage-sur-toitures.webp` | 36833262 | guide tempête et assurance |
+| `mairie-declaration-prealable-toiture.webp` | 38282734 | guide autorisation de travaux |
+| `couvreur-pose-tuiles-refection.webp` | 31771166 | guide prix d'une réfection |
+| `toits-village-normand-aides.webp` | 33137471 | guide aides et TVA |
+
+Trois visuels ont été remplacés parce qu'ils ne tenaient pas : une calculatrice
+générique, une maison neuve à ossature bois étrangère à une réfection, et deux
+techniciens en tenue industrielle qui n'évoquaient en rien une déclaration en mairie.
 
 À remplacer par des photos de WM dès qu'il en fournit d'équivalentes.
 
