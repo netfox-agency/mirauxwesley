@@ -1292,7 +1292,7 @@ GUIDES = [
     ),
     dict(
         slug="aides-renovation-toiture",
-        img="tuiles-neuves-alignees.webp", imgalt="Tuiles neuves alignées sur une couverture refaite",
+        img="calcul-aides-tva-toiture.webp", imgalt="Calculatrice et tableau de chiffres pour estimer le coût des travaux",
         nav="Aides et TVA pour refaire son toit",
         title="Aides et TVA pour refaire sa toiture",
         desc="TVA à 5,5 % ou 10 %, MaPrimeRénov', CEE, éco-PTZ : les dispositifs qui existent "
@@ -1382,7 +1382,7 @@ GUIDES = [
     ),
     dict(
         slug="declaration-prealable-toiture",
-        img="toiture-tuile-rouge-motif.webp", imgalt="Toiture en tuile rouge, motif régulier",
+        img="plan-chantier-declaration-prealable.webp", imgalt="Deux artisans consultant un plan sur un chantier",
         nav="Faut-il une autorisation",
         title="Refaire son toit : quelle autorisation ?",
         desc="Quand une déclaration préalable est obligatoire pour des travaux de toiture, ce que "
@@ -1622,7 +1622,7 @@ GUIDES = [
     ),
     dict(
         slug="toiture-tempete-assurance",
-        img="toiture-tuile-lumiere-rasante.webp", imgalt="Toiture en tuile éclairée en lumière rasante",
+        img="ciel-orage-sur-toitures.webp", imgalt="Ciel d'orage au-dessus de toitures de maisons",
         nav="Tempête : assurance et démarches",
         title="Toiture et tempête : les démarches",
         desc="Tuiles arrachées, faîtage descellé, arbre tombé : que couvre l'assurance, dans "
@@ -1697,7 +1697,7 @@ GUIDES = [
     ),
     dict(
         slug="entretien-toiture-annuel",
-        img="tuiles-mousse-vegetation.webp", imgalt="Mousse installée sur une couverture mal entretenue",
+        img="cheminees-toiture-controle.webp", imgalt="Cheminées en brique sur une toiture en tuile, sous un ciel nuageux",
         nav="Entretenir sa toiture",
         title="Entretien de toiture : le calendrier annuel",
         desc="Que vérifier sur son toit et à quelle saison : gouttières, solins, tuiles, mousse. "
