@@ -1914,6 +1914,47 @@ ETAPES = [
 ]
 
 # ──────────────────────────────────────────────────────────── gabarits ─────
+def av(rel):
+    """Empreinte de contenu pour la feuille de style et le script.
+
+    Le cache de Cloudflare garde le CSS et le JS une semaine. Sans empreinte,
+    un visiteur revenu apres un deploiement recoit le NOUVEAU html avec son
+    ANCIEN css : le 08/09/2026 le hero s'est retrouve sans style, image dans
+    le flux et texte pousse hors de l'ecran. Une nouvelle version doit donner
+    une nouvelle URL.
+    """
+    import hashlib
+    full = os.path.join(ROOT, rel)
+    try:
+        return rel + "?v=" + hashlib.sha1(open(full, "rb").read()).hexdigest()[:10]
+    except OSError:
+        return rel
+
+
+def version_assets():
+    """Applique l'empreinte a toutes les pages, index.html compris."""
+    import glob as _glob
+    vers = {r: av(r) for r in ("assets/style.css", "assets/fonts.css", "assets/app.js")}
+    pages = ([os.path.join(ROOT, "index.html"), os.path.join(ROOT, "404.html"),
+              os.path.join(ROOT, "mentions-legales.html")]
+             + _glob.glob(os.path.join(ROOT, "*", "index.html"))
+             + _glob.glob(os.path.join(ROOT, "*", "*", "index.html")))
+    n = 0
+    for page in pages:
+        if not os.path.exists(page):
+            continue
+        html = open(page, encoding="utf-8").read()
+        out = html
+        for rel, versioned in vers.items():
+            # on repart toujours de l'URL nue : sinon les empreintes s'empilent
+            out = re.sub(re.escape(rel) + r'\?v=[0-9a-f]+', rel, out)
+            out = out.replace(rel, versioned)
+        if out != html:
+            open(page, "w", encoding="utf-8").write(out)
+            n += 1
+    print("empreintes posees sur %d pages" % n)
+
+
 def head(title, desc, canon, jsonld, ogimg="couvreur-nonancourt-longere-tuile-neuve.webp"):
     return f"""<!DOCTYPE html>
 <html lang="fr">
@@ -2795,6 +2836,7 @@ def main():
     sync_home()
     print(f"{len(SERVICES)} services + {len(VILLES)} communes + {len(GUIDES)} guides + 1 hub")
     print("sitemap.xml, robots.txt, llms.txt, _redirects, .htaccess")
+    version_assets()
 
 
 def sync_home():
