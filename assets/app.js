@@ -208,7 +208,11 @@
     var b = items[idx];
     lbImg.src = b.getAttribute('data-src');
     lbImg.alt = b.querySelector('img').alt;
-    lbCap.textContent = b.getAttribute('data-cap') || '';
+    // sans legende, on retire le figcaption : sinon le gap du conteneur
+    // laisse un blanc sous la photo
+    var cap = b.getAttribute('data-cap') || '';
+    lbCap.textContent = cap;
+    lbCap.hidden = !cap;
   }
   function openLb(i) {
     lastFocus = document.activeElement;
