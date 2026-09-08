@@ -1550,3 +1550,49 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
 /* les quatre derniers liens sans retour : coordonnees du devis et barre de pied */
 .devis__coord a,.foot__bar a{transition:color .25s var(--ease-out),transform .1s var(--ease-press)}
 .devis__coord a:active,.foot__bar a:active{transform:translateY(1px)}
+
+/* --- raccord arrondi entre sombre et clair ------------------------------ */
+/* Signature VitClean : la section claire remonte sur la sombre avec de gros
+   coins arrondis, au lieu d'une cassure nette. */
+.ba + section,.urgence + section,.quote + section,.zone + section{
+  position:relative;z-index:1;
+  border-radius:clamp(24px,3vw,42px) clamp(24px,3vw,42px) 0 0;
+  margin-top:calc(-1 * clamp(24px,3vw,42px));
+  background:var(--paper);
+}
+/* la section qui precede doit laisser la place au chevauchement */
+.ba,.urgence,.quote,.zone{padding-bottom:calc(clamp(24px,3vw,42px) + clamp(30px,4vw,52px))}
+/* .avis a son propre fond : il doit le garder en remontant */
+.quote + .avis{background:var(--paper-2)}
+
+/* --- avis : note en tete, colonnes, attribution en petites capitales ----- */
+.avis__head--center{
+  display:block;text-align:center;max-width:min(760px,100%);margin-inline:auto;
+  margin-bottom:clamp(34px,4.5vw,58px);
+}
+.avis__note{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;
+  font-size:12.4px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);
+}
+.avis__note .stars{color:var(--brass);letter-spacing:.1em;font-size:13px}
+.avis__head--center h2{font-size:clamp(30px,4vw,52px)}
+
+/* --- CTA final en panneau encadre, pas en pleine largeur ---------------- */
+/* VitClean pose son « Pret a retrouver la lumiere ? » comme un objet arrondi
+   sur le fond clair, pas comme une bande qui touche les bords. */
+.devis{
+  background:transparent;padding-block:clamp(40px,6vw,80px);
+  border-radius:0;overflow:visible;
+}
+.devis::after{display:none}
+.devis__bg{display:none}
+.devis__grid{
+  position:relative;isolation:isolate;overflow:hidden;
+  border-radius:clamp(20px,2.4vw,32px);
+  padding:clamp(30px,4.5vw,66px);
+  background:
+    radial-gradient(90% 130% at 10% 40%, rgba(168,72,27,.22) 0%, rgba(168,72,27,0) 62%),
+    linear-gradient(122deg, #14100D 0%, #1E1712 48%, #100D0C 100%);
+  box-shadow:0 24px 70px -24px rgba(20,14,9,.55);
+}
