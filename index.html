@@ -18,7 +18,7 @@
 <link rel="preload" href="assets/fonts/archivo-normal-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-tight-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css?v=d037b6d157">
-<link rel="stylesheet" href="assets/style.css?v=5847c76c19">
+<link rel="stylesheet" href="assets/style.css?v=f1a2d6feda">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F4F1EA'/%3E%3Cpath d='M4 19 16 9l12 10' fill='none' stroke='%2314181B' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22 11.5V7h3v6.9' fill='none' stroke='%23B5822F' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="assets/favicon.svg">
 
@@ -32,63 +32,41 @@
 <!-- ══════════════════════════════ NAV ══════════════════════════════ -->
 <header class="nav" id="nav">
   <div class="nav__in">
-    <a class="brand" href="#top" aria-label="WM Couverture, accueil">
-      <svg class="brand__mark" viewBox="0 0 44 28" aria-hidden="true">
-        <path d="M2 18.5 22 3.5l20 15" />
-        <path d="M31 8.6V3h4.4v9" />
-        <path d="M8.5 24.5h27" class="b-accent" />
-      </svg>
-      <span class="brand__txt"><strong>WM</strong> Couverture</span>
-    </a>
-
+    <a class="brand" href="#top" aria-label="WM Couverture, accueil"><svg class="brand__mark" viewBox="0 0 44 28" aria-hidden="true"><path d="M2 18.5 22 3.5l20 15"/><path d="M31 8.6V3h4.4v9"/><path d="M8.5 24.5h27" class="b-accent"/></svg>
+      <span class="brand__txt"><strong>WM</strong> Couverture</span></a>
     <nav class="nav__links" aria-label="Navigation principale">
-      <div class="drop"><button class="drop__btn" aria-expanded="false" aria-controls="dropS">Prestations <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5"/></svg></button>
-        <div class="drop__menu" id="dropS"><a href="renovation-toiture/">Rénovation de toiture</a><a href="zinguerie-gouttieres/">Zinguerie et gouttières</a><a href="demoussage-toiture/">Nettoyage et démoussage</a><a href="depannage-toiture/">Dépannage et urgence</a></div></div>
-      <div class="drop"><button class="drop__btn" aria-expanded="false" aria-controls="dropV">Communes <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5"/></svg></button>
-        <div class="drop__menu" id="dropV"><a href="couvreur-nonancourt/">Nonancourt</a><a href="couvreur-dreux/">Dreux</a><a href="couvreur-saint-remy-sur-avre/">Saint-Rémy-sur-Avre</a><a href="couvreur-verneuil-avre-iton/">Verneuil d'Avre et d'Iton</a><a href="couvreur-anet/">Anet</a><a href="couvreur-evreux/">Évreux</a></div></div>
-      <div class="drop"><button class="drop__btn" aria-expanded="false" aria-controls="dropG">Guides <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5"/></svg></button>
-        <div class="drop__menu" id="dropG"><a href="guides/prix-refection-toiture/">Prix d'une réfection de toiture</a><a href="guides/fuite-toiture-que-faire/">Fuite de toiture : que faire</a><a href="guides/demoussage-toiture-frequence/">Démousser son toit : quand et comment</a><a href="guides/aides-renovation-toiture/">Aides et TVA pour refaire son toit</a><a href="guides/declaration-prealable-toiture/">Faut-il une autorisation</a><a href="guides/">Tous les guides</a></div></div>
-      <a href="#chantiers">Chantiers</a>
-      <a href="#maison">La maison</a>
-      <a href="#avis">Avis</a>
+      <div class="drop">
+        <button class="drop__btn" aria-expanded="false" aria-controls="dropS">Prestations
+          <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5"/></svg></button>
+        <div class="drop__menu" id="dropS"><a href="renovation-toiture/">Rénovation de toiture</a><a href="zinguerie-gouttieres/">Zinguerie et gouttières</a><a href="demoussage-toiture/">Nettoyage et démoussage</a><a href="depannage-toiture/">Dépannage et urgence</a><a href="charpente/">Charpente</a><a href="isolation-toiture/">Isolation de toiture</a><a href="recherche-de-fuite/">Recherche de fuite</a><a href="fenetre-de-toit/">Fenêtre de toit</a><a href="bardage/">Bardage</a></div>
+      </div>
+      <div class="drop">
+        <button class="drop__btn" aria-expanded="false" aria-controls="dropV">Communes
+          <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5"/></svg></button>
+        <div class="drop__menu" id="dropV"><a href="couvreur-nonancourt/">Nonancourt</a><a href="couvreur-dreux/">Dreux</a><a href="couvreur-vernouillet/">Vernouillet</a><a href="couvreur-saint-remy-sur-avre/">Saint-Rémy-sur-Avre</a><a href="couvreur-anet/">Anet</a><a href="couvreur-ivry-la-bataille/">Ivry-la-Bataille</a><a href="couvreur-verneuil-avre-iton/">Verneuil d'Avre et d'Iton</a><a href="couvreur-tillieres-sur-avre/">Tillières-sur-Avre</a><a href="couvreur-brezolles/">Brezolles</a><a href="couvreur-nogent-le-roi/">Nogent-le-Roi</a><a href="couvreur-breteuil/">Breteuil</a><a href="couvreur-evreux/">Évreux</a></div>
+      </div>
+      <div class="drop">
+        <button class="drop__btn" aria-expanded="false" aria-controls="dropG">Guides
+          <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5"/></svg></button>
+        <div class="drop__menu" id="dropG"><a href="guides/prix-refection-toiture/">Prix d'une réfection de toiture</a><a href="guides/fuite-toiture-que-faire/">Fuite de toiture : que faire</a><a href="guides/demoussage-toiture-frequence/">Démousser son toit : quand et comment</a><a href="guides/aides-renovation-toiture/">Aides et TVA pour refaire son toit</a><a href="guides/declaration-prealable-toiture/">Faut-il une autorisation</a><a href="guides/choisir-materiau-couverture/">Quelle tuile choisir</a><a href="guides/isolation-toiture-par-exterieur/">Isoler sa toiture</a><a href="guides/toiture-tempete-assurance/">Tempête : assurance et démarches</a><a href="guides/entretien-toiture-annuel/">Entretenir sa toiture</a><a href="guides/poser-fenetre-de-toit/">Poser une fenêtre de toit</a><a href="guides/">Tous les guides</a></div>
+      </div>
+      <a href="#chantiers" aria-current="page">Chantiers</a><a href="#maison">La maison</a><a href="#avis">Avis</a>
     </nav>
-
     <div class="nav__cta">
-      <a class="tel-link" href="tel:+33624592677" data-track="call">
-        <span class="dot" aria-hidden="true"></span>06 24 59 26 77
-      </a>
+      <a class="tel-link" href="tel:+33624592677" data-track="call"><span class="dot" aria-hidden="true"></span>06 24 59 26 77</a>
       <a class="btn btn--dark btn--sm" href="#devis">Devis gratuit</a>
       <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span>
-      </button>
+        <span></span><span></span></button>
     </div>
   </div>
 </header>
-
 <div class="drawer" id="drawer" hidden>
   <p class="drawer__t">Prestations</p>
-  <a href="renovation-toiture/">Rénovation de toiture</a>
-  <a href="zinguerie-gouttieres/">Zinguerie et gouttières</a>
-  <a href="demoussage-toiture/">Nettoyage et démoussage</a>
-  <a href="depannage-toiture/">Dépannage et urgence</a>
+  <a href="renovation-toiture/">Rénovation de toiture</a><a href="zinguerie-gouttieres/">Zinguerie et gouttières</a><a href="demoussage-toiture/">Nettoyage et démoussage</a><a href="depannage-toiture/">Dépannage et urgence</a><a href="charpente/">Charpente</a><a href="isolation-toiture/">Isolation de toiture</a><a href="recherche-de-fuite/">Recherche de fuite</a><a href="fenetre-de-toit/">Fenêtre de toit</a><a href="bardage/">Bardage</a>
   <p class="drawer__t">Communes</p>
-  <a href="couvreur-nonancourt/">Nonancourt</a>
-  <a href="couvreur-dreux/">Dreux</a>
-  <a href="couvreur-saint-remy-sur-avre/">Saint-Rémy-sur-Avre</a>
-  <a href="couvreur-verneuil-avre-iton/">Verneuil d'Avre et d'Iton</a>
-  <a href="couvreur-anet/">Anet</a>
-  <a href="couvreur-evreux/">Évreux</a>
+  <a href="couvreur-nonancourt/">Nonancourt</a><a href="couvreur-dreux/">Dreux</a><a href="couvreur-vernouillet/">Vernouillet</a><a href="couvreur-saint-remy-sur-avre/">Saint-Rémy-sur-Avre</a><a href="couvreur-anet/">Anet</a><a href="couvreur-ivry-la-bataille/">Ivry-la-Bataille</a><a href="couvreur-verneuil-avre-iton/">Verneuil d'Avre et d'Iton</a><a href="couvreur-tillieres-sur-avre/">Tillières-sur-Avre</a><a href="couvreur-brezolles/">Brezolles</a><a href="couvreur-nogent-le-roi/">Nogent-le-Roi</a><a href="couvreur-breteuil/">Breteuil</a><a href="couvreur-evreux/">Évreux</a>
   <p class="drawer__t">Guides</p>
-  <a href="guides/prix-refection-toiture/">Prix d'une réfection de toiture</a>
-  <a href="guides/fuite-toiture-que-faire/">Fuite de toiture : que faire</a>
-  <a href="guides/demoussage-toiture-frequence/">Démousser son toit : quand et comment</a>
-  <a href="guides/aides-renovation-toiture/">Aides et TVA pour refaire son toit</a>
-  <a href="guides/declaration-prealable-toiture/">Faut-il une autorisation</a>
-  <p class="drawer__t">Le site</p>
-  <a href="#chantiers">Chantiers</a>
-  <a href="#maison">La maison</a>
-  <a href="#avis">Avis</a>
-  <a href="#zone">Zone d'intervention</a>
+  <a href="guides/prix-refection-toiture/">Prix d'une réfection de toiture</a><a href="guides/fuite-toiture-que-faire/">Fuite de toiture : que faire</a><a href="guides/demoussage-toiture-frequence/">Démousser son toit : quand et comment</a><a href="guides/aides-renovation-toiture/">Aides et TVA pour refaire son toit</a><a href="guides/declaration-prealable-toiture/">Faut-il une autorisation</a><a href="guides/choisir-materiau-couverture/">Quelle tuile choisir</a><a href="guides/isolation-toiture-par-exterieur/">Isoler sa toiture</a><a href="guides/toiture-tempete-assurance/">Tempête : assurance et démarches</a><a href="guides/entretien-toiture-annuel/">Entretenir sa toiture</a><a href="guides/poser-fenetre-de-toit/">Poser une fenêtre de toit</a>
   <a class="drawer__tel" href="tel:+33624592677" data-track="call">06 24 59 26 77</a>
 </div>
 
@@ -96,7 +74,6 @@
 <span id="top"></span>
 
 <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
-<!-- ══════════════════════════ HERO ══════════════════════════ -->
 <section class="hero">
   <picture><source type="image/avif" sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/couvreur-charpente-contre-plongee-480.avif 480w, assets/img/r/couvreur-charpente-contre-plongee-768.avif 768w, assets/img/r/couvreur-charpente-contre-plongee-1100.avif 1100w, assets/img/r/couvreur-charpente-contre-plongee-1600.avif 1600w, assets/img/r/couvreur-charpente-contre-plongee-2000.avif 2000w"><source type="image/webp" sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/couvreur-charpente-contre-plongee-480.webp 480w, assets/img/r/couvreur-charpente-contre-plongee-768.webp 768w, assets/img/r/couvreur-charpente-contre-plongee-1100.webp 1100w, assets/img/r/couvreur-charpente-contre-plongee-1600.webp 1600w, assets/img/r/couvreur-charpente-contre-plongee-2000.webp 2000w"><img sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/couvreur-charpente-contre-plongee-480.webp 480w, assets/img/r/couvreur-charpente-contre-plongee-768.webp 768w, assets/img/r/couvreur-charpente-contre-plongee-1100.webp 1100w, assets/img/r/couvreur-charpente-contre-plongee-1600.webp 1600w, assets/img/r/couvreur-charpente-contre-plongee-2000.webp 2000w" class="hero__bg" src="assets/img/couvreur-charpente-contre-plongee.webp"
        alt="Deux charpentiers passant une panne de bois sur une charpente neuve, vus en contre-plongée"
@@ -161,95 +138,12 @@
   <div class="wrap">
     <header class="sec-head sec-head--center reveal">
       <p class="kicker"><span class="dot" aria-hidden="true"></span> Nos prestations</p>
-      <h2>Trois métiers, <em>une même</em> toiture</h2>
+      <h2>Neuf métiers, <em>un seul</em> toit</h2>
       <p>Du faîtage à la gouttière, en neuf comme en rénovation.
-         Voici ce que nous faisons le plus souvent.</p>
+        Choisissez ce qui vous concerne, nous détaillons tout sur chaque page.</p>
     </header>
+    <div class="scards"><a class="scard reveal" data-d="0" href="renovation-toiture/"><img class="scard__img" src="assets/img/renovation-toiture-charpente-liteaux-neufs.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Rénovation de toiture</span><span class="scard__p">Dépose, charpente, écran de sous-toiture et couverture neuve.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="1" href="zinguerie-gouttieres/"><img class="scard__img" src="assets/img/zinguerie-souche-zinc-toiture.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Zinguerie et gouttières</span><span class="scard__p">Gouttières, chéneaux, solins, rives et isolation sous toiture.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="2" href="demoussage-toiture/"><img class="scard__img" src="assets/img/demoussage-toiture-mousse-echafaudage.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Nettoyage et démoussage</span><span class="scard__p">Nettoyage haute pression et traitement anti-mousse professionnel.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="0" href="depannage-toiture/"><img class="scard__img" src="assets/img/depannage-toiture-depose-tuiles-urgence.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Dépannage et urgence</span><span class="scard__p">Fuite, tuiles arrachées, bâchage : mise hors d'eau 24 h/24.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="1" href="charpente/"><img class="scard__img" src="assets/img/charpente-ancienne-sous-toiture.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Charpente</span><span class="scard__p">Contrôle, reprise de pièces, renfort et charpente traditionnelle.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="2" href="isolation-toiture/"><img class="scard__img" src="assets/img/combles-avant-isolation-sous-rampants.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Isolation de toiture</span><span class="scard__p">Combles perdus, sous rampants ou par l'extérieur au moment de la réfection.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="0" href="recherche-de-fuite/"><img class="scard__img" src="assets/img/toiture-alteree-lichens.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Recherche de fuite</span><span class="scard__p">Inspection du toit, des solins, des noues et des pénétrations.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="1" href="fenetre-de-toit/"><img class="scard__img" src="assets/img/pose-fenetre-de-toit-velux.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Fenêtre de toit</span><span class="scard__p">Pose et remplacement de fenêtres de toit, raccord à la couverture.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a><a class="scard reveal" data-d="2" href="bardage/"><img class="scard__img" src="assets/img/rive-de-toiture-debord-termine.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"><span class="scard__in"><span class="scard__t">Bardage</span><span class="scard__p">Habillage de pignon, de sous-face et de façade en bois ou en composite.</span><span class="scard__go"><svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></span></span></a></div>
   </div>
-
-  <!-- 01 · diptyque : chantier réel + charpente d'ambiance -->
-  <article class="chap chap--01 wrap" id="couverture">
-    <div class="chap__body">
-      <p class="chap__intro reveal" data-d="1">
-        Tuile, ardoise ou acier. Nous refaisons les toitures usées, réparons celles
-        qui fuient, et reprenons la charpente quand elle en a besoin.
-      </p>
-      <dl class="specs reveal" data-d="2">
-        <div><dt>Réfection</dt><dd>Dépose complète, écran de sous-toiture, liteaunage et couverture neuve.</dd></div>
-        <div><dt>Charpente</dt><dd>Traditionnelle, reprise de pièces, renfort et pose de fenêtres de toit.</dd></div>
-        <div><dt>Urgence</dt><dd>Recherche de fuite, mise hors d'eau, réparation ponctuelle.</dd></div>
-      </dl>
-      <a class="link-arrow reveal" data-d="3" href="#devis">Faire chiffrer ma toiture
-        <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
-      </a>
-    </div>
-    <div class="chap__duo">
-      <figure class="frame frame--tall reveal chap__card">
-        <picture><source type="image/avif" sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/renovation-toiture-charpente-liteaux-neufs-480.avif 480w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-768.avif 768w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-1100.avif 1100w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-1600.avif 1600w"><source type="image/webp" sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/renovation-toiture-charpente-liteaux-neufs-480.webp 480w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-768.webp 768w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-1100.webp 1100w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-1600.webp 1600w"><img sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/renovation-toiture-charpente-liteaux-neufs-480.webp 480w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-768.webp 768w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-1100.webp 1100w, assets/img/r/renovation-toiture-charpente-liteaux-neufs-1600.webp 1600w" src="assets/img/renovation-toiture-charpente-liteaux-neufs.webp" width="1600" height="1200" loading="lazy" decoding="async"
-             alt="Charpente et liteaux neufs posés sur une toiture en cours de réfection"></picture>
-      
-        <figcaption class="chap__cap"><p class="chap__num">01</p><h3 class="reveal">Couverture <em>&amp;</em>&nbsp;charpente</h3></figcaption>
-      </figure>
-      <figure class="frame frame--small reveal" data-d="2">
-        <picture><source type="image/avif" sizes="(max-width:1080px) 40vw, 18vw" srcset="assets/img/r/charpente-ancienne-sous-toiture-480.avif 480w, assets/img/r/charpente-ancienne-sous-toiture-768.avif 768w, assets/img/r/charpente-ancienne-sous-toiture-1000.avif 1000w"><source type="image/webp" sizes="(max-width:1080px) 40vw, 18vw" srcset="assets/img/r/charpente-ancienne-sous-toiture-480.webp 480w, assets/img/r/charpente-ancienne-sous-toiture-768.webp 768w, assets/img/r/charpente-ancienne-sous-toiture-1000.webp 1000w"><img sizes="(max-width:1080px) 40vw, 18vw" srcset="assets/img/r/charpente-ancienne-sous-toiture-480.webp 480w, assets/img/r/charpente-ancienne-sous-toiture-768.webp 768w, assets/img/r/charpente-ancienne-sous-toiture-1000.webp 1000w" src="assets/img/charpente-ancienne-sous-toiture.webp" width="1000" height="1250" loading="lazy" decoding="async"
-             alt="Charpente ancienne éclairée par la lumière qui passe entre les liteaux"></picture>
-      </figure>
-    </div>
-  </article>
-
-  <!-- 02 · image large en tête, texte en deux colonnes dessous -->
-  <article class="chap chap--02 wrap" id="zinguerie">
-    <figure class="frame frame--wide reveal chap__card">
-      <picture><source type="image/avif" sizes="(max-width:1240px) 92vw, 1112px" srcset="assets/img/r/zinguerie-souche-zinc-bandeau-480.avif 480w, assets/img/r/zinguerie-souche-zinc-bandeau-768.avif 768w, assets/img/r/zinguerie-souche-zinc-bandeau-1100.avif 1100w, assets/img/r/zinguerie-souche-zinc-bandeau-1600.avif 1600w, assets/img/r/zinguerie-souche-zinc-bandeau-1680.avif 1680w"><source type="image/webp" sizes="(max-width:1240px) 92vw, 1112px" srcset="assets/img/r/zinguerie-souche-zinc-bandeau-480.webp 480w, assets/img/r/zinguerie-souche-zinc-bandeau-768.webp 768w, assets/img/r/zinguerie-souche-zinc-bandeau-1100.webp 1100w, assets/img/r/zinguerie-souche-zinc-bandeau-1600.webp 1600w, assets/img/r/zinguerie-souche-zinc-bandeau-1680.webp 1680w"><img sizes="(max-width:1240px) 92vw, 1112px" srcset="assets/img/r/zinguerie-souche-zinc-bandeau-480.webp 480w, assets/img/r/zinguerie-souche-zinc-bandeau-768.webp 768w, assets/img/r/zinguerie-souche-zinc-bandeau-1100.webp 1100w, assets/img/r/zinguerie-souche-zinc-bandeau-1600.webp 1600w, assets/img/r/zinguerie-souche-zinc-bandeau-1680.webp 1680w" src="assets/img/zinguerie-souche-zinc-bandeau.webp" width="1680" height="720" loading="lazy" decoding="async"
-           alt="Souche de cheminée habillée en zinc sur une toiture en tuiles plates patinées"></picture>
-    
-        <figcaption class="chap__cap"><p class="chap__num">02</p><h3 class="reveal">Zinguerie <em>&amp;</em>&nbsp;isolation</h3></figcaption>
-      </figure>
-    <div class="chap__split">
-      <div>
-        </div>
-      <div>
-        <p class="chap__intro reveal" data-d="1">
-          La zinguerie décide où part l'eau. Une descente bouchée ou un solin
-          fendu suffit à abîmer un mur en deux hivers. Nous posons, réparons
-          et entretenons.
-        </p>
-        <dl class="specs specs--2 reveal" data-d="2">
-          <div><dt>Évacuation</dt><dd>Gouttières, chéneaux, descentes, naissances.</dd></div>
-          <div><dt>Étanchéité</dt><dd>Solins, faîtages, rives, abergements de cheminée.</dd></div>
-          <div><dt>Isolation</dt><dd>Sous rampants, combles perdus, toit plat.</dd></div>
-          <div><dt>Bardage</dt><dd>Habillage de pignon et de sous-face.</dd></div>
-        </dl>
-        <a class="link-arrow reveal" data-d="3" href="#devis">Faire chiffrer ma zinguerie
-          <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
-        </a>
-      </div>
-    </div>
-  </article>
-
-  <!-- 03 · image plein cadre à gauche, texte serré à droite -->
-  <article class="chap chap--03 wrap" id="demoussage">
-    <figure class="frame frame--fill reveal chap__card">
-      <picture><source type="image/avif" sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/demoussage-toiture-mousse-echafaudage-480.avif 480w, assets/img/r/demoussage-toiture-mousse-echafaudage-768.avif 768w, assets/img/r/demoussage-toiture-mousse-echafaudage-1100.avif 1100w, assets/img/r/demoussage-toiture-mousse-echafaudage-1600.avif 1600w"><source type="image/webp" sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/demoussage-toiture-mousse-echafaudage-480.webp 480w, assets/img/r/demoussage-toiture-mousse-echafaudage-768.webp 768w, assets/img/r/demoussage-toiture-mousse-echafaudage-1100.webp 1100w, assets/img/r/demoussage-toiture-mousse-echafaudage-1600.webp 1600w"><img sizes="(max-width:1080px) 92vw, 48vw" srcset="assets/img/r/demoussage-toiture-mousse-echafaudage-480.webp 480w, assets/img/r/demoussage-toiture-mousse-echafaudage-768.webp 768w, assets/img/r/demoussage-toiture-mousse-echafaudage-1100.webp 1100w, assets/img/r/demoussage-toiture-mousse-echafaudage-1600.webp 1600w" src="assets/img/demoussage-toiture-mousse-echafaudage.webp" width="1600" height="1200" loading="lazy" decoding="async"
-           alt="Toiture envahie de mousse en cours de nettoyage, échafaudage installé"></picture>
-    
-        <figcaption class="chap__cap"><p class="chap__num">03</p><h3 class="reveal">Nettoyage <em>&amp;</em>&nbsp;démoussage</h3></figcaption>
-      </figure>
-    <div class="chap__body">
-      <p class="chap__intro reveal" data-d="1">
-        Ici, les toits verdissent vite. Un nettoyage haute pression, puis un
-        traitement anti-mousse, et le toit repart pour plusieurs années.
-      </p>
-      <dl class="specs reveal" data-d="2">
-        <div><dt>Nettoyage</dt><dd>Haute pression dosée selon le matériau, sans casser la tuile.</dd></div>
-        <div><dt>Traitement</dt><dd>Anti-mousse professionnel, effet prolongé.</dd></div>
-        <div><dt>Entretien</dt><dd>Contrôle annuel du toit et purge des gouttières.</dd></div>
-      </dl>
-      <a class="link-arrow reveal" data-d="3" href="#devis">Faire démousser mon toit
-        <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
-      </a>
-    </div>
-  </article>
 </section>
 
 <!-- ══════════════════════════ TVA RÉDUITE ══════════════════════════ -->

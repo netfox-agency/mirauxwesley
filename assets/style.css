@@ -1290,12 +1290,18 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in{
   -webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);
 }
+/* Le menu deroulant a son PROPRE fond clair : il ne doit pas heriter du
+   blanc de la barre, sinon on obtient du blanc sur blanc (vu en ligne). */
 body:has(.hero__bg) .nav:not(.scrolled) .nav__in,
-body:has(.hero__bg) .nav:not(.scrolled) .nav__in a:not(.btn),
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in a:not(.btn):not(.drop__menu a),
 body:has(.hero__bg) .nav:not(.scrolled) .nav__in button,
 body:has(.hero__bg) .nav:not(.scrolled) .nav__in .brand__txt,
 body:has(.hero__bg) .nav:not(.scrolled) .nav__in .brand__txt strong,
-body:has(.hero__bg) .nav:not(.scrolled) .nav__in svg{color:#fff;fill:currentColor}
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in > svg,
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in .drop > button svg{color:#fff;fill:currentColor}
+/* on redonne explicitement leur encre aux liens du menu deroulant */
+body:has(.hero__bg) .nav .drop__menu a{color:var(--ink-2)}
+body:has(.hero__bg) .nav .drop__menu a:hover{color:var(--ink)}
 body:has(.hero__bg) .nav:not(.scrolled) .nav__in .brand svg{fill:none;stroke:#fff}
 /* le bouton garde son propre contraste : blanc plein, texte encre */
 body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;color:var(--ink)}
@@ -1595,4 +1601,68 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
     radial-gradient(90% 130% at 10% 40%, rgba(168,72,27,.22) 0%, rgba(168,72,27,0) 62%),
     linear-gradient(122deg, #14100D 0%, #1E1712 48%, #100D0C 100%);
   box-shadow:0 24px 70px -24px rgba(20,14,9,.55);
+}
+
+/* La marge negative du raccord arrondi mangeait le padding haut de la section
+   suivante. La FAQ, qui n'avait deja aucun padding en haut, se retrouvait
+   collee au bord arrondi. On rend l'espace, valeur unique pour les quatre. */
+.ba + section,.urgence + section,.quote + section,.zone + section{
+  padding-top:calc(clamp(24px,3vw,42px) + clamp(44px,6.5vw,88px));
+}
+
+/* --- les neuf prestations en acces direct ------------------------------- */
+/* Facon VitClean : la photo EST la carte, le texte s'y incruste, tout est
+   cliquable. Pas de pictogramme dans un rond, pas de carte decorative. */
+.scards{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(12px,1.6vw,22px);
+}
+.scard{
+  position:relative;isolation:isolate;overflow:hidden;color:#fff;
+  border-radius:var(--r-img);aspect-ratio:4/3;display:block;
+  box-shadow:var(--sh-card);
+  transition:transform .1s var(--ease-press),box-shadow .4s var(--ease-out);
+}
+.scard__img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
+  transition:transform .7s var(--ease-out);
+}
+.scard::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  /* mesure : la 2e ligne de texte tombait a 4,49:1 vers 30 % du degrade.
+     On epaissit la zone basse, la photo reste lisible au-dessus. */
+  /* Le texte occupe les 42 % du bas. Calcul : il faut au moins 0,64 d'opacite
+     pour tenir 4,5:1 en blanc a 82 % sur une photo entierement blanche. */
+  background:linear-gradient(to top, rgba(10,8,7,.92) 0%, rgba(10,8,7,.84) 20%,
+             rgba(10,8,7,.68) 42%, rgba(10,8,7,.28) 62%, rgba(10,8,7,0) 82%);
+  transition:opacity .4s var(--ease-out);
+}
+.scard__in{
+  position:absolute;left:0;right:0;bottom:0;
+  display:grid;gap:6px;padding:clamp(16px,1.9vw,24px);
+}
+.scard__t{
+  font-family:var(--f-dis);font-weight:600;letter-spacing:-.03em;
+  font-size:clamp(18px,1.7vw,23px);line-height:1.1;
+  text-shadow:0 1px 8px rgba(10,8,7,.5);
+}
+.scard__p{
+  font-size:14.4px;line-height:1.45;color:rgba(255,255,255,.82);
+  text-shadow:0 1px 6px rgba(10,8,7,.6);
+}
+.scard__go{display:block;margin-top:2px}
+.scard__go svg{width:24px;height:11px;fill:none;stroke:var(--brass-lt);stroke-width:1.6;
+  transition:transform .4s var(--ease-out)}
+.scard:hover{box-shadow:0 10px 20px -8px rgba(20,14,9,.2),0 30px 60px -18px rgba(20,14,9,.35)}
+.scard:hover .scard__img{transform:scale(1.05)}
+.scard:hover .scard__go svg{transform:translateX(6px)}
+.scard:active{transform:scale(.988)}
+@media (max-width:1080px){.scards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  .scards{grid-template-columns:1fr;gap:12px}
+  .scard{aspect-ratio:16/10}
+}
+@media (prefers-reduced-motion:reduce){
+  .scard:active{transform:none}
+  .scard:hover .scard__img{transform:none}
 }

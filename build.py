@@ -2140,6 +2140,53 @@ def specs(items, cls="specs"):
     return f'<dl class="{cls} reveal">{rows}</dl>'
 
 
+# Photo de carte par prestation. Depannage et recherche de fuite partageaient
+# la meme image : cote a cote dans une grille, ca se voyait.
+CARTE_IMG = {
+ "renovation-toiture":   "renovation-toiture-charpente-liteaux-neufs.webp",
+ "zinguerie-gouttieres": "zinguerie-souche-zinc-toiture.webp",
+ "demoussage-toiture":   "demoussage-toiture-mousse-echafaudage.webp",
+ "depannage-toiture":    "depannage-toiture-depose-tuiles-urgence.webp",
+ "charpente":            "charpente-ancienne-sous-toiture.webp",
+ "isolation-toiture":    "combles-avant-isolation-sous-rampants.webp",
+ "recherche-de-fuite":   "toiture-alteree-lichens.webp",
+ "fenetre-de-toit":      "pose-fenetre-de-toit-velux.webp",
+ "bardage":              "rive-de-toiture-debord-termine.webp",
+}
+
+
+def services_grid():
+    """Les neuf prestations en acces direct.
+
+    L'accueil ne montrait que trois regroupements editoriaux : quelqu'un qui
+    cherchait « recherche de fuite » ne la voyait nulle part, alors que la page
+    existe. Genere depuis SERVICES pour ne plus jamais deriver.
+    """
+    cartes = []
+    for i, x in enumerate(SERVICES):
+        img = CARTE_IMG.get(x["slug"], x["hero"])
+        cartes.append(
+            f'<a class="scard reveal" data-d="{min(i % 3, 3)}" href="{PRE}{x["slug"]}/">'
+            f'<img class="scard__img" src="{PRE}assets/img/{img}" alt="" '
+            f'width="1600" height="1200" loading="lazy" decoding="async">'
+            f'<span class="scard__in">'
+            f'<span class="scard__t">{x["nav"]}</span>'
+            f'<span class="scard__p">{x["pitch"]}</span>'
+            f'<span class="scard__go">{ARROW}</span>'
+            f'</span></a>')
+    return f"""<section class="services" id="prestations">
+  <div class="wrap">
+    <header class="sec-head sec-head--center reveal">
+      <p class="kicker"><span class="dot" aria-hidden="true"></span> Nos prestations</p>
+      <h2>Neuf métiers, <em>un seul</em> toit</h2>
+      <p>Du faîtage à la gouttière, en neuf comme en rénovation.
+        Choisissez ce qui vous concerne, nous détaillons tout sur chaque page.</p>
+    </header>
+    <div class="scards">{"".join(cartes)}</div>
+  </div>
+</section>"""
+
+
 def band(img, alt, kicker, phrase):
     """Bandeau photo pleine largeur qui coupe le mur de texte au milieu des pages
     interieures, et redonne un point d'appel a mi-parcours."""
@@ -2840,8 +2887,9 @@ def main():
 
 
 def sync_home():
-    """L'accueil s'edite a la main, sauf deux ilots regeneres ici :
-    le JSON-LD et l'index des communes (pour que le maillage reste juste)."""
+    """L'accueil s'edite a la main, sauf les ilots regeneres ici : le JSON-LD,
+    l'index des communes, la grille des prestations et le pied de page."""
+    global PRE
     import re
     path = os.path.join(ROOT, "index.html")
     html = open(path).read()
@@ -2885,9 +2933,35 @@ def sync_home():
                   lambda m: f'<ol class="zone__index{m.group(1)}"{m.group(2)}>\n        {li}\n      </ol>',
                   html, count=1, flags=re.S)
 
+    # barre de navigation et tiroir : l'accueil en gardait une copie figee a
+    # quatre prestations sur neuf et six communes sur douze, alors que nav()
+    # les genere depuis les donnees. Meme derive que le pied de page.
+    keep, PRE = PRE, ""
+    barre = nav()
+    PRE = keep
+    # nav() sert les pages internes : fond opaque au repos et marque pointant
+    # vers la racine. L'accueil veut la barre transparente sur la photo et un
+    # retour en haut de page.
+    barre = barre.replace('class="nav nav--solid"', 'class="nav"', 1)
+    barre = barre.replace('<a class="brand" href=""', '<a class="brand" href="#top"', 1)
+    # nav() ne connait pas les ancres propres a l'accueil : on les remet
+    # derriere « Chantiers », sinon « La maison » et « Avis » disparaissent.
+    barre = re.sub(r'(<a href="#chantiers"[^>]*>Chantiers</a>)',
+                   r'\1<a href="#maison">La maison</a><a href="#avis">Avis</a>',
+                   barre, count=1)
+    i = html.index('<header class="nav')
+    j = html.index('<main id="main">')
+    html = html[:i] + barre.strip() + "\n\n" + html[j:]
+
+    # prestations : la grille des neuf services, regeneree pour rester en phase
+    keep, PRE = PRE, ""
+    grille = services_grid()
+    PRE = keep
+    html = re.sub(r'<section class="services".*?</section>',
+                  lambda m: grille, html, count=1, flags=re.S)
+
     # pied de page : regenere depuis foot() pour qu'il ne derive plus quand on
     # ajoute une prestation, une commune ou un guide (il en manquait cinq).
-    global PRE
     keep, PRE = PRE, ""
     footer = foot()
     PRE = keep
