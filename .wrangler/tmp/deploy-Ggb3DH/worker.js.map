@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../worker.js"],
+  "sourceRoot": "/Users/melvin/claude code/wm-couverture-refonte/.wrangler/tmp/deploy-Ggb3DH",
+  "sourcesContent": ["// Le cache de Cloudflare gardait l'ancien index.html apres deploiement\n// (cf-cache-status: HIT), le CSS neuf etait servi avec le HTML perime.\n// Ce worker force le HTML et les fichiers de decouverte a ne jamais etre\n// mis en cache ; les images et les polices gardent leur cache d'un an.\n// run_worker_first est obligatoire dans wrangler.jsonc, sinon les assets\n// deja publies contournent ce worker.\nconst JAMAIS_EN_CACHE = /\\.(?:html?|xml|txt|json)$|\\/$/i;\n\nexport default {\n  async fetch(request, env) {\n    const res = await env.ASSETS.fetch(request);\n    const url = new URL(request.url);\n    if (!JAMAIS_EN_CACHE.test(url.pathname)) return res;\n    const out = new Response(res.body, res);\n    out.headers.set(\"Cache-Control\", \"public, max-age=0, must-revalidate, no-store\");\n    return out;\n  },\n};\n"],
+  "mappings": ";AAMA,IAAM,kBAAkB;AAExB,IAAO,iBAAQ;AAAA,EACb,MAAM,MAAM,SAAS,KAAK;AACxB,UAAM,MAAM,MAAM,IAAI,OAAO,MAAM,OAAO;AAC1C,UAAM,MAAM,IAAI,IAAI,QAAQ,GAAG;AAC/B,QAAI,CAAC,gBAAgB,KAAK,IAAI,QAAQ,EAAG,QAAO;AAChD,UAAM,MAAM,IAAI,SAAS,IAAI,MAAM,GAAG;AACtC,QAAI,QAAQ,IAAI,iBAAiB,8CAA8C;AAC/E,WAAO;AAAA,EACT;AACF;",
+  "names": []
+}
