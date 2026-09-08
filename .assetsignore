@@ -1,0 +1,12 @@
+# Fichiers de travail : ils ne doivent pas etre servis publiquement.
+# Constate le 08/09/2026 : build.py, le plan Google Ads, les notes SEO et les
+# CSV d'import etaient tous accessibles en 200 sur le site en ligne.
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+build.py
+tools/
+ads-import/
+*.md
+.htaccess
