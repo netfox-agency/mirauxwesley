@@ -10,3 +10,5 @@ tools/
 ads-import/
 *.md
 .htaccess
+__pycache__/
+*.pyc
