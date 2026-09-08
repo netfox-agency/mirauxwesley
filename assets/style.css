@@ -1492,3 +1492,61 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
                     rgba(8,11,14,.22) 46%, rgba(8,11,14,0) 66%);
 }
 .hero__k{text-shadow:0 1px 5px rgba(8,11,14,.7)}
+
+/* =========================================================================
+   COUCHE INTERACTION
+   Mesure : 70 elements cliquables sur 76 n'avaient aucun etat presse, et
+   toute la page bougeait sur une seule courbe. VitClean en a treize et
+   quatre courbes. Le premier principe d'Apple est de repondre au doigt qui
+   appuie, pas au relachement.
+   ========================================================================= */
+:root{
+  --ease-out:cubic-bezier(.22,.9,.28,1);    /* ce qui entre */
+  --ease-in:cubic-bezier(.55,.06,.68,.19);  /* ce qui sort */
+  --ease-move:cubic-bezier(.32,.72,0,1);    /* ce qui se deplace */
+  --ease-press:cubic-bezier(.3,.8,.4,1);    /* la pression, tres court */
+}
+
+/* --- retour a la pression : instantane, jamais au relachement ----------- */
+.btn,.gal__i,.f-chips span,.callbar__tel,.callbar__devis,.drawer__tel{
+  transition:transform .1s var(--ease-press),background-color .25s var(--ease-out),
+             box-shadow .25s var(--ease-out),color .25s var(--ease-out);
+}
+.btn:active{transform:scale(.972)}
+.gal__i:active{transform:scale(.986)}
+.f-chips label:active span{transform:scale(.96)}
+.callbar__tel:active,.callbar__devis:active,.drawer__tel:active{transform:scale(.97)}
+
+/* les liens a chevron : la fleche part, le texte s'enfonce d'un cheveu */
+.link-arrow{transition:color .25s var(--ease-out),transform .1s var(--ease-press)}
+.link-arrow:active{transform:translateY(1px)}
+.link-arrow:active svg{transform:translateX(4px)}
+
+/* les listes de liens : le decalage au survol existait, la pression non */
+.svc__list a:active,.mesh__list a:active,.hub__list a:active,
+.toc__l a:active,.zone__index a:active,.foot__col a:active,.crumb a:active{
+  transform:translateY(1px);
+}
+.faq__list summary{transition:color .25s var(--ease-out),transform .1s var(--ease-press)}
+.faq__list summary:active{transform:translateY(1px)}
+
+/* --- ce qui n'avait aucun retour au survol ------------------------------ */
+.brand{transition:opacity .25s var(--ease-out),transform .1s var(--ease-press)}
+.brand:hover{opacity:.72}
+.brand:active{transform:scale(.985)}
+.burger{transition:background-color .25s var(--ease-out),transform .1s var(--ease-press)}
+.burger:hover{background:rgba(20,24,27,.06)}
+.burger:active{transform:scale(.94)}
+.f input,.f textarea{transition:border-color .25s var(--ease-out),background .25s var(--ease-out),
+  box-shadow .25s var(--ease-out)}
+.f input:hover:not(:focus),.f textarea:hover:not(:focus){background:#fff}
+
+/* --- la pression n'a pas de sens au doigt sur ce qui defile ------------- */
+@media (prefers-reduced-motion:reduce){
+  .btn:active,.gal__i:active,.link-arrow:active,.faq__list summary:active,
+  .brand:active,.burger:active,.callbar__tel:active,.callbar__devis:active{transform:none}
+}
+
+/* les quatre derniers liens sans retour : coordonnees du devis et barre de pied */
+.devis__coord a,.foot__bar a{transition:color .25s var(--ease-out),transform .1s var(--ease-press)}
+.devis__coord a:active,.foot__bar a:active{transform:translateY(1px)}
