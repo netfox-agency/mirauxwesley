@@ -1,10 +1,15 @@
 {
-  // Site statique : aucun build. Cloudflare sert la racine du dépôt telle quelle.
+  // Site statique : aucun build. Cloudflare sert la racine du dépôt.
   // "name" doit correspondre exactement au nom du projet dans le dashboard.
   "name": "mirauxwesley",
+  "main": "worker.js",
   "compatibility_date": "2026-09-02",
   "assets": {
     "directory": ".",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // Sans ceci, les assets déjà publiés sont servis avant le worker et
+    // gardent leurs en-têtes de cache : le correctif serait sans effet.
+    "run_worker_first": true
   }
 }

@@ -12,3 +12,5 @@ ads-import/
 .htaccess
 __pycache__/
 *.pyc
+worker.js
+.wrangler/
