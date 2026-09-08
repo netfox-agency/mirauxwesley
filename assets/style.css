@@ -1311,12 +1311,13 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
 
 /* le texte tombait sur le visage du second charpentier : on decale l'image
    pour lui rendre le vide du ciel (voir regle « texte dans le vide ») */
-.hero__bg{object-position:34% 18%}
+.hero__bg{object-position:52% 62%}
 .hero__in{margin-left:0;margin-right:auto}
 @media (max-width:760px){
-  /* le cadrage mobile est plus serre : on remonte encore pour sortir le
-     second charpentier de la zone de texte */
-  .hero__bg{object-position:52% 10%}
+  /* Le cartouche « Nonancourt » arrivait presque sous la barre fixe : on lui
+     garantit un dégagement, le hero reste ancré en bas. */
+  .hero{padding-top:calc(96px + env(safe-area-inset-top,0px))}
+  .hero__bg{object-position:58% 66%}
   .hero .hero__h1{font-size:clamp(34px,8.6vw,46px);line-height:1.06}
 }
 
@@ -1490,12 +1491,23 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
    eclats clairs du ciel. Il est haut dans le cadre, donc hors du degrade bas :
    c'est la bande laterale qui doit le porter. Renforcee a gauche seulement,
    jamais de voile sur le sujet. */
+/* Bande basse pour l'ensemble, plus une bande laterale legere. Le ciel de la
+   photo reste lisible : le contraste du texte est assure par le voile local
+   pose derriere le bloc, pas en assombrissant toute l'image. */
 .hero::after{
   background:
     linear-gradient(to top, rgba(8,11,14,.86) 0%, rgba(8,11,14,.55) 26%,
                     rgba(8,11,14,.12) 54%, rgba(8,11,14,0) 74%),
-    linear-gradient(to right, rgba(8,11,14,.7) 0%, rgba(8,11,14,.5) 26%,
-                    rgba(8,11,14,.22) 46%, rgba(8,11,14,0) 66%);
+    linear-gradient(to right, rgba(8,11,14,.5) 0%, rgba(8,11,14,.3) 28%,
+                    rgba(8,11,14,.1) 48%, rgba(8,11,14,0) 66%);
+}
+/* voile doux, cale sur le bloc de texte uniquement */
+.hero__in{position:relative}
+.hero__in::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  inset:-42px -140px -30px -60px;
+  background:radial-gradient(78% 86% at 24% 38%, rgba(8,11,14,.74) 0%,
+             rgba(8,11,14,.56) 40%, rgba(8,11,14,.24) 70%, rgba(8,11,14,0) 100%);
 }
 .hero__k{text-shadow:0 1px 5px rgba(8,11,14,.7)}
 
