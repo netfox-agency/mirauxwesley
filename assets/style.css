@@ -1220,3 +1220,379 @@ body.lock{overflow:hidden}
   .plan__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:640px){.plan__grid{grid-template-columns:1fr}}
+
+/* =========================================================================
+   COUCHE VITCLEAN
+   Reference : vitclean.netfoxfood.workers.dev, dont le CSS s'annonce
+   « light Apple-luxe ». Hero photo plein cadre, texte en bas a gauche dans
+   le vide du ciel, bande basse degradee (jamais de voile global).
+   ========================================================================= */
+
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:min(94svh,880px);display:flex;align-items:flex-end;
+  padding:0 0 clamp(38px,6vw,74px);margin-bottom:0;
+}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
+  object-position:62% 42%}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(to top, rgba(8,11,14,.86) 0%, rgba(8,11,14,.55) 26%,
+                    rgba(8,11,14,.12) 54%, rgba(8,11,14,0) 74%),
+    linear-gradient(to right, rgba(8,11,14,.55) 0%, rgba(8,11,14,.18) 38%,
+                    rgba(8,11,14,0) 62%);
+}
+.hero__in{color:#fff;display:grid;gap:0;max-width:min(760px,100%);margin-right:auto}
+.hero__k{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12.6px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  color:rgba(255,255,255,.82);margin-bottom:18px;
+}
+.hero__k .dot{width:6px;height:6px;border-radius:50%;background:var(--brass-lt);flex:none}
+.hero__k .sep{opacity:.5}
+.hero .hero__h1{
+  font-size:clamp(40px,6.4vw,84px);line-height:1.02;letter-spacing:-.04em;
+  font-weight:700;color:#fff;margin:0 0 20px;
+  text-shadow:0 2px 18px rgba(8,11,14,.35);
+}
+.hero .hero__h1 .it{color:var(--brass-lt)}
+.hero__lead{
+  font-size:clamp(16.4px,1.35vw,18.6px);line-height:1.6;max-width:52ch;
+  color:rgba(255,255,255,.86);margin:0 0 30px;
+}
+.hero .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:clamp(28px,4vw,42px)}
+.btn--light{--bg:#fff;--fg:var(--ink);box-shadow:0 8px 26px -8px rgba(0,0,0,.4)}
+.btn--light:hover{--bg:#f2f2f4}
+.btn--glass{
+  --bg:rgba(255,255,255,.13);--fg:#fff;
+  -webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);
+}
+.btn--glass:hover{--bg:rgba(255,255,255,.22)}
+.hero .hero__trust{
+  border-top:1px solid rgba(255,255,255,.22);padding-top:20px;
+  color:rgba(255,255,255,.72);
+}
+.hero .hero__trust b{color:#fff}
+@media (prefers-reduced-transparency:reduce){
+  .btn--glass{--bg:rgba(30,34,38,.92);backdrop-filter:none}
+}
+@media (max-width:760px){
+  .hero{min-height:min(92svh,720px)}
+  .hero .hero__cta .btn{flex:1 1 100%;justify-content:center}
+}
+
+/* le hero photo passe sous la nav : elle doit etre lisible dessus des le
+   scroll 0, comme la pilule sombre de VitClean */
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in{
+  background:rgba(14,17,20,.42);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);
+}
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in,
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in a:not(.btn),
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in button,
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in .brand__txt,
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in .brand__txt strong,
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in svg{color:#fff;fill:currentColor}
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in .brand svg{fill:none;stroke:#fff}
+/* le bouton garde son propre contraste : blanc plein, texte encre */
+body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;color:var(--ink)}
+@media (prefers-reduced-transparency:reduce){
+  body:has(.hero__bg) .nav:not(.scrolled) .nav__in{background:rgba(14,17,20,.9);backdrop-filter:none}
+}
+
+/* le texte tombait sur le visage du second charpentier : on decale l'image
+   pour lui rendre le vide du ciel (voir regle « texte dans le vide ») */
+.hero__bg{object-position:34% 18%}
+.hero__in{margin-left:0;margin-right:auto}
+@media (max-width:760px){
+  /* le cadrage mobile est plus serre : on remonte encore pour sortir le
+     second charpentier de la zone de texte */
+  .hero__bg{object-position:52% 10%}
+  .hero .hero__h1{font-size:clamp(34px,8.6vw,46px);line-height:1.06}
+}
+
+/* --- en-tete de section centre, cartouche a pastille (VitClean) --------- */
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.2px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  color:var(--brass-ink);margin-bottom:16px;
+}
+.kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--brass);flex:none}
+.sec-head--center{
+  max-width:min(720px,100%);margin-inline:auto;text-align:center;
+}
+.sec-head--center p:not(.kicker){margin-inline:auto}
+.sec-head--center h2{margin-bottom:14px}
+
+/* --- panneau sombre a degrade (equivalent du CreditBand de VitClean) ---- */
+.panel-wrap{padding:clamp(30px,5vw,64px) 0}
+.panel{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  border-radius:clamp(20px,2.4vw,30px);overflow:hidden;color:#fff;
+  background:
+    radial-gradient(120% 140% at 8% 0%, rgba(168,72,27,.34) 0%, rgba(168,72,27,0) 58%),
+    linear-gradient(118deg, #17130F 0%, #241A12 46%, #120F0D 100%);
+  box-shadow:0 20px 60px -22px rgba(20,14,9,.55);
+}
+.panel__l{padding:clamp(28px,3.6vw,52px)}
+.panel__r{
+  padding:clamp(28px,3.6vw,52px);
+  border-left:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,0));
+}
+.panel__k{
+  font-size:11.8px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+  color:rgba(255,255,255,.58);margin-bottom:16px;
+}
+.panel h2{font-size:clamp(27px,3.5vw,46px);line-height:1.06;margin-bottom:16px;color:#fff}
+.panel h2 em{color:var(--brass-lt)}
+.panel__p{color:rgba(255,255,255,.76);font-size:16.6px;line-height:1.62;max-width:44ch;
+  margin-bottom:22px}
+.panel .link-arrow{color:#fff}
+.panel .link-arrow svg{stroke:var(--brass-lt)}
+.panel .link-arrow:hover{color:var(--brass-lt)}
+.panel__fig{
+  font-family:var(--f-dis);letter-spacing:-.05em;line-height:1;margin-bottom:18px;
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+}
+.panel__fig s{font-size:clamp(24px,2.6vw,34px);color:rgba(255,255,255,.4);
+  text-decoration-thickness:2px}
+.panel__fig b{font-size:clamp(46px,6vw,84px);font-weight:700;color:var(--brass-lt)}
+.panel__note{color:rgba(255,255,255,.76);font-size:16px;line-height:1.6;margin-bottom:16px}
+.panel__note b{color:#fff;font-weight:600}
+.panel__fine{color:rgba(255,255,255,.5);font-size:13.6px;line-height:1.55}
+@media (max-width:860px){
+  .panel{grid-template-columns:1fr}
+  .panel__r{border-left:0;border-top:1px solid rgba(255,255,255,.12)}
+}
+
+/* --- section zone en sombre (VitClean pose sa carte des zones sur du noir) */
+.zone{
+  background:
+    radial-gradient(90% 120% at 78% 18%, rgba(168,72,27,.20) 0%, rgba(168,72,27,0) 60%),
+    linear-gradient(180deg, #0D0B0A 0%, #141110 52%, #0D0B0A 100%);
+  color:#fff;border-top:0;
+}
+.zone .eyebrow{color:rgba(255,255,255,.5)}
+.zone__l h2{color:#fff}
+.zone__l h2 em{color:var(--brass-lt)}
+.zone__l>p{color:rgba(255,255,255,.72)}
+.zone__index{border-top-color:rgba(255,255,255,.16)}
+.zone__index li{color:rgba(255,255,255,.66)}
+.zone__index li:first-child{color:#fff}
+.zone__index li::before{color:var(--brass-lt);opacity:.75}
+.zone__index a:hover{color:var(--brass-lt);border-color:var(--brass-lt)}
+.zone .btn--dark{--bg:#fff;--fg:var(--ink)}
+.zone .btn--ghost{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+/* la carte dessinee doit s'inverser, sinon elle disparait sur le noir */
+.zone .m-ring{fill:rgba(232,168,124,.05);stroke:var(--brass-lt);stroke-opacity:.34}
+.zone .m-ring2{fill:rgba(232,168,124,.05);stroke:var(--brass-lt);stroke-opacity:.24}
+.zone .m-dot{fill:#fff;opacity:.42}
+.zone .m-cross{stroke:var(--brass-lt);stroke-opacity:.18}
+.zone .m-halo{fill:var(--brass-lt);opacity:.2}
+.zone .m-home{fill:var(--brass-lt);stroke:#0D0B0A}
+.zone .m-lab{fill:rgba(255,255,255,.72)}
+.zone__map figcaption{color:rgba(255,255,255,.5)}
+
+/* --- CTA final en panneau photo sombre (« Pret a retrouver la lumiere ? ») */
+.devis{background:var(--paper-2);position:relative}
+.devis__grid{position:relative}
+
+/* Le bloc de devis est le moment le plus important de la page : il finissait
+   en beige clair. Il devient le dernier grand moment sombre, la photo derriere
+   et le formulaire en carte blanche posee dessus. */
+.devis{
+  background:#0D0B0A;color:#fff;isolation:isolate;overflow:hidden;
+  border-top:0;padding-block:clamp(64px,9vw,116px);
+}
+.devis__bg{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
+  object-position:50% 58%;
+}
+.devis::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(80% 100% at 12% 50%, rgba(13,11,10,.94) 0%, rgba(13,11,10,.72) 46%,
+                    rgba(13,11,10,.5) 100%),
+    linear-gradient(180deg, rgba(13,11,10,.72), rgba(13,11,10,.86));
+}
+.devis .eyebrow{color:rgba(255,255,255,.5)}
+.devis__l h2{color:#fff}
+.devis__l h2 em{color:var(--brass-lt)}
+.devis__l>p{color:rgba(255,255,255,.76)}
+.devis__coord li{border-top-color:rgba(255,255,255,.18)}
+.devis__coord span{color:rgba(255,255,255,.5)}
+.devis__coord a,.devis__coord li>*{color:#fff}
+.devis__coord a:hover{color:var(--brass-lt)}
+.devis .form{
+  background:rgba(255,255,255,.97);color:var(--ink);
+  box-shadow:0 24px 70px -20px rgba(0,0,0,.6);
+}
+.devis .form__note{color:var(--muted)}
+@media (prefers-reduced-transparency:reduce){.devis .form{background:#fff}}
+
+/* --- chapitres metiers : la photo devient la carte, le titre s'y incruste - */
+.chap__card{position:relative;isolation:isolate}
+.chap__card::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to top, rgba(10,8,7,.82) 0%, rgba(10,8,7,.42) 26%,
+             rgba(10,8,7,.08) 52%, rgba(10,8,7,0) 70%);
+}
+.chap__cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:clamp(18px,2.4vw,30px);color:#fff;
+}
+.chap__cap .chap__num{
+  font-family:var(--f-dis);font-size:12.4px;letter-spacing:.16em;font-weight:600;
+  color:rgba(255,255,255,.62);opacity:1;margin:0 0 6px;line-height:1;
+}
+.chap__cap h3{
+  color:#fff;font-size:clamp(24px,2.9vw,38px);line-height:1.06;margin:0;
+  text-shadow:0 2px 14px rgba(10,8,7,.4);
+}
+.chap__cap h3 em{color:var(--brass-lt)}
+/* la colonne de texte commence maintenant par l'intro : elle se recale en haut */
+.chap--01 .chap__body,.chap--03 .chap__body{align-self:start}
+.chap--02 .chap__split>div:first-child{display:none}
+.chap--02 .chap__split{grid-template-columns:1fr}
+@media (max-width:760px){.chap__cap{padding:16px}}
+
+/* le chapitre 01 : la photo doit peser autant que le texte pour porter son
+   titre, et la vignette d'appoint se contente d'un rappel.
+   Sous media query : ces regles arrivent apres l'effondrement mobile en une
+   colonne et le rouvraient, le texte se retrouvait dans 150 px. */
+@media (min-width:761px){
+  .chap--01{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
+  .chap__duo{grid-template-columns:1.7fr .7fr;align-items:end}
+  .frame--tall{aspect-ratio:5/6}
+  .chap--03{align-items:stretch}
+  .chap--03 .frame--fill{aspect-ratio:5/4}
+}
+
+/* le numero se perdait sur le ciel quand le titre passe sur deux lignes */
+.chap__cap .chap__num{color:rgba(255,255,255,.9);
+  text-shadow:0 1px 6px rgba(10,8,7,.85), 0 0 14px rgba(10,8,7,.6)}
+.chap__card::after{
+  background:linear-gradient(to top, rgba(10,8,7,.86) 0%, rgba(10,8,7,.6) 22%,
+             rgba(10,8,7,.24) 44%, rgba(10,8,7,0) 66%);
+}
+
+/* Mesure sur pixels reels : le cartouche du hero tombait a 3,85:1 sur les
+   eclats clairs du ciel. Il est haut dans le cadre, donc hors du degrade bas :
+   c'est la bande laterale qui doit le porter. Renforcee a gauche seulement,
+   jamais de voile sur le sujet. */
+.hero::after{
+  background:
+    linear-gradient(to top, rgba(8,11,14,.86) 0%, rgba(8,11,14,.55) 26%,
+                    rgba(8,11,14,.12) 54%, rgba(8,11,14,0) 74%),
+    linear-gradient(to right, rgba(8,11,14,.7) 0%, rgba(8,11,14,.5) 26%,
+                    rgba(8,11,14,.22) 46%, rgba(8,11,14,0) 66%);
+}
+.hero__k{text-shadow:0 1px 5px rgba(8,11,14,.7)}
+
+/* =========================================================================
+   COUCHE INTERACTION
+   Mesure : 70 elements cliquables sur 76 n'avaient aucun etat presse, et
+   toute la page bougeait sur une seule courbe. VitClean en a treize et
+   quatre courbes. Le premier principe d'Apple est de repondre au doigt qui
+   appuie, pas au relachement.
+   ========================================================================= */
+:root{
+  --ease-out:cubic-bezier(.22,.9,.28,1);    /* ce qui entre */
+  --ease-in:cubic-bezier(.55,.06,.68,.19);  /* ce qui sort */
+  --ease-move:cubic-bezier(.32,.72,0,1);    /* ce qui se deplace */
+  --ease-press:cubic-bezier(.3,.8,.4,1);    /* la pression, tres court */
+}
+
+/* --- retour a la pression : instantane, jamais au relachement ----------- */
+.btn,.gal__i,.f-chips span,.callbar__tel,.callbar__devis,.drawer__tel{
+  transition:transform .1s var(--ease-press),background-color .25s var(--ease-out),
+             box-shadow .25s var(--ease-out),color .25s var(--ease-out);
+}
+.btn:active{transform:scale(.972)}
+.gal__i:active{transform:scale(.986)}
+.f-chips label:active span{transform:scale(.96)}
+.callbar__tel:active,.callbar__devis:active,.drawer__tel:active{transform:scale(.97)}
+
+/* les liens a chevron : la fleche part, le texte s'enfonce d'un cheveu */
+.link-arrow{transition:color .25s var(--ease-out),transform .1s var(--ease-press)}
+.link-arrow:active{transform:translateY(1px)}
+.link-arrow:active svg{transform:translateX(4px)}
+
+/* les listes de liens : le decalage au survol existait, la pression non */
+.svc__list a:active,.mesh__list a:active,.hub__list a:active,
+.toc__l a:active,.zone__index a:active,.foot__col a:active,.crumb a:active{
+  transform:translateY(1px);
+}
+.faq__list summary{transition:color .25s var(--ease-out),transform .1s var(--ease-press)}
+.faq__list summary:active{transform:translateY(1px)}
+
+/* --- ce qui n'avait aucun retour au survol ------------------------------ */
+.brand{transition:opacity .25s var(--ease-out),transform .1s var(--ease-press)}
+.brand:hover{opacity:.72}
+.brand:active{transform:scale(.985)}
+.burger{transition:background-color .25s var(--ease-out),transform .1s var(--ease-press)}
+.burger:hover{background:rgba(20,24,27,.06)}
+.burger:active{transform:scale(.94)}
+.f input,.f textarea{transition:border-color .25s var(--ease-out),background .25s var(--ease-out),
+  box-shadow .25s var(--ease-out)}
+.f input:hover:not(:focus),.f textarea:hover:not(:focus){background:#fff}
+
+/* --- la pression n'a pas de sens au doigt sur ce qui defile ------------- */
+@media (prefers-reduced-motion:reduce){
+  .btn:active,.gal__i:active,.link-arrow:active,.faq__list summary:active,
+  .brand:active,.burger:active,.callbar__tel:active,.callbar__devis:active{transform:none}
+}
+
+/* les quatre derniers liens sans retour : coordonnees du devis et barre de pied */
+.devis__coord a,.foot__bar a{transition:color .25s var(--ease-out),transform .1s var(--ease-press)}
+.devis__coord a:active,.foot__bar a:active{transform:translateY(1px)}
+
+/* --- raccord arrondi entre sombre et clair ------------------------------ */
+/* Signature VitClean : la section claire remonte sur la sombre avec de gros
+   coins arrondis, au lieu d'une cassure nette. */
+.ba + section,.urgence + section,.quote + section,.zone + section{
+  position:relative;z-index:1;
+  border-radius:clamp(24px,3vw,42px) clamp(24px,3vw,42px) 0 0;
+  margin-top:calc(-1 * clamp(24px,3vw,42px));
+  background:var(--paper);
+}
+/* la section qui precede doit laisser la place au chevauchement */
+.ba,.urgence,.quote,.zone{padding-bottom:calc(clamp(24px,3vw,42px) + clamp(30px,4vw,52px))}
+/* .avis a son propre fond : il doit le garder en remontant */
+.quote + .avis{background:var(--paper-2)}
+
+/* --- avis : note en tete, colonnes, attribution en petites capitales ----- */
+.avis__head--center{
+  display:block;text-align:center;max-width:min(760px,100%);margin-inline:auto;
+  margin-bottom:clamp(34px,4.5vw,58px);
+}
+.avis__note{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;
+  font-size:12.4px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);
+}
+.avis__note .stars{color:var(--brass);letter-spacing:.1em;font-size:13px}
+.avis__head--center h2{font-size:clamp(30px,4vw,52px)}
+
+/* --- CTA final en panneau encadre, pas en pleine largeur ---------------- */
+/* VitClean pose son « Pret a retrouver la lumiere ? » comme un objet arrondi
+   sur le fond clair, pas comme une bande qui touche les bords. */
+.devis{
+  background:transparent;padding-block:clamp(40px,6vw,80px);
+  border-radius:0;overflow:visible;
+}
+.devis::after{display:none}
+.devis__bg{display:none}
+.devis__grid{
+  position:relative;isolation:isolate;overflow:hidden;
+  border-radius:clamp(20px,2.4vw,32px);
+  padding:clamp(30px,4.5vw,66px);
+  background:
+    radial-gradient(90% 130% at 10% 40%, rgba(168,72,27,.22) 0%, rgba(168,72,27,0) 62%),
+    linear-gradient(122deg, #14100D 0%, #1E1712 48%, #100D0C 100%);
+  box-shadow:0 24px 70px -24px rgba(20,14,9,.55);
+}
