@@ -30,6 +30,8 @@ SIZES = [
     ('hubrow__img',  '112px'),
     ('hubfeat__img', '(max-width:760px) 92vw, 46vw'),
     ('band__bg',     '100vw'),
+    ('hero__bg',     '100vw'),
+    ('scard__img',   '(max-width:640px) 92vw, (max-width:1080px) 46vw, 31vw'),
     ('quote__bg',    '100vw'),
     ('urgence__bg',  '100vw'),
 ]

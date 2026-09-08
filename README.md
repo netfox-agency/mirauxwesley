@@ -299,3 +299,23 @@ galerie au survol, visionneuse, barre d'appel mobile. Tout est neutralisé sous
 `assets/app.js` pousse `form_start`, `generate_lead` et `phone_call` dans
 `dataLayer`. Il suffit de brancher GTM ou gtag pour câbler les conversions
 Google Ads, rien d'autre à modifier dans le code.
+
+## Ordre de construction
+
+**`build.py` puis `tools/images.py`, jamais l'inverse.** `sync_home()` régénère
+la grille des prestations et le pied de page avec des `<img>` nus : lancer les
+images avant la construction fait perdre les `<picture>` responsives.
+
+Après une génération d'images interrompue, vérifier avant de déployer :
+
+```
+find assets -size 0 -type f          # fichiers tronqués, wrangler plante dessus
+python3 - <<'P'
+import glob,os
+print([os.path.basename(f)[:-5] for f in glob.glob('assets/img/*.webp')
+       if not glob.glob('assets/img/r/'+os.path.basename(f)[:-5]+'-*.webp')])
+P
+```
+
+`--keep` réutilise l'existant et **ne génère rien pour une source neuve** :
+après avoir ajouté une image, lancer `tools/images.py` sans `--keep`.
