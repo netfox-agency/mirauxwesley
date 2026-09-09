@@ -1231,7 +1231,10 @@ body.lock{overflow:hidden}
 .hero{
   position:relative;isolation:isolate;overflow:hidden;
   min-height:min(94svh,880px);display:flex;align-items:flex-end;
-  padding:0 0 clamp(38px,6vw,74px);margin-bottom:0;
+  /* La barre est fixe et le contenu est ancre en bas : sans ce degagement,
+     une fenetre basse (1000x620, 1280x800) faisait passer le titre DERRIERE
+     la barre. min-height laisse le hero grandir si le texte a besoin de place. */
+  padding:clamp(104px,13vh,150px) 0 clamp(38px,6vw,74px);margin-bottom:0;
 }
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
   object-position:62% 42%}
@@ -1314,9 +1317,7 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
 .hero__bg{object-position:52% 62%}
 .hero__in{margin-left:0;margin-right:auto}
 @media (max-width:760px){
-  /* Le cartouche « Nonancourt » arrivait presque sous la barre fixe : on lui
-     garantit un dégagement, le hero reste ancré en bas. */
-  .hero{padding-top:calc(96px + env(safe-area-inset-top,0px))}
+  .hero{padding-top:calc(100px + env(safe-area-inset-top,0px))}
   .hero__bg{object-position:58% 66%}
   .hero .hero__h1{font-size:clamp(34px,8.6vw,46px);line-height:1.06}
 }
@@ -1494,21 +1495,17 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
 /* Bande basse pour l'ensemble, plus une bande laterale legere. Le ciel de la
    photo reste lisible : le contraste du texte est assure par le voile local
    pose derriere le bloc, pas en assombrissant toute l'image. */
+/* Deux degrades continus, sans bord visible. Le voile radial pose derriere le
+   bloc de texte se lisait comme une tache sombre sur le ciel. */
 .hero::after{
   background:
-    linear-gradient(to top, rgba(8,11,14,.86) 0%, rgba(8,11,14,.55) 26%,
-                    rgba(8,11,14,.12) 54%, rgba(8,11,14,0) 74%),
-    linear-gradient(to right, rgba(8,11,14,.5) 0%, rgba(8,11,14,.3) 28%,
-                    rgba(8,11,14,.1) 48%, rgba(8,11,14,0) 66%);
+    linear-gradient(to top, rgba(8,11,14,.8) 0%, rgba(8,11,14,.5) 30%,
+                    rgba(8,11,14,.14) 58%, rgba(8,11,14,0) 80%),
+    linear-gradient(102deg, rgba(8,11,14,.8) 0%, rgba(8,11,14,.64) 24%,
+                    rgba(8,11,14,.36) 46%, rgba(8,11,14,.1) 64%,
+                    rgba(8,11,14,0) 80%);
 }
-/* voile doux, cale sur le bloc de texte uniquement */
 .hero__in{position:relative}
-.hero__in::before{
-  content:"";position:absolute;z-index:-1;pointer-events:none;
-  inset:-42px -140px -30px -60px;
-  background:radial-gradient(78% 86% at 24% 38%, rgba(8,11,14,.74) 0%,
-             rgba(8,11,14,.56) 40%, rgba(8,11,14,.24) 70%, rgba(8,11,14,0) 100%);
-}
 .hero__k{text-shadow:0 1px 5px rgba(8,11,14,.7)}
 
 /* =========================================================================
