@@ -695,7 +695,12 @@ p{margin:0}
 .m-key--2{background:rgba(176,124,46,.05);box-shadow:inset 0 0 0 1px rgba(176,124,46,.45)}
 
 /* --------------------------------------------------- faq -------------- */
-.faq{padding:0 0 clamp(64px,9vw,110px)}
+/* Le bloc de questions n'avait AUCUN padding haut : sur les 31 pages
+   internes, le titre et la premiere question se collaient au bord de la
+   section. Sur l'accueil ca ne se voyait pas, le raccord arrondi lui en
+   donnait. Corrige a la racine ; l'accueil garde sa valeur de raccord,
+   posee plus bas dans la feuille. */
+.faq{padding:clamp(56px,7.5vw,96px) 0 clamp(64px,9vw,110px)}
 .faq__grid{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);
   gap:clamp(28px,5vw,72px);align-items:start}
 .faq h2{font-size:clamp(30px,3.9vw,50px)}
