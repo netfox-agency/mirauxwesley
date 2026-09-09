@@ -381,7 +381,8 @@ p{margin:0}
   object-position:50% 40%}
 .quote::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(180deg,rgba(16,21,25,.87),rgba(16,21,25,.74))}
-.quote__in{max-width:900px;color:#fff}
+.quote__in{color:#fff}
+.quote blockquote{max-width:24ch}
 .quote blockquote{
   margin:0;font-family:var(--f-dis);font-weight:600;
   font-size:clamp(24px,3.3vw,44px);line-height:1.2;letter-spacing:-.035em;
@@ -397,7 +398,9 @@ p{margin:0}
 
 /* --------------------------------------------------- avant / après ---- */
 .ba{padding:clamp(56px,8vw,96px) 0;background:var(--slate);color:#fff}
-.ba__head{margin-bottom:clamp(28px,4vw,46px);max-width:760px}
+.ba__head{margin-bottom:clamp(28px,4vw,46px)}
+.ba__head h2{max-width:19ch}
+.ba__head p{max-width:62ch}
 .ba__head h2{font-size:clamp(31px,4.2vw,54px);margin-bottom:14px}
 .ba__head h2 em{color:var(--brass-lt)}
 .ba__head p{color:rgba(255,255,255,.62);font-size:17px}
@@ -542,7 +545,9 @@ p{margin:0}
 .band::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top, rgba(13,17,20,.95) 0%, rgba(13,17,20,.88) 30%,
              rgba(13,17,20,.64) 54%, rgba(13,17,20,.16) 80%, rgba(13,17,20,0) 100%)}
-.band__in{color:#fff;display:grid;gap:14px;justify-items:start;max-width:720px}
+.band__in{color:#fff;display:grid;gap:14px;justify-items:start}
+.band__p{max-width:22ch}
+.band__k{max-width:52ch}
 /* Le cartouche etait en laiton clair : mesure sur les pixels reels, il
    tombait a 2,6:1 sur les eclats de la photo. En blanc il passe l'AA quelle
    que soit l'image, et l'ombre porte le reste. Meme recette que .gal__cap. */
