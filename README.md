@@ -1,6 +1,6 @@
 # WM Couverture · refonte du site (Nonancourt, 27)
 
-Refonte statique de [wm-couverture.fr](https://www.wm-couverture.fr/) : onze pages
+Refonte statique de [wmcouverture.fr](https://wmcouverture.fr/) : onze pages
 générées, sans framework ni bundler. Uniquement du HTML, du CSS et un fichier JS
 de 300 lignes, plus deux scripts Python de génération.
 

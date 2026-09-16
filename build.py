@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Génère les pages internes de wm-couverture.fr (services + communes),
+Génère les pages internes de wmcouverture.fr (services + communes),
 le sitemap, le robots.txt et les règles de redirection 301.
 
     python3 build.py
@@ -17,7 +17,7 @@ PRE = "../"   # prefixe vers la racine, ajuste selon la profondeur de la page
 # ─────────────────────────────────────────────────────────── constantes ────
 TEL_TXT   = "06 24 59 26 77"
 TEL_HREF  = "+33624592677"
-DOMAIN    = "https://www.wm-couverture.fr"
+DOMAIN    = "https://wmcouverture.fr"
 ADDR      = "577A les maisons rouges, 27320 Nonancourt"
 W3F_KEY   = "b8529af1-dc00-4478-a060-25b363122aaf"   # cle publique Web3Forms, prevue pour le code client
 MAPS      = "https://www.google.com/maps/search/?api=1&query=577A+les+maisons+rouges+27320+Nonancourt"
