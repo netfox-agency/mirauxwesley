@@ -332,3 +332,20 @@ manuelle. À rafraîchir à la main quand le compteur aura bougé.
 L'adresse et les coordonnées viennent de la fiche Google, qui fait autorité
 pour le référencement local : `577A les maisons rouges, 27320 Nonancourt`,
 `48.7632745 / 1.2240144`.
+
+## Formulaire
+
+Clé Web3Forms posée le 08/09/2026 et **vérifiée en ligne** : envoi réel accepté
+(`success: true`), message de confirmation affiché, champs réinitialisés,
+événement `generate_lead` poussé dans le dataLayer.
+
+Pièges à connaître, valables pour tout site Web3Forms :
+
+- **Jamais de `fetch` en JSON** : le `Content-Type: application/json` déclenche
+  un preflight que Web3Forms ne gère pas. Utiliser `FormData` + en-tête
+  `Accept: application/json`. C'est ce que fait `assets/app.js`.
+- **Un appel serveur (curl, Node) est refusé** en plan gratuit : l'API est
+  prévue pour le navigateur. On ne peut donc pas tester l'envoi en ligne de
+  commande, il faut un vrai navigateur.
+- Le pot de miel doit s'appeler **`botcheck`**, c'est le nom attendu.
+- L'objet du mail ne nomme plus le domaine, pour survivre au changement de nom.

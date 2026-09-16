@@ -19,7 +19,7 @@ TEL_TXT   = "06 24 59 26 77"
 TEL_HREF  = "+33624592677"
 DOMAIN    = "https://www.wm-couverture.fr"
 ADDR      = "577A les maisons rouges, 27320 Nonancourt"
-W3F_KEY   = "REMPLACER_PAR_VOTRE_CLE_WEB3FORMS"
+W3F_KEY   = "b8529af1-dc00-4478-a060-25b363122aaf"   # cle publique Web3Forms, prevue pour le code client
 MAPS      = "https://www.google.com/maps/search/?api=1&query=577A+les+maisons+rouges+27320+Nonancourt"
 # Coordonnees a caler EXACTEMENT sur l'epingle de la fiche Google avant mise en ligne.
 GEO_LAT   = "48.7632745"
@@ -2292,7 +2292,7 @@ def devis(titre, sous):
     </div>
     <form class="form reveal" id="devisForm" method="POST" action="https://api.web3forms.com/submit" novalidate>
       <input type="hidden" name="access_key" value="{W3F_KEY}">
-      <input type="hidden" name="subject" value="Nouvelle demande de devis · wm-couverture.fr">
+      <input type="hidden" name="subject" value="Nouvelle demande de devis · site WM Couverture">
       <input type="hidden" name="from_name" value="Site WM Couverture">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
       <input type="hidden" name="page" id="f_page" value="">
