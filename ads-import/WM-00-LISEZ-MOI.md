@@ -1,63 +1,43 @@
-# Import Google Ads · WM Couverture
+# ⚠️ Ces CSV sont PÉRIMÉS — ne pas les importer
 
-Fichiers prêts pour **Google Ads Editor**. Le plan et le raisonnement sont dans
-[GOOGLE-ADS-PLAN.md](../GOOGLE-ADS-PLAN.md).
+Le 16/09/2026, la structure a été créée **directement dans le compte**
+`8973082946` (Miraux Wesley), par `~/ads-write/creer-campagnes-wm.py`.
 
-## Avant d'importer
+**Importer ces fichiers créerait tout en double.**
 
-1. Créer le compte Google Ads du client, récupérer son **ID client** (format
-   `123-456-7890`).
-2. Remplacer `XXX-XXX-XXXX` par cet ID dans les quatre CSV :
-   ```bash
-   sed -i '' 's/XXX-XXX-XXXX/123-456-7890/g' ads-import/WM-0*.csv
-   ```
-3. Vérifier que le **site est en ligne** et que les pages de destination
-   répondent. Sinon les annonces seront refusées.
+Ils sont gardés uniquement comme trace de la première version du plan.
 
-## Ordre d'import dans Google Ads Editor
+## Ce qui est réellement en ligne dans le compte
 
-| Ordre | Fichier | Contenu |
-|---|---|---|
-| 1 | `WM-01-campagnes.csv` | 3 campagnes, créées **en pause** |
-| 2 | `WM-02-groupes-annonces.csv` | 7 groupes d'annonces avec leur plafond de CPC |
-| 3 | `WM-03-mots-cles.csv` | 160 mots-clés, exact et expression uniquement |
-| 4 | `WM-04-annonces-rsa.csv` | 7 annonces responsives, 15 titres et 4 descriptions chacune |
-| 5 | `WM-05-mots-cles-negatifs.txt` | 54 exclusions, à coller en liste partagée |
+| | |
+|---|---|
+| 4 campagnes | Appels-Couvreur (5,00 €/j) · Entretien-Toiture (3,50) · Gros-Chantiers (2,55) · Marque (1,00) |
+| État | **toutes en PAUSED** |
+| 8 groupes | 216 mots-clés, tous en correspondance EXPRESSION |
+| 8 annonces | 15 titres et 4 descriptions chacune |
+| 120 exclusions | réparties en 7 listes partagées |
+| Extensions | 1 appel · 6 liens annexes · 6 accroches · 1 bloc d'extraits |
+| Conversions | devis (200 €) · appel site (100 €) · appel annonces (100 €, ≥ 30 s) |
 
-Les longueurs de titres (30 caractères) et de descriptions (90) sont vérifiées :
-aucun dépassement.
+La campagne **Marque** n'est pas du confort : l'ancien site de l'agence
+précédente reste en ligne sur `wm-couverture.fr` et sort premier sur
+« WM Couverture ». Une annonce passe au-dessus du naturel. C'est le seul
+levier direct contre lui, et il coûte un euro par jour.
 
-## À régler à la main, l'éditeur ne le fait pas
+## Ce qui bloque l'activation
 
-- **Zones géographiques** : 35 km autour de Nonancourt pour Entretien, 25 km pour
-  Urgence, 40 km pour Marque. Dans les options, choisir **« Présence »** et non
-  l'option par défaut qui inclut les personnes seulement intéressées par la zone.
-- **Calendrier** : 7 h à 21 h, 7 j/7. Ajustements +25 % en semaine de 18 h à 21 h,
-  +20 % le week-end, +10 % de 7 h à 9 h.
-- **Appareils** : +30 % sur mobile.
-- **Assets** : numéro de téléphone, liens annexes, accroches, extraits structurés,
-  et lieu une fois la fiche Google liée au compte.
-- **Annonces appel seul** sur les groupes Fuite et Dépannage.
-- **Réseau** : décocher le Réseau Display et les partenaires du Réseau de Recherche.
-- **Conversions** : les 4 actions décrites dans le plan, avant d'activer.
+1. **Facturation** : `billing_setup` est en `PENDING`. Rien ne peut diffuser.
+2. Lien du site à changer dans la fiche Google vers `wmcouverture.fr`.
 
-## Ne pas activer avant
+Une fois débloqué, n'ouvrir que **Appels-Couvreur**, **Entretien-Toiture** et
+**Marque** (9,50 €/j). Gros-Chantiers attend le mois 2 : sans historique de
+conversion, un clic à 5 € mange un tiers du budget du jour pour rien.
 
-Les campagnes sont importées **en pause**, volontairement. Les quatre points
-bloquants sont listés en fin de plan : site en ligne, clé Web3Forms, suivi des
-conversions, fiche Google liée.
+## Modifier la structure
 
-## Preuve sociale (ajouté le 08/09/2026)
+```bash
+cd ~/ads-write && ./.venv/bin/python creer-campagnes-wm.py 8973082946
+```
 
-Fiche Google vérifiée : **Couvreur Nonancourt - Wm-couverture, 5,0 sur 81 avis**,
-dont 81 cinq étoiles et aucun en dessous.
-
-- `WM-04` : « Entreprise Familiale » (présent sur les 9 annonces, générique et
-  invérifiable) remplacé par **« 81 Avis 5/5 sur Google »**, 22 caractères.
-- `WM-06-extensions-accroche.csv` : 6 accroches × 4 campagnes. Les extensions
-  ne consomment aucun emplacement de titre.
-- Les **notes de vendeur** peuvent apparaître seules sous les annonces : Google
-  les tire de ses propres données, rien à déclarer.
-
-⚠️ **Le nombre d'avis est écrit en dur** dans les annonces ET sur 22 pages du
-site. À reprendre quand il aura sensiblement bougé (`5,0 sur 81`, `81 avis`).
+Sans `--appliquer`, rien n'est écrit : chaque opération est résolue contre le
+compte réel, donc une faute de nom sort en simulation et pas en production.
