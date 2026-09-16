@@ -27,7 +27,12 @@ GEO_LON   = "1.2240144"
 PRICE     = "$$"
 # URL de la fiche Google, du Facebook, etc. Laisser vide tant qu'on ne les a pas :
 # une URL fausse dans sameAs fait plus de mal que pas de sameAs du tout.
-SAMEAS    = []
+SAMEAS    = [
+    # La fiche Google porte 81 avis 5/5. Comme l'ancien site de l'agence
+    # revendique la meme entreprise, ce lien est le signal qui rattache le
+    # domaine neuf a la bonne entite. URL par cid : elle ne bouge jamais.
+    "https://maps.google.com/?cid=17637010817244759536",
+]
 # Communes desservies au-dela des pages dediees.
 ZONE_PLUS = ["La Madeleine-de-Nonancourt", "Muzy", "Illiers-l'Eveque", "Saint-Georges-Motel",
              "Marcilly-sur-Eure", "Garennes-sur-Eure", "Bueil", "Ezy-sur-Eure",
@@ -2651,7 +2656,7 @@ def render_plan():
     ld = ('{"@context":"https://schema.org","@graph":[' + ld_business() + ','
           '{"@type":"WebPage","name":"Plan du site","url":"%s/plan-du-site/"}]}' % DOMAIN)
     return "".join([
-        head("Plan du site · WM Couverture",
+        head("Plan du site · WM Couverture, couvreur à Nonancourt",
              "Toutes les pages du site WM Couverture : prestations de couverture, communes "
              "d'intervention autour de Nonancourt et guides pratiques sur la toiture.",
              "plan-du-site/", ld),
