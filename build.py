@@ -19,6 +19,10 @@ TEL_TXT   = "06 24 59 26 77"
 TEL_HREF  = "+33624592677"
 DOMAIN    = "https://wmcouverture.fr"
 ADDR      = "577A les maisons rouges, 27320 Nonancourt"
+ADS_GTAG       = "AW-18440677778"          # identifiant de conversion du compte Miraux Wesley
+ADS_CONV_DEVIS = "2vnCCLbgjPocEJLTmdlE"    # « Demande de devis (site) »
+ADS_CONV_APPEL = "l6LECPvZkvocEJLTmdlE"    # « Appel depuis le site »
+
 W3F_KEY   = "b8529af1-dc00-4478-a060-25b363122aaf"   # cle publique Web3Forms, prevue pour le code client
 MAPS      = "https://www.google.com/maps/search/?api=1&query=577A+les+maisons+rouges+27320+Nonancourt"
 # Coordonnees a caler EXACTEMENT sur l'epingle de la fiche Google avant mise en ligne.
@@ -1990,6 +1994,21 @@ def head(title, desc, canon, jsonld, ogimg="couvreur-nonancourt-longere-tuile-ne
 <link rel="stylesheet" href="{PRE}assets/style.css">
 <link rel="icon" href="{PRE}assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{PRE}assets/favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id={ADS_GTAG}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){{dataLayer.push(arguments);}}
+gtag('consent', 'default', {{
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  analytics_storage: 'denied', wait_for_update: 500
+}});
+gtag('set', 'url_passthrough', true);
+gtag('set', 'ads_data_redaction', true);
+gtag('js', new Date());
+gtag('config', '{ADS_GTAG}');
+// app.js lit ces etiquettes : build.py reste le seul endroit qui les definit.
+window.WM_CONV = {{devis:'{ADS_GTAG}/{ADS_CONV_DEVIS}', appel:'{ADS_GTAG}/{ADS_CONV_APPEL}'}};
+</script>
 <script type="application/ld+json">{jsonld}</script>
 </head>
 <body>
@@ -2891,6 +2910,45 @@ def main():
     version_assets()
 
 
+def bloc_gtag():
+    """La balise Google Ads, identique a celle que head() pose sur les pages
+    generees. L'accueil et les mentions legales s'editant a la main, elle est
+    reinjectee ici a chaque build : sans ca, la page la plus importante du
+    site, celle ou atterrit la publicite, ne compte aucune conversion."""
+    return (
+        f'<script async src="https://www.googletagmanager.com/gtag/js?id={ADS_GTAG}"></script>\n'
+        '<script>\n'
+        'window.dataLayer = window.dataLayer || [];\n'
+        'function gtag(){dataLayer.push(arguments);}\n'
+        "gtag('consent', 'default', {\n"
+        "  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',\n"
+        "  analytics_storage: 'denied', wait_for_update: 500\n"
+        '});\n'
+        "gtag('set', 'url_passthrough', true);\n"
+        "gtag('set', 'ads_data_redaction', true);\n"
+        "gtag('js', new Date());\n"
+        f"gtag('config', '{ADS_GTAG}');\n"
+        '// app.js lit ces etiquettes : build.py reste le seul endroit qui les definit.\n'
+        f"window.WM_CONV = {{devis:'{ADS_GTAG}/{ADS_CONV_DEVIS}', appel:'{ADS_GTAG}/{ADS_CONV_APPEL}'}};\n"
+        '</script>')
+
+
+def poser_gtag(html):
+    """Remplace le bloc s'il est deja la, l'insere avant le JSON-LD sinon."""
+    import re
+    bloc = bloc_gtag()
+    motif = re.compile(
+        r'<script async src="https://www\.googletagmanager\.com/gtag/js\?id=[^"]*"></script>\s*'
+        r'<script>.*?</script>', re.S)
+    if motif.search(html):
+        return motif.sub(lambda _: bloc, html, count=1)
+    if '<script type="application/ld+json">' in html:
+        return html.replace('<script type="application/ld+json">',
+                            bloc + '\n<script type="application/ld+json">', 1)
+    # Les mentions legales n'ont pas de JSON-LD : </head> existe partout.
+    return html.replace('</head>', bloc + '\n</head>', 1)
+
+
 def sync_home():
     """L'accueil s'edite a la main, sauf les ilots regeneres ici : le JSON-LD,
     l'index des communes, la grille des prestations et le pied de page."""
@@ -2973,7 +3031,18 @@ def sync_home():
     footer = footer[:footer.index("</footer>") + len("</footer>")]
     html = re.sub(r'<footer class="foot">.*?</footer>',
                   lambda m: footer, html, count=1, flags=re.S)
+    html = poser_gtag(html)
     open(path, "w").write(html)
+
+    # Les mentions legales s'editent aussi a la main. Faible trafic, mais un
+    # visiteur qui y passe puis appelle doit etre compte comme les autres.
+    ml = os.path.join(ROOT, "mentions-legales.html")
+    if os.path.exists(ml):
+        # Lire AVANT d'ouvrir en ecriture : en une seule expression, Python
+        # evalue open(ml, "w") d'abord, ce qui vide le fichier, et la lecture
+        # qui suit ne renvoie plus rien.
+        contenu = open(ml).read()
+        open(ml, "w").write(poser_gtag(contenu))
 
 
 if __name__ == "__main__":

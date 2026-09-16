@@ -283,7 +283,7 @@
             form.reset();
             msg.className = 'form__msg ok';
             msg.textContent = 'Message bien reçu. Nous vous rappelons rapidement.';
-            (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead' });
+            signale('generate_lead', 'devis');
           } else {
             msg.className = 'form__msg ko';
             msg.textContent = "L'envoi a échoué. Appelez-nous au 06 24 59 26 77.";
@@ -323,10 +323,21 @@
     calc.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
   }
 
+  /* Un evenement, deux destinataires : le dataLayer pour la trace, et
+     Google Ads pour la conversion. La balise peut etre bloquee par une
+     extension : on verifie avant d'appeler. */
+  function signale(evenement, cle) {
+    (window.dataLayer = window.dataLayer || []).push({ event: evenement });
+    var envoi = window.WM_CONV && window.WM_CONV[cle];
+    if (envoi && typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { send_to: envoi });
+    }
+  }
+
   /* ---------------------------------------------------------- tracking - */
   $$('[data-track="call"]').forEach(function (a) {
     a.addEventListener('click', function () {
-      (window.dataLayer = window.dataLayer || []).push({ event: 'phone_call' });
+      signale('phone_call', 'appel');
     });
   });
 
