@@ -18,12 +18,12 @@ PRE = "../"   # prefixe vers la racine, ajuste selon la profondeur de la page
 TEL_TXT   = "06 24 59 26 77"
 TEL_HREF  = "+33624592677"
 DOMAIN    = "https://www.wm-couverture.fr"
-ADDR      = "Route de Saint-Remy, 27320 Nonancourt"
+ADDR      = "577A les maisons rouges, 27320 Nonancourt"
 W3F_KEY   = "REMPLACER_PAR_VOTRE_CLE_WEB3FORMS"
-MAPS      = "https://www.google.com/maps/search/?api=1&query=Route+de+Saint-Remy+27320+Nonancourt"
+MAPS      = "https://www.google.com/maps/search/?api=1&query=577A+les+maisons+rouges+27320+Nonancourt"
 # Coordonnees a caler EXACTEMENT sur l'epingle de la fiche Google avant mise en ligne.
-GEO_LAT   = "48.76950"
-GEO_LON   = "1.20870"
+GEO_LAT   = "48.7632745"
+GEO_LON   = "1.2240144"
 PRICE     = "$$"
 # URL de la fiche Google, du Facebook, etc. Laisser vide tant qu'on ne les a pas :
 # une URL fausse dans sameAs fait plus de mal que pas de sameAs du tout.
@@ -2078,7 +2078,7 @@ def page_hero(eyebrow, h1a, h1b, lead, img, alt, urgent=False):
            ni les avis, ni les horaires. Meme bloc que la page d'accueil. -->
       <ul class="hero__trust phero__trust reveal" data-d="4">
         <li><b data-count="14">14</b> ans d'expérience</li>
-        <li><span class="stars stars--big" aria-label="cinq étoiles">★★★★★</span> Avis Google</li>
+        <li><span class="stars stars--big" aria-hidden="true">★★★★★</span> <b>5,0</b> sur <b>81</b> avis Google</li>
         <li><b>7</b>j/7, de 8 h à 21 h</li>
       </ul>
     </div>
@@ -2095,10 +2095,10 @@ def facts_row():
     return """<section class="facts facts--slim">
   <div class="wrap">
     <ul class="facts__row">
+      <li class="reveal"><b>81 avis, 5,0 sur 5</b><span>aucun avis en dessous de cinq étoiles</span></li>
       <li class="reveal"><b>Devis gratuit</b><span>nous venons mesurer et nous chiffrons</span></li>
       <li class="reveal" data-d="1"><b>Paiement en plusieurs fois</b><span>sur les gros chantiers</span></li>
       <li class="reveal" data-d="2"><b>7 j/7, 8 h à 21 h</b><span>et la nuit en cas de fuite</span></li>
-      <li class="reveal" data-d="3"><b>Père en fils</b><span>celui qui chiffre monte sur le toit</span></li>
     </ul>
   </div>
 </section>"""
@@ -2246,7 +2246,7 @@ def avis_pair(a, b):
   <div class="wrap">
     <header class="avis__head"><h2 class="reveal">Ce que disent <em>les clients</em></h2>
       <p class="reveal" data-d="1"><span class="stars stars--big" aria-hidden="true">★★★★★</span>
-        Cinq avis publiés sur notre fiche Google.</p></header>
+        <b>5,0 sur 81 avis</b> publiés sur sa fiche Google.</p></header>
     <div class="avis__grid avis__grid--pair">{q(*a)}{q(*b)}</div>
   </div>
 </section>"""
@@ -2340,7 +2340,7 @@ def foot():
     <div class="foot__col">
       <h3>Contact</h3>
       <a href="tel:{TEL_HREF}" data-track="call">{TEL_TXT}</a>
-      <a href="{MAPS}" target="_blank" rel="noopener">Route de Saint-Remy<br>27320 Nonancourt</a>
+      <a href="{MAPS}" target="_blank" rel="noopener">577A les maisons rouges<br>27320 Nonancourt</a>
       <span>Tous les jours 8 h à 21 h<br>Dépannage 24 h/24</span>
     </div>
   </div>
@@ -2377,7 +2377,7 @@ def ld_business():
             '"telephone":"+33624592677","url":"%s/","image":[%s],"priceRange":"%s",'
             '"currenciesAccepted":"EUR","paymentAccepted":"Especes, cheque, virement",'
             '"foundingDate":"2012","knowsLanguage":"fr-FR"%s,'
-            '"address":{"@type":"PostalAddress","streetAddress":"Route de Saint-Remy",'
+            '"address":{"@type":"PostalAddress","streetAddress":"577A les maisons rouges",'
             '"postalCode":"27320","addressLocality":"Nonancourt","addressRegion":"Normandie",'
             '"addressCountry":"FR"},'
             '"geo":{"@type":"GeoCoordinates","latitude":%s,"longitude":%s},'
@@ -2843,7 +2843,7 @@ def main():
            "(27320), dans l'Eure. Toiture, charpente, zinguerie, isolation, nettoyage et "
            "demoussage. 14 ans d'experience, depannage 24 h/24, devis gratuit.", "",
            "- Telephone : 06 24 59 26 77",
-           "- Adresse : Route de Saint-Remy, 27320 Nonancourt, France",
+           "- Adresse : 577A les maisons rouges, 27320 Nonancourt, France",
            "- Horaires : tous les jours de 8 h a 21 h, depannage 24 h/24",
            "- Zone : Eure (27) et Eure-et-Loir (28), autour de Nonancourt, Dreux, "
            "Verneuil d'Avre et d'Iton et Evreux", "",
