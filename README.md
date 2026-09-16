@@ -319,3 +319,16 @@ P
 
 `--keep` réutilise l'existant et **ne génère rien pour une source neuve** :
 après avoir ajouté une image, lancer `tools/images.py` sans `--keep`.
+
+## Chiffres à réviser
+
+Le nombre d'avis Google (**81**, note **5,0**) est écrit en dur sur 22 pages :
+rangée de preuve du hero, bandeau de réassurance, en-tête de la section avis.
+Il n'est **volontairement pas** balisé en `aggregateRating` : Google traite les
+avis d'une entreprise publiés sur son propre site comme auto-décernés, ce qui
+les rend inéligibles aux étoiles pour un `LocalBusiness` et expose à une action
+manuelle. À rafraîchir à la main quand le compteur aura bougé.
+
+L'adresse et les coordonnées viennent de la fiche Google, qui fait autorité
+pour le référencement local : `577A les maisons rouges, 27320 Nonancourt`,
+`48.7632745 / 1.2240144`.

@@ -46,3 +46,18 @@ aucun dépassement.
 Les campagnes sont importées **en pause**, volontairement. Les quatre points
 bloquants sont listés en fin de plan : site en ligne, clé Web3Forms, suivi des
 conversions, fiche Google liée.
+
+## Preuve sociale (ajouté le 08/09/2026)
+
+Fiche Google vérifiée : **Couvreur Nonancourt - Wm-couverture, 5,0 sur 81 avis**,
+dont 81 cinq étoiles et aucun en dessous.
+
+- `WM-04` : « Entreprise Familiale » (présent sur les 9 annonces, générique et
+  invérifiable) remplacé par **« 81 Avis 5/5 sur Google »**, 22 caractères.
+- `WM-06-extensions-accroche.csv` : 6 accroches × 4 campagnes. Les extensions
+  ne consomment aucun emplacement de titre.
+- Les **notes de vendeur** peuvent apparaître seules sous les annonces : Google
+  les tire de ses propres données, rien à déclarer.
+
+⚠️ **Le nombre d'avis est écrit en dur** dans les annonces ET sur 22 pages du
+site. À reprendre quand il aura sensiblement bougé (`5,0 sur 81`, `81 avis`).
