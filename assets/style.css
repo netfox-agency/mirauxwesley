@@ -481,7 +481,7 @@ p{margin:0}
 .phero__trust{margin-top:clamp(22px,3vw,32px)}
 @media (max-width:760px){
   .phero__trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
-  .phero__trust li:nth-child(2){grid-column:1/-1;order:-1}
+  
 }
 
 /* --------------------------------------------------- hub guides ------- */
@@ -865,7 +865,7 @@ body.lock{overflow:hidden}
   .hero__cta .btn{flex:1 1 100%}
   /* trois reperes qui se cassaient en 2 + 1 : etoiles en tete, chiffres dessous */
   .hero__trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
-  .hero__trust li:nth-child(2){grid-column:1/-1;order:-1}
+  
   .shot--detail{width:47%;right:-6px;bottom:-10px}
   .facts__row{grid-template-columns:1fr}
   .facts__row li{padding:16px 0 6px}
@@ -1740,4 +1740,40 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
 
 @media (prefers-reduced-motion:reduce){
   .gnote__lien{transition:none}
+}
+
+/* ── note Google dans le hero ───────────────────────────────────────────────
+   Elle etait en bas, troisieme d'une liste de trois, au meme poids que les
+   horaires. C'est pourtant la seule preuve qui ne vienne pas de nous. Elle
+   remonte donc juste avant les boutons, la ou le visiteur decide. */
+.hnote{
+  display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;
+  margin:0 0 26px;padding:8px 16px 8px 13px;border-radius:100px;
+  font-size:14.6px;color:var(--ink-2);
+  background:var(--card);box-shadow:inset 0 0 0 1px var(--rule);
+}
+.hnote .g-logo{width:19px;height:19px}
+.hnote__chiffre{
+  font-family:var(--f-dis);font-weight:700;font-size:20px;letter-spacing:-.03em;
+  color:var(--ink);line-height:1;
+}
+.hnote__txt b{font-weight:600;color:var(--ink)}
+
+/* Sur l'accueil le hero est une photo sombre : meme matiere que le bouton
+   translucide voisin, pour que la pastille appartienne a la scene. */
+.hnote--sombre{
+  color:rgba(255,255,255,.84);
+  background:rgba(255,255,255,.13);
+  -webkit-backdrop-filter:saturate(180%) blur(16px);
+  backdrop-filter:saturate(180%) blur(16px);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);
+}
+.hnote--sombre .hnote__chiffre,
+.hnote--sombre .hnote__txt b{color:#fff}
+.hnote--sombre .etoiles__vide svg{fill:rgba(255,255,255,.32)}
+
+@media (max-width:420px){
+  .hnote{font-size:13.8px;gap:8px;padding:7px 13px 7px 11px}
+  .hnote__chiffre{font-size:18px}
+  .etoiles--m{font-size:17px}
 }

@@ -2107,12 +2107,12 @@ def page_hero(eyebrow, h1a, h1b, lead, img, alt, urgent=False):
       <p class="eyebrow reveal">{eyebrow}</p>
       <h1 class="reveal" data-d="1">{h1a}<br>{h1b}</h1>
       <p class="phero__lead reveal" data-d="2">{lead}</p>
+      {hero_note()}
       <div class="phero__cta reveal" data-d="3">{cta}</div>
       <!-- Un clic paye atterrissait ici sans une seule preuve : ni les annees,
            ni les avis, ni les horaires. Meme bloc que la page d'accueil. -->
       <ul class="hero__trust phero__trust reveal" data-d="4">
         <li><b data-count="14">14</b> ans d'expérience</li>
-        <li><span class="stars stars--big" aria-hidden="true">★★★★★</span> <b>5,0</b> sur <b>81</b> avis Google</li>
         <li><b>7</b>j/7, de 8 h à 21 h</li>
       </ul>
     </div>
@@ -2343,6 +2343,25 @@ def bloc_avis(n=5, centre=True):
     <div class="gav__grid">{cartes}</div>
   </div>
 </section>"""
+
+
+def hero_note(sombre=False):
+    """La note Google, placee juste avant les boutons d'appel a l'action.
+
+    Elle etait en bas du hero, troisieme element d'une liste de trois, a poids
+    egal avec les horaires. C'est pourtant la seule preuve du lot qui ne vienne
+    pas de nous : 81 personnes l'ont ecrite, pas l'agence. Elle passe donc au
+    moment ou le visiteur decide, juste avant « Devis gratuit ».
+
+    Volontairement sans lien : sur la page ou atterrit la publicite, on
+    n'ouvre pas une porte de sortie vers Google au moment de la decision. Le
+    lien vers la fiche est plus bas, dans la section des avis."""
+    cls = " hnote--sombre" if sombre else ""
+    return (
+     f'<p class="hnote{cls} reveal" data-d="2">{G_LOGO}'
+     f'<span class="hnote__chiffre">{note_fr()}</span>'
+     f'{etoiles(AVIS_NOTE, "m")}'
+     f'<span class="hnote__txt"><b>{AVIS_TOTAL} avis</b> Google</span></p>')
 
 
 def avis_vedette():
@@ -3144,6 +3163,15 @@ def sync_home():
     html = re.sub(r'(<p class="quote__by reveal" data-d="1">)[^<]*(<span>)',
                   lambda m: m.group(1) + v["auteur"] + " " + m.group(2),
                   html, count=1)
+
+    # La note Google remonte avant les boutons, et quitte la liste du bas :
+    # la repeter deux fois dans le meme ecran l'affaiblit au lieu de l'appuyer.
+    html = re.sub(r'\s*<p class="hnote[^"]*"[^>]*>.*?</p>', "", html, flags=re.S)
+    html = re.sub(r'(</p>\s*)(<div class="hero__cta)',
+                  lambda m: "</p>\n\n    " + hero_note(sombre=True) + "\n\n    " + m.group(2),
+                  html, count=1, flags=re.S)
+    html = re.sub(r'\s*<li><span class="stars stars--big"[^>]*>.*?avis Google</li>',
+                  "", html, count=1, flags=re.S)
 
     # Le lien carte de l'accueil pointait encore sur l'ancienne adresse alors
     # que le texte affichait la bonne : l'un ouvrait Route de Saint-Remy,
