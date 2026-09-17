@@ -1,0 +1,46 @@
+{
+  "_lisez_moi": "Source unique pour la note, le nombre d'avis et les avis affiches. Regenere par `python3 tools/avis.py --cle AIza...` depuis l'API Google Places. Ne pas editer a la main une fois la cle en place : la prochaine execution ecrase.",
+  "recupere_le": "2026-09-04",
+  "fiche": "https://maps.google.com/?cid=17637010817244759536",
+  "note": 5.0,
+  "total": 81,
+  "source": "saisie_manuelle_a_verifier",
+  "_alerte_source": "Ces avis ont ete poses a la main le 04/09/2026 sans trace de leur origine, et le premier nomme « Monsieur Mouche », qui n'est pas le gerant. Tant que tools/avis.py n'a pas tourne avec une vraie cle, on ne peut pas garantir qu'ils viennent bien de la fiche de Wesley. A remplacer des que possible.",
+  "avis": [
+    {
+      "auteur": "André Y.",
+      "initiale": "A",
+      "note": 5,
+      "quand": "",
+      "texte": "Un grand merci à Monsieur Mouche pour son approche commerciale et son sens du service. Pour une réparation de gouttières et une fuite de cheminée, une réalisation de devis ultra rapide, suivie d'une intervention dans un délai très court. Bravo et merci. En cas de besoin, je referai sans hésiter appel à ses services."
+    },
+    {
+      "auteur": "Abiba B.",
+      "initiale": "A",
+      "note": 5,
+      "quand": "",
+      "texte": "Super travail. Très professionnel et surtout tout est bien expliqué. On comprend tout, même si on n'est pas du métier. Les artisans sont très efficaces, organisés et très sympathiques."
+    },
+    {
+      "auteur": "Joy L.",
+      "initiale": "J",
+      "note": 5,
+      "quand": "",
+      "texte": "Nous avons effectué un entretien de notre toiture et nous sommes très satisfaits. C'est comme si nous avions un toit neuf."
+    },
+    {
+      "auteur": "Anne D.",
+      "initiale": "A",
+      "note": 5,
+      "quand": "",
+      "texte": "Efficacité, professionnalisme, qualité du travail, devis rapide. Je recommande sans hésiter WM Couverture."
+    },
+    {
+      "auteur": "Gaylord A.",
+      "initiale": "G",
+      "note": 5,
+      "quand": "",
+      "texte": "Quelle est la différence entre un bon coin à champignons et un bon artisan ? Le bon artisan est à faire connaître à tous ! C'est fait."
+    }
+  ]
+}

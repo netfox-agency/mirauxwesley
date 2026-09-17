@@ -9,7 +9,8 @@ le sitemap, le robots.txt et les règles de redirection 301.
 L'accueil (index.html) n'est PAS généré : il s'édite à la main.
 Les pages produites ne s'éditent jamais directement, elles sont écrasées.
 """
-import os, re, shutil
+import os
+import pathlib, re, shutil
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PRE = "../"   # prefixe vers la racine, ajuste selon la profondeur de la page
@@ -54,17 +55,26 @@ PHONE = ('<svg viewBox="0 0 20 20" aria-hidden="true" class="ico"><path d="M4.2 
          '1.3a11 11 0 0 0 4.2 4.2l1.3-1.9 3.8 1.5v3.1a1.4 1.4 0 0 1-1.5 1.4A13.6 13.6 0 0 1 2.8 '
          '4.3a1.4 1.4 0 0 1 1.4-1.5Z"/></svg>')
 
-AVIS = [
-    ("André Y.", "Un grand merci à Monsieur Mouche pour son approche commerciale et son sens du "
-                 "service. Pour une réparation de gouttières et une fuite de cheminée, une réalisation "
-                 "de devis ultra rapide, suivie d'une intervention dans un délai très court."),
-    ("Joy L.",   "Nous sommes très satisfaits de leur travail. Entreprise sérieuse et ponctuelle. "
-                 "C'est comme si nous avions un toit neuf."),
-    ("Abiba B.", "Super travail. Très professionnel et surtout tout est bien expliqué. On comprend "
-                 "tout, même si on n'est pas du métier."),
-    ("Anne D.",  "Efficacité, professionnalisme, qualité du travail, devis rapide. Je recommande "
-                 "sans hésiter WM Couverture."),
-]
+# ── avis Google ────────────────────────────────────────────────────────────
+# Source unique : avis.json, regenere par `python3 tools/avis.py --cle AIza...`
+# depuis l'API Google Places. Rien ici n'ecrit le nombre d'avis en dur : c'est
+# ce qui garantit qu'il reste a jour partout d'un seul coup.
+import json as _json
+_AVIS_JSON = _json.loads((pathlib.Path(__file__).resolve().parent / "avis.json")
+                         .read_text(encoding="utf-8"))
+AVIS_NOTE  = _AVIS_JSON["note"]                 # 5.0
+AVIS_TOTAL = _AVIS_JSON["total"]                # 81
+AVIS_FICHE = _AVIS_JSON["fiche"]
+AVIS       = _AVIS_JSON["avis"]
+
+def note_fr():
+    """5.0 -> « 5,0 ». Une note entiere reste ecrite avec sa decimale : c'est
+    ainsi que Google l'affiche, et c'est ce que le visiteur reconnait."""
+    return f"{AVIS_NOTE:.1f}".replace(".", ",")
+
+def avis_resume():
+    return f"{note_fr()} sur {AVIS_TOTAL} avis"
+
 
 # ──────────────────────────────────────────────────────────── services ─────
 SERVICES = [
@@ -2119,7 +2129,7 @@ def facts_row():
     return """<section class="facts facts--slim">
   <div class="wrap">
     <ul class="facts__row">
-      <li class="reveal"><b>81 avis, 5,0 sur 5</b><span>aucun avis en dessous de cinq étoiles</span></li>
+      <li class="reveal"><b>{AVIS_TOTAL} avis, {note_fr()} sur 5</b><span>aucun avis en dessous de cinq étoiles</span></li>
       <li class="reveal"><b>Devis gratuit</b><span>nous venons mesurer et nous chiffrons</span></li>
       <li class="reveal" data-d="1"><b>Paiement en plusieurs fois</b><span>sur les gros chantiers</span></li>
       <li class="reveal" data-d="2"><b>7 j/7, 8 h à 21 h</b><span>et la nuit en cas de fuite</span></li>
@@ -2262,16 +2272,108 @@ def etapes():
 </section>"""
 
 
+# ── rendu des avis facon Google ────────────────────────────────────────────
+# Le visiteur doit reconnaitre d'un coup d'oeil que ce sont de vrais avis
+# Google et pas des temoignages ecrits par l'agence. Trois signaux suffisent :
+# le G quadricolore, les etoiles ambre de Google (#FBBC04) et le lien vers la
+# fiche. Les conditions d'utilisation de Google imposent de toute facon
+# l'attribution et le lien, donc ces signaux ne sont pas decoratifs.
+
+G_LOGO = (
+ '<svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true">'
+ '<path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 '
+ '5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>'
+ '<path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 '
+ '2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>'
+ '<path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34'
+ 'C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>'
+ '<path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 '
+ '24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>')
+
+_ETOILE = ('<svg viewBox="0 0 20 19" aria-hidden="true"><path d="M10 0l2.9 6.2 6.6.9-4.8 4.8 '
+           '1.2 6.9L10 15.5 4.1 18.8l1.2-6.9L.5 7.1l6.6-.9z"/></svg>')
+
+
+def etoiles(note=5.0, taille="s"):
+    """Cinq etoiles avec remplissage partiel. Le pourcentage est calcule ici et
+    pas en CSS : une note de 4,6 doit remplir 92 % et non arrondir a 5."""
+    pct = max(0.0, min(1.0, float(note) / 5.0)) * 100
+    return (f'<span class="etoiles etoiles--{taille}" aria-hidden="true">'
+            f'<span class="etoiles__vide">{_ETOILE * 5}</span>'
+            f'<span class="etoiles__plein" style="width:{pct:.4g}%">{_ETOILE * 5}</span>'
+            '</span>')
+
+
+def avis_carte(a, i=0):
+    """Une carte d'avis. La date est omise si on ne l'a pas : mieux vaut pas de
+    date qu'une date inventee."""
+    quand = f'<span class="gav__quand">{a["quand"]}</span>' if a.get("quand") else ""
+    return (
+     f'<figure class="gav reveal" data-d="{min(i, 4)}">'
+     f'<header class="gav__h">'
+     f'<span class="gav__pastille" aria-hidden="true">{a["initiale"]}</span>'
+     f'<span class="gav__qui"><b>{a["auteur"]}</b>{quand}</span>'
+     f'</header>'
+     f'{etoiles(a.get("note", 5))}'
+     f'<blockquote>{a["texte"]}</blockquote>'
+     '</figure>')
+
+
+def avis_bandeau(centre=False):
+    """La note globale. C'est la seule partie qui doit absolument etre juste :
+    elle vient d'avis.json, donc de l'API, jamais d'une saisie."""
+    cls = " gnote--centre" if centre else ""
+    return (
+     f'<div class="gnote{cls} reveal">{G_LOGO}'
+     f'<span class="gnote__chiffre">{note_fr()}</span>'
+     f'{etoiles(AVIS_NOTE, "m")}'
+     f'<span class="gnote__total">sur <b>{AVIS_TOTAL} avis</b> Google</span>'
+     f'<a class="gnote__lien" href="{AVIS_FICHE}" target="_blank" rel="noopener nofollow">'
+     f'Les lire sur Google{ARROW}</a></div>')
+
+
+def bloc_avis(n=5, centre=True):
+    cartes = "".join(avis_carte(a, i) for i, a in enumerate(AVIS[:n]))
+    return f"""<section class="avis" id="avis">
+  <div class="wrap">
+    <header class="avis__head avis__head--center">
+      <h2 class="reveal">Ce que disent <em>les clients</em></h2>
+      {avis_bandeau(centre)}
+    </header>
+    <div class="gav__grid">{cartes}</div>
+  </div>
+</section>"""
+
+
+def avis_vedette():
+    """L'avis mis en exergue sur l'accueil. On prend le plus court qui reste
+    substantiel : la citation en grand doit tenir sur trois lignes, et un avis
+    de trois cents signes casse la mise en page. Choix automatique, donc il
+    survit au remplacement des avis par les vrais."""
+    candidats = [a for a in AVIS if 60 <= len(a["texte"]) <= 220] or AVIS
+    return min(candidats, key=lambda a: len(a["texte"]))
+
+
+def citation_html(a):
+    """Met la derniere phrase en valeur. On ne reformule rien : on choisit
+    seulement ou couper, sinon on ferait dire a un client ce qu'il n'a pas
+    ecrit."""
+    import re as _re
+    phrases = [x.strip() for x in _re.split(r'(?<=[.!?])\s+', a["texte"].strip()) if x.strip()]
+    if len(phrases) < 2:
+        return a["texte"]
+    return " ".join(phrases[:-1]) + f' <em>{phrases[-1]}</em>'
+
+
 def avis_pair(a, b):
-    def q(n, t):
-        return (f'<figure class="avis__q reveal"><blockquote>{t}</blockquote>'
-                f'<figcaption>{n} <span>avis Google</span></figcaption></figure>')
+    """Version courte pour les pages internes : deux avis, meme habillage."""
     return f"""<section class="avis">
   <div class="wrap">
-    <header class="avis__head"><h2 class="reveal">Ce que disent <em>les clients</em></h2>
-      <p class="reveal" data-d="1"><span class="stars stars--big" aria-hidden="true">★★★★★</span>
-        <b>5,0 sur 81 avis</b> publiés sur sa fiche Google.</p></header>
-    <div class="avis__grid avis__grid--pair">{q(*a)}{q(*b)}</div>
+    <header class="avis__head avis__head--center">
+      <h2 class="reveal">Ce que disent <em>les clients</em></h2>
+      {avis_bandeau(True)}
+    </header>
+    <div class="gav__grid gav__grid--pair">{avis_carte(a, 0)}{avis_carte(b, 1)}</div>
   </div>
 </section>"""
 
@@ -2370,7 +2472,7 @@ def foot():
   </div>
   <div class="wrap foot__bar">
     <p>© <span id="year">2026</span> WM Couverture. Tous droits réservés.</p>
-    <p><a href="{PRE}plan-du-site/">Plan du site</a> <span aria-hidden="true">·</span> <a href="{PRE}mentions-legales.html">Mentions légales</a></p>
+    <p><a href="{PRE}plan-du-site/">Plan du site</a> <span aria-hidden="true">·</span> <a href="{PRE}mentions-legales.html">Mentions légales</a> <span aria-hidden="true">·</span> <a href="{PRE}politique-de-confidentialite.html">Confidentialité</a></p>
   </div>
 </footer>
 <div class="callbar" id="callbar">
@@ -3031,13 +3133,42 @@ def sync_home():
     footer = footer[:footer.index("</footer>") + len("</footer>")]
     html = re.sub(r'<footer class="foot">.*?</footer>',
                   lambda m: footer, html, count=1, flags=re.S)
+    # La section avis et la citation viennent d'avis.json : le nombre d'avis
+    # ne doit exister qu'a un seul endroit, sinon il se perime par morceaux.
+    html = re.sub(r'<section class="avis" id="avis">.*?</section>',
+                  lambda m: bloc_avis(), html, count=1, flags=re.S)
+    v = avis_vedette()
+    html = re.sub(r'(<blockquote class="reveal">\s*<span class="quote__mark"[^>]*>[^<]*</span>).*?(</blockquote>)',
+                  lambda m: m.group(1) + "\n      " + citation_html(v) + "\n    " + m.group(2),
+                  html, count=1, flags=re.S)
+    html = re.sub(r'(<p class="quote__by reveal" data-d="1">)[^<]*(<span>)',
+                  lambda m: m.group(1) + v["auteur"] + " " + m.group(2),
+                  html, count=1)
+
+    # Le lien carte de l'accueil pointait encore sur l'ancienne adresse alors
+    # que le texte affichait la bonne : l'un ouvrait Route de Saint-Remy,
+    # l'autre annoncait les maisons rouges.
+    html = re.sub(r'https://www\.google\.com/maps/search/\?api=1&query=[^"]*',
+                  lambda m: MAPS.replace("&", "&"), html)
+
+    # Derniere mention du nombre d'avis ecrite en dur dans l'accueil.
+    html = re.sub(r'<b>\d+ avis, [\d,]+ sur 5</b>',
+                  lambda m: f'<b>{AVIS_TOTAL} avis, {note_fr()} sur 5</b>', html)
+
     html = poser_gtag(html)
     open(path, "w").write(html)
 
     # Les mentions legales s'editent aussi a la main. Faible trafic, mais un
     # visiteur qui y passe puis appelle doit etre compte comme les autres.
+    for nom in ("mentions-legales.html", "politique-de-confidentialite.html"):
+        f = os.path.join(ROOT, nom)
+        if not os.path.exists(f):
+            continue
+        contenu_f = open(f).read()
+        open(f, "w").write(poser_gtag(contenu_f))
+
     ml = os.path.join(ROOT, "mentions-legales.html")
-    if os.path.exists(ml):
+    if False:
         # Lire AVANT d'ouvrir en ecriture : en une seule expression, Python
         # evalue open(ml, "w") d'abord, ce qui vide le fichier, et la lecture
         # qui suit ne renvoie plus rien.
