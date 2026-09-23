@@ -3714,6 +3714,395 @@ def reperes_bloc(ville, nom_ville):
   </div>
 </section>"""
 
+# ── pages prestation x commune ─────────────────────────────────────────────
+# L'axe qui capte « demoussage toiture Dreux », une recherche differente de
+# « couvreur Dreux ». C'est aussi l'endroit exact ou l'on derape : une page
+# par combinaison possible, c'est une page satellite, et Google sanctionne
+# tout le domaine, pas seulement les pages fautives.
+#
+# Garde-fous appliques :
+#   · le modele local-service fixe l'alerte a 30 pages de lieu et l'ARRET a
+#     50. Nous en avons 12, on en ajoute 8, soit 20. On reste sous l'alerte.
+#   · une page n'existe que si la combinaison a une realite : les quatre
+#     communes les plus peuplees, les deux prestations les plus demandees.
+#   · chaque page porte du texte ECRIT pour elle, pas un gabarit a variables.
+#     Le seuil d'une page de zone desservie est 500 mots et 40 % d'unicite.
+PAIRES = [
+ dict(svc="demoussage-toiture", ville="couvreur-dreux",
+      nav="Démoussage à Dreux",
+      title="Démoussage de toiture à Dreux (28100)",
+      desc="Démoussage et nettoyage de toiture à Dreux : maisons de ville, pavillons et "
+           "couvertures anciennes. Visite et devis gratuits, entreprise installée à 13 km.",
+      h1=("Démoussage de <em>toiture</em>", "à Dreux"),
+      img="demoussage-toiture-mousse-echafaudage.webp",
+      imgalt="Démoussage d'une toiture envahie de mousse depuis un échafaudage",
+      pourquoi=["Dreux est bâtie dans une cuvette, au confluent de la Blaise et de l'Eure, et "
+                "l'humidité y stagne plus longtemps qu'en plateau. Les versants nord des maisons "
+                "du centre reverdissent vite, d'autant que beaucoup sont mitoyennes et n'ont "
+                "aucun ensoleillement direct d'un côté.",
+                "L'autre facteur est l'âge du bâti. Le centre ancien et les quartiers des années "
+                "soixante-dix portent des tuiles qui ont déjà largement perdu leur engobe. Une "
+                "tuile poreuse retient l'eau, sèche mal, et devient un support idéal pour la "
+                "mousse : le cycle s'accélère tout seul."],
+      surplace=["Sur les maisons de ville mitoyennes, le sujet n'est pas le produit, c'est "
+                "l'accès. Pas de recul devant, du stationnement, parfois un jardin arrière "
+                "inaccessible depuis la rue. Nous chiffrons l'échafaudage ou la nacelle "
+                "séparément pour que vous sachiez ce que vous payez.",
+                "Sur les pavillons des quartiers pavillonnaires, c'est plus simple et souvent "
+                "traitable à l'échelle, ce qui change nettement la facture.",
+                "Ce que nous voyons le plus souvent à Dreux : des gouttières pleines de terre "
+                "végétale, dans lesquelles poussent des plantes. Elles se vident au passage, "
+                "sinon tout ce qu'on décroche du toit vient les boucher."],
+      faq=[("Faut-il un échafaudage pour une maison de ville à Dreux ?",
+            "Souvent oui, dès qu'il n'y a pas de recul ou que la hauteur dépasse un étage. Nous "
+            "le disons à la visite et nous le chiffrons à part : c'est fréquemment le premier "
+            "poste de la facture, et il n'a rien à voir avec la toiture elle-même."),
+           ("Vous intervenez dans les quartiers ou seulement au centre ?",
+            "Partout sur la commune, ainsi qu'à Vernouillet, Sainte-Gemme-Moronval et "
+            "Cherisy. Dreux est à un quart d'heure de l'atelier, c'est dans notre rayon "
+            "quotidien.")]),
+
+ dict(svc="demoussage-toiture", ville="couvreur-evreux",
+      nav="Démoussage à Évreux",
+      title="Démoussage de toiture à Évreux (27000)",
+      desc="Démoussage et nettoyage de toiture à Évreux et dans son agglomération. "
+           "Traitement anti-mousse, gouttières comprises, devis gratuit après visite.",
+      h1=("Démoussage de <em>toiture</em>", "à Évreux"),
+      img="tuiles-mousse-vegetation.webp",
+      imgalt="Tuiles anciennes envahies de mousse et de végétation",
+      pourquoi=["Évreux s'étend sur les coteaux de l'Iton, et l'exposition change complètement "
+                "d'un quartier à l'autre. Les maisons adossées aux versants boisés, côté "
+                "Navarre ou vers la forêt, reçoivent des feuilles toute l'automne et gardent "
+                "l'humidité : elles se remoussent deux fois plus vite que celles du plateau.",
+                "C'est aussi la ville la plus éloignée de notre zone habituelle. Nous y allons "
+                "régulièrement, mais nous groupons les interventions : pour un démoussage, "
+                "c'est sans conséquence, ce n'est pas une urgence."],
+      surplace=["Le bâti d'Évreux est le plus varié de notre secteur : centre reconstruit "
+                "d'après-guerre, faubourgs anciens, grands lotissements des années soixante-dix "
+                "et quatre-vingt. Chacun demande une approche différente, et surtout une "
+                "pression différente.",
+                "Sur les toitures d'après-guerre en tuile mécanique, le piège est la "
+                "sur-pression : ces tuiles sont souvent minces et la haute pression les décape "
+                "sans qu'on s'en aperçoive tout de suite. Nous adaptons, systématiquement.",
+                "Sur les maisons proches de la forêt, le démoussage seul ne suffit pas "
+                "longtemps : il faut aussi dégager les branches qui surplombent, sinon le toit "
+                "reverdit en deux ans."],
+      faq=[("Vous vous déplacez vraiment jusqu'à Évreux ?",
+            "Oui, régulièrement. C'est à 38 km de l'atelier, environ quarante minutes. Comptez "
+            "quelques jours d'attente pour un rendez-vous de devis, parce que nous groupons les "
+            "déplacements sur ce secteur."),
+           ("Le démoussage tient combien de temps ici ?",
+            "Trois à cinq ans sur une maison dégagée, parfois deux seulement sous les arbres ou "
+            "sur un versant nord permanent. Nous vous le disons à la visite plutôt que de "
+            "promettre la même durée partout.")]),
+
+ dict(svc="demoussage-toiture", ville="couvreur-vernouillet",
+      nav="Démoussage à Vernouillet",
+      title="Démoussage de toiture à Vernouillet (28500)",
+      desc="Démoussage de toiture à Vernouillet : pavillons, maisons de plain-pied et "
+           "couvertures des années 70-90. Nettoyage, traitement et gouttières. Devis gratuit.",
+      h1=("Démoussage de <em>toiture</em>", "à Vernouillet"),
+      img="toiture-alteree-lichens.webp",
+      imgalt="Toiture ancienne altérée et couverte de lichens",
+      pourquoi=["Vernouillet est largement pavillonnaire, et c'est une bonne nouvelle pour le "
+                "démoussage : beaucoup de maisons de plain-pied ou à un étage, dégagées sur "
+                "leurs quatre côtés, accessibles à l'échelle. Le poste échafaudage, qui plombe "
+                "les factures en centre-ville, disparaît souvent ici.",
+                "En revanche, le parc date en grande majorité des années soixante-dix à "
+                "quatre-vingt-dix. Ces couvertures en tuile mécanique arrivent aujourd'hui "
+                "autour de cinquante ans : c'est l'âge où la porosité augmente nettement et où "
+                "la mousse s'installe pour de bon."],
+      surplace=["Sur ce type de toiture, le vrai enjeu du démoussage n'est pas l'esthétique, "
+                "c'est de savoir si la tuile est encore récupérable. Nous en descendons deux "
+                "et nous les manipulons devant vous : si elles se cassent entre les doigts, un "
+                "démoussage est de l'argent dépensé sur un toit à refaire, et nous le disons.",
+                "Quand la couverture est encore saine, c'est au contraire le moment idéal : un "
+                "démoussage suivi d'un hydrofuge sur une tuile de cet âge peut repousser la "
+                "réfection de plusieurs années.",
+                "Les lotissements de Vernouillet ont souvent des toitures identiques sur toute "
+                "une rue. Quand plusieurs voisins font en même temps, l'échafaudage et le "
+                "déplacement se partagent : cela vaut la peine d'en parler entre vous."],
+      faq=[("Mes voisins ont le même toit, peut-on grouper ?",
+            "Oui, et c'est fréquent dans les lotissements. Le déplacement et parfois le matériel "
+            "se mutualisent. Dites-le-nous à la visite, nous chiffrons en conséquence."),
+           ("Comment savoir si mon toit vaut encore un démoussage ?",
+            "En montant et en manipulant deux tuiles. Une tuile saine se déplace, une tuile "
+            "gélive se fend. C'est le seul test qui vaille, et il se fait devant vous.")]),
+
+ dict(svc="demoussage-toiture", ville="couvreur-verneuil-avre-iton",
+      nav="Démoussage à Verneuil",
+      title="Démoussage de toiture à Verneuil d'Avre et d'Iton",
+      desc="Démoussage de toiture à Verneuil d'Avre et d'Iton : centre ancien, tuile plate et "
+           "ardoise. Nettoyage adapté au matériau, traitement anti-mousse. Devis gratuit.",
+      h1=("Démoussage de <em>toiture</em>", "à Verneuil d'Avre et d'Iton"),
+      img="tuiles-anciennes-patinees.webp",
+      imgalt="Tuiles anciennes patinées par le temps sur une toiture",
+      pourquoi=["Verneuil a un centre ancien dense, avec des maisons à pans de bois, de la "
+                "petite tuile plate et de l'ardoise. Ce n'est pas le même travail que sur un "
+                "pavillon : sur de la petite tuile plate de pays, chaque élément est fragile et "
+                "la circulation sur le toit doit être limitée au strict nécessaire.",
+                "Une partie du centre se trouve en périmètre de monument historique. Cela ne "
+                "concerne pas un simple nettoyage, mais cela compte dès qu'il faut remplacer des "
+                "tuiles au passage : le modèle et la teinte peuvent être imposés."],
+      surplace=["Sur l'ardoise, le démoussage se pense autrement. L'ardoise n'est pas poreuse : "
+                "les mousses s'accrochent en surface et aux crochets, pas dans la matière. On "
+                "nettoie plus doucement, et l'hydrofuge n'a aucun intérêt — s'il vous est "
+                "proposé sur de l'ardoise, posez des questions.",
+                "Sur la petite tuile plate, le risque est mécanique : on en casse en marchant. "
+                "Nous travaillons depuis des échelles de couvreur réparties, pas en circulant "
+                "librement, et nous prévoyons toujours un petit stock de tuiles de "
+                "remplacement au devis.",
+                "Verneuil est à 32 km de l'atelier. Nous y groupons les visites, ce qui décale "
+                "un rendez-vous de devis de quelques jours."],
+      faq=[("Peut-on démousser une toiture en ardoise ?",
+            "Oui, mais différemment : nettoyage doux, sans haute pression, et sans hydrofuge, "
+            "qui ne sert à rien sur un matériau non poreux. Le risque principal est de "
+            "desceller des crochets."),
+           ("Ma maison est en secteur protégé, cela change-t-il quelque chose ?",
+            "Pas pour le nettoyage lui-même. Cela compte si des tuiles doivent être remplacées : "
+            "le modèle et la teinte peuvent être imposés, et il faut alors s'approvisionner en "
+            "conséquence.")]),
+
+ dict(svc="renovation-toiture", ville="couvreur-dreux",
+      nav="Rénovation de toiture à Dreux",
+      title="Rénovation de toiture à Dreux (28100)",
+      desc="Réfection de toiture à Dreux : dépose, contrôle de charpente, écran de sous-toiture "
+           "et couverture neuve en tuile, ardoise ou acier. Devis détaillé poste par poste.",
+      h1=("Rénovation de <em>toiture</em>", "à Dreux"),
+      img="couvreur-dreux-maison-de-ville-toiture.webp",
+      imgalt="Toiture de maison de ville mitoyenne à Dreux",
+      pourquoi=["Refaire un toit à Dreux pose deux questions que l'on ne rencontre pas en "
+                "campagne : l'accès et l'urbanisme. En centre ancien, l'échafaudage empiète "
+                "souvent sur le trottoir ou la chaussée, ce qui demande une autorisation de "
+                "voirie et modifie le planning.",
+                "Côté urbanisme, Dreux relève d'Eure-et-Loir : la déclaration préalable se "
+                "dépose à la mairie, et une partie du centre se trouve en périmètre de monument "
+                "historique. Le dossier passe alors devant l'architecte des Bâtiments de France "
+                "à Chartres, ce qui allonge l'instruction à deux mois et peut imposer un "
+                "matériau ou une teinte."],
+      surplace=["Sur une maison mitoyenne, la dépose demande une organisation différente : on "
+                "ne peut pas ouvrir largement et laisser le chantier en l'état. On avance par "
+                "sections, et le logement est hors d'eau chaque soir.",
+                "Les raccords avec les voisins sont le point technique de ces toitures : "
+                "solins, noues communes, murs de refend qui dépassent en pignon. C'est là que "
+                "les fuites apparaissent, et c'est ce que nous regardons en premier à la visite.",
+                "Nous chiffrons poste par poste — dépose, évacuation, charpente, écran, "
+                "couverture, zinguerie, échafaudage — précisément pour que vous puissiez "
+                "comparer avec un autre devis ligne à ligne. Un prix global ne se compare à rien."],
+      faq=[("Faut-il une autorisation pour refaire un toit à Dreux ?",
+            "Une déclaration préalable, oui, dès lors que l'aspect extérieur change — et changer "
+            "de tuile change l'aspect. Comptez un mois d'instruction, deux en périmètre de "
+            "monument historique. Nous montons le dossier avec vous."),
+           ("Combien de temps dure le chantier sur une maison de ville ?",
+            "Une à deux semaines de présence pour une maison courante, hors intempéries, plus le "
+            "montage et le démontage de l'échafaudage. Le délai global depuis la signature est "
+            "plutôt de deux à quatre mois, à cause de l'autorisation et de l'approvisionnement.")]),
+
+ dict(svc="renovation-toiture", ville="couvreur-evreux",
+      nav="Rénovation de toiture à Évreux",
+      title="Rénovation de toiture à Évreux (27000)",
+      desc="Réfection complète de toiture à Évreux : charpente contrôlée, écran de "
+           "sous-toiture, couverture neuve. Entreprise familiale de l'Eure, devis détaillé.",
+      h1=("Rénovation de <em>toiture</em>", "à Évreux"),
+      img="refection-toiture-pavillon-terminee.webp",
+      imgalt="Réfection de toiture de pavillon terminée",
+      pourquoi=["Évreux est dans l'Eure, notre département. Cela simplifie une partie du "
+                "dossier : la déclaration préalable se dépose à la mairie et, en périmètre de "
+                "monument historique, c'est l'unité départementale de l'architecture et du "
+                "patrimoine de l'Eure qui donne l'avis, à Évreux même.",
+                "Le parc immobilier de la ville comporte beaucoup de constructions "
+                "d'après-guerre et des grands lotissements des années soixante-dix. Ces "
+                "couvertures arrivent aujourd'hui en fin de vie toutes en même temps, souvent "
+                "sans écran de sous-toiture."],
+      surplace=["Sur ces maisons, la réfection est l'occasion unique de rattraper deux retards "
+                "d'un coup : poser l'écran de sous-toiture qui n'a jamais existé, et isoler. "
+                "Faire les deux séparément coûte nettement plus cher, parce que l'échafaudage et "
+                "la dépose se paient deux fois.",
+                "La charpente de ces constructions est généralement saine, sauf aux abouts de "
+                "chevrons en bas de pente, là où la gouttière a débordé pendant des années. "
+                "C'est la reprise la plus fréquente, et elle se chiffre à l'avance si on la "
+                "constate à la visite.",
+                "Évreux est à 38 km, environ quarante minutes. Pour un chantier de plusieurs "
+                "jours, la distance ne change rien à l'organisation : l'équipe reste sur place "
+                "la journée."],
+      faq=[("Vous prenez des chantiers complets jusqu'à Évreux ?",
+            "Oui. Pour une réfection, la distance n'est pas un obstacle : l'équipe reste sur "
+            "place toute la journée. C'est pour les petites interventions que l'éloignement "
+            "compte."),
+           ("Peut-on isoler en même temps que la réfection ?",
+            "C'est même le meilleur moment, et le seul où l'isolation par l'extérieur est "
+            "possible sans surcoût de dépose. Nous chiffrons les deux séparément pour que vous "
+            "voyiez ce que coûte réellement l'isolation.")]),
+
+ dict(svc="renovation-toiture", ville="couvreur-vernouillet",
+      nav="Rénovation de toiture à Vernouillet",
+      title="Rénovation de toiture à Vernouillet (28500)",
+      desc="Réfection de toiture à Vernouillet : pavillons et maisons des années 70-90. "
+           "Dépose, écran de sous-toiture, couverture neuve. Devis détaillé poste par poste.",
+      h1=("Rénovation de <em>toiture</em>", "à Vernouillet"),
+      img="renovation-toiture-charpente-liteaux-neufs.webp",
+      imgalt="Charpente et liteaux neufs sur une toiture en cours de rénovation",
+      pourquoi=["Vernouillet est un cas d'école : un parc pavillonnaire massivement construit "
+                "entre 1970 et 1990, avec des couvertures en tuile mécanique qui atteignent "
+                "toutes leur limite en même temps. Beaucoup de ces toits n'ont jamais eu d'écran "
+                "de sous-toiture, parce que ce n'était pas la pratique à l'époque.",
+                "Conséquence concrète : une tuile déplacée par le vent ne pardonne pas. L'eau "
+                "tombe directement dans les combles, sur l'isolant, et le propriétaire ne s'en "
+                "aperçoit qu'à la tache au plafond, parfois des mois plus tard."],
+      surplace=["Sur ces maisons, la réfection est simple techniquement : charpente en fermettes "
+                "industrielles généralement saine, pentes régulières, accès dégagé. C'est ce qui "
+                "permet un chantier court et un prix maîtrisé.",
+                "Le point de vigilance est la fermette elle-même : on ne coupe jamais un élément "
+                "d'une charpente industrielle sans calcul, même pour passer un conduit ou "
+                "aménager. Chaque pièce participe à l'équilibre de l'ensemble.",
+                "L'autre sujet est l'isolation des combles perdus, presque toujours en place "
+                "mais presque toujours sous-dimensionnée : dix centimètres posés à l'époque, "
+                "contre trente à quarante attendus aujourd'hui. La réfection est le moment de "
+                "regarder."],
+      faq=[("Ma maison date de 1978, faut-il tout refaire ?",
+            "Pas forcément. À cet âge, certaines couvertures sont encore saines et d'autres sont "
+            "finies. Le test se fait en manipulant des tuiles : si elles cassent, c'est terminé. "
+            "Nous le faisons devant vous et nous le disons franchement."),
+           ("Peut-on garder la charpente ?",
+            "Dans l'immense majorité des cas de ce parc, oui. Les fermettes sont saines, sauf "
+            "aux abouts si l'eau a coulé longtemps. On contrôle pendant la dépose et on reprend "
+            "ponctuellement si besoin.")]),
+
+ dict(svc="renovation-toiture", ville="couvreur-anet",
+      nav="Rénovation de toiture à Anet",
+      title="Rénovation de toiture à Anet (28260)",
+      desc="Réfection de toiture à Anet : bâti ancien, tuile plate et ardoise, contraintes de "
+           "secteur patrimonial. Dépose, charpente, couverture neuve. Devis détaillé.",
+      h1=("Rénovation de <em>toiture</em>", "à Anet"),
+      img="corps-de-ferme-pierre-depose-couverture.webp",
+      imgalt="Corps de ferme en pierre dont la couverture est en cours de dépose",
+      pourquoi=["Anet est une commune où le patrimoine pèse sur les chantiers de toiture. Le "
+                "château et ses abords créent un périmètre dans lequel tout changement d'aspect "
+                "extérieur passe devant l'architecte des Bâtiments de France, à Chartres pour "
+                "l'Eure-et-Loir.",
+                "Concrètement, cela veut dire que le matériau n'est pas toujours un choix libre. "
+                "Le modèle de tuile, sa teinte, parfois le type de zinguerie peuvent être "
+                "imposés. Et l'instruction passe d'un à deux mois : c'est à intégrer au "
+                "calendrier dès le départ, pas à découvrir après la signature."],
+      surplace=["Le bâti ancien d'Anet demande des matériaux qui ne sont pas toujours en stock. "
+                "Une petite tuile plate de pays dans une teinte précise peut représenter "
+                "plusieurs semaines de fabrication. Nous le vérifions avant de donner une date "
+                "de démarrage, pas après.",
+                "Les charpentes y sont souvent anciennes et de belle facture. Quand elles sont "
+                "saines, elles se conservent et se reprennent ponctuellement : il serait absurde "
+                "de remplacer du chêne centenaire encore sain par du résineux neuf.",
+                "Anet est à 24 km de l'atelier, environ vingt-cinq minutes. Nous y intervenons "
+                "régulièrement, ainsi qu'à Ivry-la-Bataille et Saint-Georges-Motel."],
+      faq=[("Le château impose-t-il vraiment des contraintes à toute la commune ?",
+            "Pas à toute la commune, mais à un périmètre autour. Il faut vérifier si votre "
+            "parcelle y est : cela se demande en mairie, et c'est la première chose à faire "
+            "avant de choisir un matériau."),
+           ("Peut-on conserver la charpente ancienne ?",
+            "Presque toujours, si elle est saine. Le chêne ancien est souvent de meilleure "
+            "qualité que ce qui se pose aujourd'hui. On sonde pendant la dépose et on reprend "
+            "seulement ce qui doit l'être.")]),
+]
+
+
+def render_paire(pr):
+    """Page prestation x commune. Reutilise les blocs de conversion du site et
+    n'ajoute que du texte ecrit pour cette combinaison precise."""
+    svc = next(x for x in SERVICES if x["slug"] == pr["svc"])
+    v = next(x for x in VILLES if x["slug"] == pr["ville"])
+    slug = f'{pr["svc"]}-{v["ville"].lower().replace(" ", "-").replace("'", "-")}'
+    slug = (slug.replace("é", "e").replace("è", "e").replace("ê", "e")
+                .replace("î", "i").replace("ô", "o").replace("à", "a").replace("--", "-"))
+    canon = slug + "/"
+    d = REPERES.get(v["ville"], {})
+    km = round(d.get("km", 0) * 1.3) if d else None
+
+    ld = ('{"@context":"https://schema.org","@graph":[' + ld_business() + ','
+          '{"@type":"Service","name":%s,"serviceType":%s,'
+          '"provider":{"@id":"%s/#business"},"areaServed":{"@type":"City","name":%s},'
+          '"url":"%s/%s"},'
+          '{"@type":"WebPage","name":%s,"url":"%s/%s","about":{"@id":"%s/#business"}},'
+          '{"@type":"BreadcrumbList","itemListElement":['
+          '{"@type":"ListItem","position":1,"name":"Accueil","item":"%s/"},'
+          '{"@type":"ListItem","position":2,"name":%s,"item":"%s/%s/"},'
+          '{"@type":"ListItem","position":3,"name":%s,"item":"%s/%s"}]},'
+          '{"@type":"FAQPage","mainEntity":[%s]}]}'
+          % (jstr(pr["nav"]), jstr(svc["nav"]), DOMAIN, jstr(v["ville"]), DOMAIN, canon,
+             jstr(pr["title"]), DOMAIN, canon, DOMAIN,
+             DOMAIN,
+             jstr(svc["nav"]), DOMAIN, svc["slug"],
+             jstr(pr["nav"]), DOMAIN, canon,
+             ",".join('{"@type":"Question","name":%s,"acceptedAnswer":'
+                      '{"@type":"Answer","text":%s}}' % (jstr(q), jstr(a))
+                      for q, a in pr["faq"])))
+
+    pourquoi = "".join(f"<p>{x}</p>" for x in pr["pourquoi"])
+    surplace = "".join(f"<p>{x}</p>" for x in pr["surplace"])
+    autres = "".join(
+        f'<li><a href="{PRE}{x["slug"]}/">{x["nav"]}<span>{ARROW}</span></a></li>'
+        for x in SERVICES if x["slug"] != svc["slug"])
+    trajet = ("dans la commune de l'atelier" if not km or km <= 4
+              else f"à {km} km de l'atelier")
+
+    return "".join([
+        head(pr["title"] + " · WM Couverture", pr["desc"], canon, ld, pr["img"]),
+        "<main id=\"main\">",
+        f"""<section class="phero">
+  <div class="wrap phero__grid">
+    <div>
+      <p class="eyebrow reveal">{svc["nav"]} <span aria-hidden="true">·</span> {v["ville"]}</p>
+      <h1 class="reveal" data-d="1">{pr["h1"][0]}<br>{pr["h1"][1]}</h1>
+      <p class="phero__lead reveal" data-d="2">{pr["pourquoi"][0][:210]}…</p>
+      {hero_note()}
+      <div class="phero__cta reveal" data-d="3">
+        <a class="btn btn--dark" href="#devis">Demander mon devis gratuit</a>
+        <a class="btn btn--ghost" href="tel:{TEL_HREF}" data-track="call">{PHONE}{TEL_TXT}</a></div>
+      <ul class="hero__trust phero__trust reveal" data-d="4">
+        <li><b data-count="14">14</b> ans d'expérience</li>
+        <li><b>7</b>j/7, de 8 h à 21 h</li>
+      </ul>
+    </div>
+    <figure class="frame phero__img reveal" data-d="2">
+      <img src="{PRE}assets/img/{pr["img"]}" alt="{pr["imgalt"]}" width="1600" height="1200" fetchpriority="high" decoding="async">
+    </figure>
+  </div>
+</section>""",
+        crumb(pr["nav"]),
+        f"""<section class="detail">
+  <div class="wrap detail__grid">
+    <div><p class="eyebrow reveal">Pourquoi ici</p>
+      <h2 class="reveal" data-d="1">{svc["nav"]} <em>à {v["ville"]}</em></h2></div>
+    <div class="detail__t reveal" data-d="1">{pourquoi}</div>
+  </div>
+</section>""",
+        f"""<section class="detail detail--alt">
+  <div class="wrap detail__grid">
+    <div><p class="eyebrow reveal">Sur place</p>
+      <h2 class="reveal" data-d="1">Ce que nous <em>trouvons</em> sur ces toits</h2></div>
+    <div class="detail__t reveal" data-d="1">{surplace}</div>
+  </div>
+</section>""",
+        reperes_bloc(v, v["ville"]),
+        band(pr["img"], pr["imgalt"], f'{svc["nav"]} à {v["ville"]}',
+             f'Un toit à voir {trajet} : nous nous déplaçons et le devis est gratuit.'),
+        avis_pair(AVIS[0], AVIS[2]),
+        faq_block(pr["faq"] + v["faq"][:2]),
+        f"""<section class="mesh">
+  <div class="wrap mesh__grid">
+    <div><h2 class="reveal">Nos autres <em>prestations</em></h2>
+      <ul class="mesh__list reveal" data-d="1">{autres}</ul></div>
+    <div><h2 class="reveal">En savoir plus</h2>
+      <ul class="mesh__list reveal" data-d="1">
+        <li><a href="{PRE}{svc["slug"]}/">{svc["nav"]}, en détail<span>{ARROW}</span></a></li>
+        <li><a href="{PRE}{v["slug"]}/">Couvreur à {v["ville"]}<span>{ARROW}</span></a></li>
+      </ul></div>
+  </div>
+</section>""",
+        devis(f'{svc["nav"]} <em>à {v["ville"]}</em> ?',
+              "Décrivez la situation en deux lignes, nous rappelons pour caler une visite."),
+        "</main>",
+        foot(),
+    ]), slug
+
 
 def render_ville(v):
     canon = v["slug"] + "/"
@@ -4075,6 +4464,11 @@ def main():
     for v in VILLES:
         write(os.path.join(ROOT, v["slug"], "index.html"), render_ville(v))
         pages.append((v["slug"] + "/", "0.8"))
+    for pr in PAIRES:
+        html, slug = render_paire(pr)
+        write(os.path.join(ROOT, slug, "index.html"), html)
+        pages.append((slug + "/", "0.75"))
+
     write(os.path.join(ROOT, "404.html"), render_404())
     write(os.path.join(ROOT, "plan-du-site", "index.html"), render_plan())
     pages.append(("plan-du-site/", "0.3"))
