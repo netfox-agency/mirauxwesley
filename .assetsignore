@@ -15,3 +15,5 @@ __pycache__/
 worker.js
 .wrangler/
 avis.json
+communes-terrain.json
+communes-data.json

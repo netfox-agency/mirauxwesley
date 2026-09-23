@@ -1,0 +1,83 @@
+{
+ "_lisez_moi": "Ce que seul Wesley sait. Quatre champs par commune. Un champ vide n'affiche rien : mieux vaut pas de bloc qu'un bloc inventé. Relancer `python3 build.py && python3 tools/images.py --keep` après avoir rempli, le site se met à jour tout seul.",
+ "_comment_remplir": {
+  "toits": "Quels toits domine-t-on ici ? Matériau, époque, forme. 2 à 3 phrases.",
+  "defaut": "Quel défaut revient chez toi sur CETTE commune en particulier ? 2 à 3 phrases.",
+  "chantier": "Un chantier précis que tu y as fait, et ce qu'il avait de particulier. Sans nom de client ni adresse exacte. 2 à 3 phrases.",
+  "repere": "Un endroit ou un quartier que les gens du coin reconnaissent tout de suite, et ce que tu y as vu. 1 à 2 phrases."
+ },
+ "communes": {
+  "Nonancourt": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Dreux": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Vernouillet": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Saint-Rémy-sur-Avre": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Anet": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Ivry-la-Bataille": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Verneuil d'Avre et d'Iton": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Tillières-sur-Avre": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Brezolles": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Nogent-le-Roi": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Breteuil": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  },
+  "Évreux": {
+   "toits": "",
+   "defaut": "",
+   "chantier": "",
+   "repere": ""
+  }
+ }
+}

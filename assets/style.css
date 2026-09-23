@@ -1802,3 +1802,25 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
 }
 .reperes__p{max-width:62ch;font-size:16.4px;line-height:1.65;color:var(--ink-2)}
 .reperes__p a{color:var(--brass-ink);text-underline-offset:.16em}
+
+/* ── ce que seul l'artisan sait ────────────────────────────────────────────
+   Le bloc ne s'affiche que si communes-terrain.json est renseigne pour la
+   commune. Un champ vide n'affiche rien : pas de bloc vaut mieux qu'un bloc
+   invente. */
+.terrain{padding:clamp(52px,7vw,92px) 0;background:var(--paper-2);
+  border-top:1px solid var(--rule)}
+.terrain h2{font-size:clamp(28px,3.8vw,46px);margin-bottom:clamp(26px,3.5vw,42px)}
+.terrain__g{display:grid;gap:clamp(22px,3vw,38px);grid-template-columns:1fr}
+@media (min-width:760px){.terrain__g{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.terrain__i{display:flex;flex-direction:column;gap:10px;
+  padding-top:16px;border-top:1px solid var(--rule)}
+.terrain__i h3{
+  font-family:var(--f-dis);font-size:16px;font-weight:700;letter-spacing:-.02em;
+  color:var(--ink);margin:0;
+}
+.terrain__i p{margin:0;font-size:15.8px;line-height:1.62;color:var(--ink-2)}
+.terrain__p{
+  margin-top:clamp(24px,3vw,36px);padding-top:18px;border-top:1px solid var(--rule);
+  font-family:var(--f-dis);font-size:clamp(17px,1.9vw,21px);font-weight:500;
+  letter-spacing:-.02em;line-height:1.4;color:var(--ink);max-width:54ch;
+}

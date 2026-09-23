@@ -3637,6 +3637,43 @@ UDAP = {
 }
 
 
+# ── ce que seul l'artisan sait ─────────────────────────────────────────────
+# Les pages de commune plafonnent a ~413 mots d'editorial, alors que le seuil
+# d'une page de lieu principale est 600. Le manque ne peut pas etre comble par
+# du texte genere : il se verrait, et ce serait exactement le defaut des pages
+# generiques des concurrents. Il vient d'un entretien avec Wesley.
+#
+# Ce bloc lit communes-terrain.json et ne s'affiche QUE pour les communes
+# renseignees. Un champ vide n'invente rien.
+_TERRAIN = _json.loads((pathlib.Path(__file__).resolve().parent /
+                        "communes-terrain.json").read_text(encoding="utf-8"))["communes"]
+
+
+def terrain_bloc(nom_ville):
+    d = _TERRAIN.get(nom_ville) or {}
+    champs = [
+        ("Les toits d'ici", d.get("toits", "").strip()),
+        ("Ce qui revient le plus", d.get("defaut", "").strip()),
+        ("Un chantier de la commune", d.get("chantier", "").strip()),
+    ]
+    champs = [(h, txt) for h, txt in champs if txt]
+    if not champs:
+        return ""
+    repere = (d.get("repere") or "").strip()
+    corps = "".join(
+        f'<div class="terrain__i reveal" data-d="{i+1}"><h3>{h}</h3><p>{txt}</p></div>'
+        for i, (h, txt) in enumerate(champs))
+    fin = f'<p class="terrain__p reveal" data-d="4">{repere}</p>' if repere else ""
+    return f"""<section class="terrain">
+  <div class="wrap">
+    <p class="eyebrow reveal">De notre expérience</p>
+    <h2 class="reveal" data-d="1">Sur les toits <em>de {nom_ville}</em></h2>
+    <div class="terrain__g">{corps}</div>
+    {fin}
+  </div>
+</section>"""
+
+
 def reperes_bloc(ville, nom_ville):
     """Faits verifies propres a la commune.
 
@@ -4082,6 +4119,7 @@ def render_paire(pr):
   </div>
 </section>""",
         reperes_bloc(v, v["ville"]),
+        terrain_bloc(v["ville"]),
         band(pr["img"], pr["imgalt"], f'{svc["nav"]} à {v["ville"]}',
              f'Un toit à voir {trajet} : nous nous déplaçons et le devis est gratuit.'),
         avis_pair(AVIS[0], AVIS[2]),
@@ -4154,6 +4192,7 @@ def render_ville(v):
 </section>""",
         mat_block(f'Ce que nous faisons le plus <em>à {v["ville"]}</em>', v["focus"], "deep deep--alt"),
         reperes_bloc(v, v["ville"]),
+        terrain_bloc(v["ville"]),
         band(bimg, balt, f'Couvreur à {v["ville"]}',
              f'Un toit à voir {dist_p}, un devis à faire chiffrer : nous nous déplaçons.'),
         etapes(),
