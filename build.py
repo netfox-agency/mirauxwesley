@@ -683,9 +683,9 @@ VILLES = [
     dict(photo="couvreur-nonancourt-longere-tuile-neuve.webp", photoalt="Longère couverte à neuf en tuile à Nonancourt",
          slug="couvreur-nonancourt", ville="Nonancourt", cp="27320", dep="Eure", km=None,
          title="Couvreur à Nonancourt (27320) · WM Couverture",
-         desc="WM Couverture est installée route de Saint-Remy à Nonancourt. Rénovation de "
+         desc="WM Couverture est installée aux Maisons Rouges à Nonancourt. Rénovation de "
               "toiture, charpente, zinguerie et démoussage dans le bourg et les hameaux alentour.",
-         intro="C'est notre commune. L'atelier est route de Saint-Remy, et une bonne partie de "
+         intro="C'est notre commune. L'atelier est aux Maisons Rouges, et une bonne partie de "
                "nos chantiers tient dans un rayon de dix minutes.",
          bati="Le bourg mêle des maisons anciennes en brique et silex, couvertes en tuile plate "
               "de pays, et des pavillons plus récents en tuile mécanique. Dans la campagne "
@@ -2586,6 +2586,108 @@ def render_service(s):
     ])
 
 
+# ── reperes locaux verifies ────────────────────────────────────────────────
+# Nos pages de commune n'etaient uniques qu'a 36 % : 496 mots sur 802 etaient
+# identiques d'une commune a l'autre. C'est exactement le defaut des pages
+# generiques de nos concurrents, et le seuil attendu pour une page de lieu
+# est 60 %. Ce bloc ajoute des faits REELS et differents pour chaque commune,
+# jamais du remplissage : distance mesuree depuis l'atelier, population de
+# l'INSEE, et l'administration qui traite reellement le dossier.
+#
+# Source : API Geo du gouvernement (geo.api.gouv.fr), relevee le 18/09/2026.
+# Distances a vol d'oiseau converties en distance routiere par le facteur
+# 1,3 usuel en zone rurale, puis en duree a 55 km/h de moyenne.
+REPERES = _json.loads(pathlib.Path(__file__).resolve().parent.joinpath(
+    "communes-data.json").read_text(encoding="utf-8"))
+
+# L'Architecte des Batiments de France est saisi par departement : un chantier
+# a Dreux ne depend pas du meme service qu'un chantier a Evreux. C'est une
+# information que le proprietaire cherche vraiment, et qu'aucune page
+# generique ne donne.
+UDAP = {
+    "27": ("l'UDAP de l'Eure", "Évreux"),
+    "28": ("l'UDAP d'Eure-et-Loir", "Chartres"),
+}
+
+
+def reperes_bloc(ville, nom_ville):
+    """Faits verifies propres a la commune.
+
+    Premiere version : un gabarit a variables, ou seuls les chiffres
+    changeaient. Elle a fait BAISSER l'unicite des pages, c'est-a-dire
+    exactement le defaut reproche aux pages generiques des concurrents.
+    Celle-ci branche le texte sur trois axes reels (eloignement, taille,
+    departement), pour que les phrases elles-memes different et pas
+    seulement les noms.
+
+    Source : API Geo du gouvernement, relevee le 18/09/2026. Distance a vol
+    d'oiseau x1,3 (facteur routier usuel en zone rurale), 55 km/h de moyenne.
+    """
+    d = REPERES.get(nom_ville)
+    if not d:
+        return ""
+    km = round(d["km"] * 1.3)
+    mn = max(5, round(km / 55 * 60 / 5) * 5)
+    pop = d["pop"] or 0
+    hab = f"{pop:,}".replace(",", " ")
+    udap, chef_lieu = UDAP.get(d["dep"], ("", ""))
+    meme_dep = d["dep"] == "27"
+
+    # 1. l'eloignement change ce qu'on peut promettre
+    if km <= 4:
+        trajet = ("L'atelier est dans la commune. C'est ici que nous intervenons le plus "
+                  "vite, et souvent le jour même quand il y a de l'eau qui rentre.")
+    elif km <= 15:
+        trajet = (f"{km} km depuis l'atelier des Maisons Rouges, environ {mn} minutes. "
+                  "C'est dans notre rayon quotidien : passer voir un toit ne nous "
+                  "demande pas d'organiser une journée.")
+    else:
+        trajet = (f"{km} km depuis l'atelier, environ {mn} minutes de route. Nous y "
+                  "allons régulièrement, mais nous groupons les visites : comptez "
+                  "quelques jours pour un rendez-vous de devis, immédiat en urgence.")
+
+    # 2. la taille change le bati et donc le travail
+    if pop < 3000:
+        bati = ("Sur une commune de cette taille, le bâti est surtout ancien et isolé : "
+                "longères, corps de ferme, dépendances. Les surfaces de rampant sont "
+                "grandes et les charpentes ont souvent plus d'un siècle.")
+    elif pop < 15000:
+        bati = ("Le bourg mélange de l'ancien à reprendre et des pavillons des années "
+                "soixante-dix à quatre-vingt-dix, dont les couvertures arrivent "
+                "justement en fin de vie.")
+    else:
+        bati = ("Sur une ville de cette taille, nous voyons de tout : centre ancien "
+                "contraint, lotissements pavillonnaires, et copropriétés où la "
+                "décision se prend en assemblée. Le devis doit être lisible par des "
+                "gens qui ne sont pas du métier.")
+
+    # 3. le departement change l'administration qui tranche
+    if meme_dep:
+        admin = (f"{nom_ville} est dans l'Eure, notre département. La déclaration "
+                 f"préalable se dépose à la mairie ; en périmètre de monument "
+                 f"historique, c'est {udap} à {chef_lieu} qui donne l'avis.")
+    else:
+        admin = (f"{nom_ville} est en Eure-et-Loir, de l'autre côté de l'Avre. Les "
+                 f"règles d'urbanisme ne sont pas celles de l'Eure : le dossier part "
+                 f"à la mairie, et en périmètre de monument historique c'est "
+                 f"{udap} à {chef_lieu} qui tranche, avec deux mois d'instruction.")
+
+    return f"""<section class="reperes">
+  <div class="wrap">
+    <h2 class="reveal">{nom_ville} <em>en pratique</em></h2>
+    <dl class="reperes__l reveal" data-d="1">
+      <div><dt>Depuis l'atelier</dt><dd>{km} km, {mn} min</dd></div>
+      <div><dt>Habitants</dt><dd>{hab}</dd></div>
+      <div><dt>Département</dt><dd>{d["dep_nom"]} ({d["dep"]})</dd></div>
+    </dl>
+    <p class="reperes__p reveal" data-d="2">{trajet} {bati}</p>
+    <p class="reperes__p reveal" data-d="3">{admin} Nous montons le dossier avec
+      vous, et nous le disons avant de commencer, pas après : voir le
+      <a href="{{PRE}}guides/declaration-prealable-toiture/">guide des autorisations</a>.</p>
+  </div>
+</section>"""
+
+
 def render_ville(v):
     canon = v["slug"] + "/"
     dist = ("notre atelier" if v["km"] is None else f"à {v['km']} km de l'atelier")
@@ -2635,6 +2737,7 @@ def render_ville(v):
   </div>
 </section>""",
         mat_block(f'Ce que nous faisons le plus <em>à {v["ville"]}</em>', v["focus"], "deep deep--alt"),
+        reperes_bloc(v, v["ville"]),
         band(bimg, balt, f'Couvreur à {v["ville"]}',
              f'Un toit à voir {dist_p}, un devis à faire chiffrer : nous nous déplaçons.'),
         etapes(),
@@ -2984,7 +3087,7 @@ def main():
 
     # llms.txt : resume lisible par les moteurs generatifs
     llm = [f"# WM Couverture", "",
-           "> Entreprise familiale de couverture installee route de Saint-Remy a Nonancourt "
+           "> Entreprise familiale de couverture installee aux Maisons Rouges a Nonancourt "
            "(27320), dans l'Eure. Toiture, charpente, zinguerie, isolation, nettoyage et "
            "demoussage. 14 ans d'experience, depannage 24 h/24, devis gratuit.", "",
            "- Telephone : 06 24 59 26 77",

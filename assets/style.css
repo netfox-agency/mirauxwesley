@@ -1777,3 +1777,28 @@ body:has(.hero__bg) .nav:not(.scrolled) .nav__in .btn--dark{background:#fff;colo
   .hnote__chiffre{font-size:18px}
   .etoiles--m{font-size:17px}
 }
+
+/* ── reperes locaux ─────────────────────────────────────────────────────────
+   Des faits verifies, differents pour chaque commune. C'est ce qui separe une
+   vraie page locale d'un gabarit ou seul le nom de ville change. */
+.reperes{padding:clamp(48px,6vw,80px) 0;border-top:1px solid var(--rule)}
+.reperes__l{
+  display:grid;gap:clamp(14px,2.4vw,28px);margin:clamp(22px,3vw,34px) 0;
+  grid-template-columns:1fr;
+}
+@media (min-width:620px){.reperes__l{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.reperes__l > div{
+  padding-top:15px;border-top:1px solid var(--rule);
+  display:flex;flex-direction:column;gap:5px;
+}
+.reperes__l dt{
+  font-size:12.2px;letter-spacing:.11em;text-transform:uppercase;
+  font-weight:600;color:var(--muted);
+}
+.reperes__l dd{
+  margin:0;font-family:var(--f-dis);font-size:clamp(21px,2.4vw,27px);
+  font-weight:700;letter-spacing:-.035em;color:var(--ink);
+  font-variant-numeric:tabular-nums;
+}
+.reperes__p{max-width:62ch;font-size:16.4px;line-height:1.65;color:var(--ink-2)}
+.reperes__p a{color:var(--brass-ink);text-underline-offset:.16em}

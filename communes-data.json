@@ -1,0 +1,98 @@
+{
+ "Nonancourt": {
+  "code": "27438",
+  "pop": 2321,
+  "km": 2.9,
+  "dep": "27",
+  "dep_nom": "Eure",
+  "surface": 730.97
+ },
+ "Dreux": {
+  "code": "28134",
+  "pop": 31543,
+  "km": 9.9,
+  "dep": "28",
+  "dep_nom": "Eure-et-Loir",
+  "surface": 2423.79
+ },
+ "Vernouillet": {
+  "code": "28404",
+  "pop": 12310,
+  "km": 10.9,
+  "dep": "28",
+  "dep_nom": "Eure-et-Loir",
+  "surface": 1225.96
+ },
+ "Saint-Rémy-sur-Avre": {
+  "code": "28359",
+  "pop": 4058,
+  "km": 1.9,
+  "dep": "28",
+  "dep_nom": "Eure-et-Loir",
+  "surface": 1305.21
+ },
+ "Anet": {
+  "code": "28007",
+  "pop": 2721,
+  "km": 18.8,
+  "dep": "28",
+  "dep_nom": "Eure-et-Loir",
+  "surface": 794.82
+ },
+ "Ivry-la-Bataille": {
+  "code": "27355",
+  "pop": 2609,
+  "km": 21.2,
+  "dep": "27",
+  "dep_nom": "Eure",
+  "surface": 777.85
+ },
+ "Verneuil d'Avre et d'Iton": {
+  "code": "27679",
+  "pop": 7193,
+  "km": 24.5,
+  "dep": "27",
+  "dep_nom": "Eure",
+  "surface": 5607.53
+ },
+ "Tillières-sur-Avre": {
+  "code": "27643",
+  "pop": 1020,
+  "km": 14.3,
+  "dep": "27",
+  "dep_nom": "Eure",
+  "surface": 1679
+ },
+ "Brezolles": {
+  "code": "28059",
+  "pop": 1785,
+  "km": 14.3,
+  "dep": "28",
+  "dep_nom": "Eure-et-Loir",
+  "surface": 1427.06
+ },
+ "Nogent-le-Roi": {
+  "code": "28279",
+  "pop": 4021,
+  "km": 26.2,
+  "dep": "28",
+  "dep_nom": "Eure-et-Loir",
+  "surface": 1317.39
+ },
+ "Breteuil": {
+  "code": "27112",
+  "pop": 4282,
+  "km": 25.4,
+  "dep": "27",
+  "dep_nom": "Eure",
+  "surface": 5527.61
+ },
+ "Évreux": {
+  "code": "27229",
+  "pop": 49360,
+  "km": 29.0,
+  "dep": "27",
+  "dep_nom": "Eure",
+  "surface": 2641.68
+ }
+}
