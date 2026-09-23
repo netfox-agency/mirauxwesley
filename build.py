@@ -1867,6 +1867,1033 @@ GUIDES = [
               "s'installe au moment de la pose sans surcoût de main-d'œuvre.")],
         cta=("Demander un devis fenêtre de toit", "renovation-toiture"),
     ),
+    dict(
+        slug="quand-refaire-sa-toiture",
+        cle="Un toit ne prévient pas. Il donne des signes pendant des années.",
+        img="corps-de-ferme-pierre-depose-couverture.webp",
+        imgalt="Corps de ferme en pierre dont la couverture est en cours de dépose",
+        nav="Quand refaire sa toiture",
+        title="Quand faut-il refaire sa toiture ?",
+        desc="Les signes qui disent qu'une toiture arrive en fin de vie, la durée de vie réelle "
+             "de chaque matériau, et comment savoir si une réparation suffit encore.",
+        h1=("Quand faut-il <em>refaire</em>", "sa toiture ?"),
+        court="Une couverture se remplace quand les réparations deviennent plus fréquentes que "
+              "les années qui la séparent de sa fin de vie théorique. Concrètement : "
+              "<b>des tuiles qui se cassent à la manipulation, un litelage qui ne tient plus les "
+              "clous, de la lumière visible depuis les combles</b>. À l'inverse, quelques tuiles "
+              "déplacées après un coup de vent ne justifient pas une réfection, et un couvreur "
+              "honnête vous le dira.",
+        estim=False,
+        sections=[
+            ("Les signes qui ne trompent pas",
+             ["<b>La tuile casse quand on la soulève.</b> C'est le test le plus parlant. Une terre "
+              "cuite saine se manipule. Une tuile gélive, poreuse d'avoir gelé et dégelé cinquante "
+              "hivers, se fend entre les doigts. Si le couvreur en casse trois pour en déplacer "
+              "dix, la couverture est finie.",
+              "<b>Les liteaux ne tiennent plus.</b> Sous la couverture, les tuiles reposent sur des "
+              "liteaux cloués. Quand le bois s'effrite et que les pointes ne mordent plus, on ne "
+              "peut plus reposer une tuile correctement. Réparer devient impossible.",
+              "<b>On voit le jour depuis les combles.</b> Montez dans les combles par temps sec et "
+              "regardez vers le haut sans lampe. Des points lumineux signifient des trous, et "
+              "chaque trou laissera passer la pluie battante.",
+              "<b>Les mousses reviennent en deux ans.</b> Un démoussage tient normalement trois à "
+              "cinq ans. Si la mousse revient bien plus vite, c'est que la tuile est devenue "
+              "poreuse et retient l'eau : elle ne sèche plus.",
+              "<b>La ligne de faîtage ondule.</b> Vu de la rue, un faîtage qui n'est plus droit ou "
+              "un versant qui se creuse signalent un problème de charpente, pas de couverture. "
+              "C'est plus grave, et ça ne se règle pas en changeant des tuiles."]),
+            ("Combien de temps dure une couverture, matériau par matériau",
+             ["Ces durées sont des ordres de grandeur admis dans le métier. L'exposition compte "
+              "autant que le matériau : un versant nord humide vieillit deux fois plus vite qu'un "
+              "versant sud ventilé.",
+              "<b>Tuile de terre cuite :</b> 40 à 60 ans pour une tuile mécanique, souvent plus "
+              "pour une tuile plate de pays bien posée. Beaucoup de toits anciens de la vallée de "
+              "l'Avre dépassent le siècle.",
+              "<b>Ardoise naturelle :</b> 75 à 100 ans, parfois davantage. Ce sont souvent les "
+              "crochets ou les clous qui lâchent avant la pierre.",
+              "<b>Ardoise fibrociment :</b> 30 à 50 ans. Attention : posée avant 1997, elle peut "
+              "contenir de l'amiante, et sa dépose relève alors d'une procédure encadrée.",
+              "<b>Bac acier :</b> 30 à 50 ans selon le traitement et l'épaisseur. La corrosion part "
+              "des perçages et des découpes.",
+              "<b>Zinc :</b> 50 à 80 ans en couverture, moins en gouttière où l'eau stagne."]),
+            ("Réparer ou refaire : comment trancher",
+             ["La question n'est pas l'âge du toit, c'est le rapport entre ce que coûte la "
+              "réparation et ce qu'elle achète de tranquillité.",
+              "<b>Réparer se défend</b> quand la cause est ponctuelle et identifiée : un solin de "
+              "cheminée, une noue percée, une dizaine de tuiles déplacées par le vent sur une "
+              "couverture saine par ailleurs.",
+              "<b>Refaire s'impose</b> quand les interventions se répètent sur des points "
+              "différents. Trois réparations en deux ans à des endroits sans rapport, c'est le "
+              "matériau qui lâche partout en même temps, pas un accident.",
+              "<b>Le calcul honnête :</b> si la réparation coûte le quart d'une réfection et ne "
+              "garantit que deux ou trois ans, elle est chère. Si elle coûte un dixième et tient "
+              "dix ans, elle est excellente. Demandez cette estimation de durée, par écrit."]),
+            ("Ce qui pousse à décider maintenant plutôt que dans cinq ans",
+             ["<b>La charpente.</b> Tant que l'eau n'est pas entrée durablement, la charpente est "
+              "saine et la réfection ne touche que la couverture. Une fois que les pannes ont "
+              "travaillé et que les champignons s'y sont mis, le chantier change de nature et de "
+              "prix.",
+              "<b>L'isolation.</b> Refaire un toit est le seul moment où l'isolation par "
+              "l'extérieur est envisageable sans surcoût de dépose. Faire les deux séparément "
+              "coûte nettement plus cher que les faire ensemble.",
+              "<b>Les aides.</b> Les dispositifs d'aide à la rénovation changent chaque année et "
+              "ne vont pas en s'élargissant. Ce qui est éligible aujourd'hui ne le sera pas "
+              "forcément dans trois ans.",
+              "Cela dit, personne ne devrait refaire un toit qui tient encore. Le rôle du couvreur "
+              "est de vous dire combien d'années il reste, pas de vous vendre un chantier."]),
+        ],
+        faq=[("Un couvreur peut-il vraiment estimer les années qui restent ?",
+              "Approximativement, oui, en montant. L'état des tuiles à la manipulation, celui des "
+              "liteaux et la porosité du matériau donnent une fourchette honnête. Personne ne peut "
+              "donner une date, et méfiez-vous de qui le prétend."),
+             ("Mon toit a 50 ans mais ne fuit pas. Dois-je m'inquiéter ?",
+              "Pas nécessairement. Une couverture peut dépasser largement sa durée théorique si "
+              "elle est bien ventilée et entretenue. Un contrôle tous les ans suffit, et il coûte "
+              "beaucoup moins cher qu'une réfection anticipée."),
+             ("Peut-on refaire un seul versant ?",
+              "Oui, et c'est fréquent : le versant nord se dégrade plus vite. Le rendu sera "
+              "différent entre les deux pans pendant quelques années, le temps que la tuile neuve "
+              "patine. Certains PLU l'interdisent en secteur protégé."),
+             ("La réfection peut-elle attendre l'été ?",
+              "Si le toit est hors d'eau, oui, et c'est même souvent préférable pour la logistique. "
+              "Si l'eau entre, non : chaque hiver passé avec une infiltration abîme la charpente.")],
+        cta=("Faire contrôler l'état du toit", "renovation-toiture"),
+    ),
+    dict(
+        slug="demarchage-toiture-arnaque",
+        cle="Un couvreur sérieux ne sonne pas à votre porte pour vous vendre un toit.",
+        img="echafaudage-bache-maison-de-ville.webp",
+        imgalt="Échafaudage bâché sur une maison de ville pendant des travaux de toiture",
+        nav="Démarchage toiture : les pièges",
+        title="Démarchage toiture : reconnaître l'arnaque",
+        desc="Comment repérer une entreprise de toiture qui démarche, quels signaux doivent vous "
+             "arrêter, et ce que dit la loi sur le démarchage à domicile et le droit de rétractation.",
+        h1=("Démarchage toiture :", "<em>reconnaître</em> l'arnaque"),
+        court="La toiture est l'un des secteurs les plus touchés par le démarchage abusif. Le "
+              "schéma est presque toujours le même : quelqu'un passe « par hasard », a vu « un "
+              "problème » depuis la rue, propose un diagnostic gratuit immédiat, monte, redescend "
+              "avec des photos alarmantes, et fait signer le jour même avec un acompte. "
+              "<b>Un professionnel installé n'a pas besoin de sonner chez vous.</b>",
+        estim=False,
+        sections=[
+            ("Les sept signaux qui doivent vous arrêter",
+             ["<b>1. Il est venu sans que vous l'appeliez.</b> C'est le premier et le plus simple. "
+              "Une entreprise qui a du travail ne fait pas du porte-à-porte.",
+              "<b>2. Il a vu le problème depuis la rue.</b> On ne diagnostique pas une toiture "
+              "depuis un trottoir. On voit une mousse, éventuellement une tuile déplacée. Pas une "
+              "charpente, pas un écran de sous-toiture, pas une fuite.",
+              "<b>3. Il veut monter tout de suite.</b> Une fois sur le toit, seul, il contrôle ce "
+              "que vous verrez sur les photos. Des tuiles cassées peuvent l'avoir été en montant.",
+              "<b>4. L'offre expire aujourd'hui.</b> « J'ai une équipe dans le secteur cette "
+              "semaine », « le prix est valable si vous signez maintenant ». Aucun prix honnête "
+              "n'a besoin d'urgence pour être accepté.",
+              "<b>5. Il demande un acompte immédiat.</b> Surtout en liquide, ou par un virement "
+              "qu'il vous fait faire devant lui.",
+              "<b>6. Le devis est vague.</b> « Réfection toiture : 14 000 € ». Sans surface, sans "
+              "matériau, sans détail des postes. Un devis qui ne se vérifie pas ne s'engage à rien.",
+              "<b>7. Il parle d'aides ou de « 1 € ».</b> Aucun dispositif public ne finance une "
+              "toiture à un euro. C'est le marqueur le plus fiable d'une arnaque."]),
+            ("Ce que dit la loi, et qui joue pour vous",
+             ["<b>Quatorze jours de rétractation.</b> Pour un contrat conclu à votre domicile suite "
+              "à un démarchage, vous disposez d'un délai de quatorze jours pour vous rétracter, "
+              "sans motif et sans pénalité. Le professionnel doit vous remettre un formulaire de "
+              "rétractation : son absence est déjà une infraction.",
+              "<b>Aucun paiement avant sept jours.</b> Dans le cadre d'un démarchage à domicile, le "
+              "professionnel n'a pas le droit d'encaisser quoi que ce soit avant l'expiration d'un "
+              "délai de sept jours. Un acompte exigé sur-le-champ est illégal.",
+              "<b>Le devis engage.</b> Signé, il vaut contrat. Mais un devis qui ne mentionne ni "
+              "les surfaces, ni les matériaux, ni le détail des postes est inopposable dans les "
+              "faits : vous ne pouvez pas prouver ce qui était promis, et eux non plus.",
+              "Ces règles existent précisément parce que le secteur a été massivement abusé. "
+              "Utilisez-les sans état d'âme."]),
+            ("Les cinq vérifications qui prennent dix minutes",
+             ["<b>Le SIRET.</b> Demandez-le, puis tapez-le sur l'annuaire des entreprises de "
+              "l'État. Vous verrez la date de création, l'activité déclarée et l'adresse. Une "
+              "entreprise de couverture créée il y a trois mois à six cents kilomètres mérite des "
+              "questions.",
+              "<b>L'assurance décennale.</b> Demandez l'attestation, avec l'année en cours et "
+              "l'activité « couverture » explicitement mentionnée. Une attestation périmée ou pour "
+              "une autre activité ne vous couvre pas.",
+              "<b>L'adresse réelle.</b> Cherchez-la sur une carte. Un atelier, un dépôt, quelque "
+              "chose de physique. Une boîte postale ou une adresse de domiciliation n'est pas un "
+              "bon signe pour des travaux lourds.",
+              "<b>Les avis, et leur ancienneté.</b> Vingt avis excellents déposés la même semaine "
+              "ne valent rien. Des avis étalés sur des années, avec des réponses de l'entreprise, "
+              "valent beaucoup.",
+              "<b>Des chantiers dans le secteur.</b> Demandez deux adresses de chantiers récents "
+              "à proximité. Un artisan local en a toujours."]),
+            ("Si vous avez déjà signé",
+             ["<b>Dans les quatorze jours :</b> envoyez votre rétractation en recommandé avec "
+              "accusé de réception. Pas besoin de justifier. Conservez la preuve d'envoi.",
+              "<b>Si des travaux ont commencé :</b> la rétractation reste valable, mais cela se "
+              "complique. Faites constater l'état par un tiers, photographiez tout, et ne payez "
+              "rien de plus.",
+              "<b>Si vous avez payé :</b> signalez à la répression des fraudes via la plateforme "
+              "SignalConso, et déposez plainte si la somme est importante. Prévenez votre banque "
+              "immédiatement en cas de paiement par carte.",
+              "<b>Dans tous les cas :</b> faites établir un devis par une entreprise locale que "
+              "vous aurez choisie. Vous saurez alors si le prix annoncé avait un rapport avec la "
+              "réalité, et ce document vous servira."]),
+        ],
+        faq=[("Un couvreur peut-il proposer un diagnostic gratuit ?",
+              "Oui, et beaucoup le font, nous compris : la visite et le devis sont gratuits. La "
+              "différence est que vous l'avez appelé. Le problème n'est pas la gratuité, c'est "
+              "l'initiative du contact et l'urgence fabriquée."),
+             ("Comment savoir si les photos qu'on me montre sont bien de mon toit ?",
+              "Demandez des photos larges qui montrent l'environnement : une cheminée reconnaissable, "
+              "la maison voisine, un arbre. Un gros plan de tuile cassée peut venir de n'importe où."),
+             ("On me dit que ma charpente est attaquée. Comment vérifier ?",
+              "Une charpente se contrôle depuis les combles, pas depuis le toit. Montez-y vous-même "
+              "avec une lampe : le bois attaqué se creuse à la pointe d'un tournevis et laisse "
+              "de la sciure. Demandez toujours un deuxième avis avant un traitement de charpente."),
+             ("Faut-il se méfier de toutes les entreprises qui viennent de loin ?",
+              "Pas systématiquement, mais posez la question du service après-vente. La décennale "
+              "dure dix ans : si un problème apparaît dans huit ans, qui reviendra ?")],
+        cta=("Demander un devis à une entreprise locale", "renovation-toiture"),
+    ),
+    dict(
+        slug="hydrofuge-toiture-utile",
+        cle="L'hydrofuge protège une tuile saine. Il ne sauve pas une tuile morte.",
+        img="demoussage-toiture-mousse-echafaudage.webp",
+        imgalt="Toiture envahie de mousse en cours de démoussage depuis un échafaudage",
+        nav="Hydrofuge : utile ou pas",
+        title="Hydrofuge de toiture : utile ou inutile ?",
+        desc="Ce que fait réellement un traitement hydrofuge sur une toiture, quand il a du sens, "
+             "quand il n'en a aucun, et pourquoi il est si souvent vendu au mauvais moment.",
+        h1=("Hydrofuge de toiture :", "<em>utile</em> ou inutile ?"),
+        court="Un hydrofuge est une résine qui empêche l'eau de pénétrer dans la tuile. Appliqué "
+              "après un démoussage sur une couverture encore saine, il ralentit réellement le "
+              "retour des mousses et le vieillissement. Appliqué sur une tuile déjà poreuse et "
+              "gélive, <b>il ne répare rien et masque l'état réel du toit</b>. C'est pour ça qu'il "
+              "figure en tête des prestations vendues par démarchage.",
+        estim=False,
+        sections=[
+            ("Ce que fait un hydrofuge, physiquement",
+             ["Une tuile de terre cuite n'est pas étanche : elle est poreuse. L'eau y pénètre de "
+              "quelques millimètres, puis s'évapore. Ce cycle est normal et la tuile est conçue "
+              "pour ça.",
+              "Le problème vient quand la porosité augmente avec l'âge. La tuile retient plus "
+              "d'eau, plus longtemps. Elle sèche moins vite, donc les mousses s'y installent. Et "
+              "surtout, l'eau retenue gèle en hiver : en gelant elle gonfle, et elle fait éclater "
+              "la tuile de l'intérieur. C'est le phénomène de gélivité.",
+              "<b>L'hydrofuge forme un film qui empêche l'eau d'entrer</b>, tout en laissant la "
+              "vapeur sortir. L'eau perle et glisse au lieu de s'infiltrer. Sur une tuile encore "
+              "en bon état, c'est efficace et cela repousse le vieillissement.",
+              "Il existe en incolore, qui ne change rien à l'aspect, et en coloré, qui redonne une "
+              "teinte homogène. Le coloré est un produit de finition, pas de protection "
+              "supplémentaire."]),
+            ("Quand il a du sens, et quand il n'en a aucun",
+             ["<b>Il a du sens</b> sur une couverture de quinze à trente ans, saine, qui vient "
+              "d'être démoussée, sur un versant exposé au nord ou à l'ombre d'arbres. Là, il "
+              "allonge réellement l'intervalle entre deux démoussages.",
+              "<b>Il n'a aucun sens</b> sur une tuile déjà gélive, qui s'effrite ou se casse à la "
+              "manipulation. La résine se pose sur un matériau qui part en morceaux : elle "
+              "n'empêchera ni l'éclatement ni les fuites. Elle donne seulement au toit un bel "
+              "aspect pendant deux ans.",
+              "<b>Il n'a aucun sens non plus</b> sur une ardoise naturelle, qui n'est pas poreuse. "
+              "Se le faire proposer sur de l'ardoise est un signal d'alarme sur la compétence ou "
+              "l'honnêteté de l'interlocuteur.",
+              "<b>Il ne remplace jamais un démoussage.</b> Appliqué sur des mousses, il les "
+              "emprisonne sous le film. Le résultat est pire que rien."]),
+            ("Pourquoi on vous le propose si souvent",
+             ["Un hydrofuge coûte peu cher en matière et se pose vite. Il transforme visuellement "
+              "un toit en une journée, surtout en version colorée. Et son efficacité réelle ne se "
+              "constate qu'au bout de plusieurs années, quand l'entreprise n'est plus joignable.",
+              "C'est exactement le profil d'une prestation vendue par démarchage : impressionnant "
+              "tout de suite, invérifiable à long terme.",
+              "Cela ne veut pas dire que le produit est mauvais. Il est bon, au bon moment, sur le "
+              "bon support. Cela veut dire qu'il faut se demander <b>pourquoi</b> on vous le "
+              "propose, et exiger que l'état réel de la tuile soit constaté avant.",
+              "Le test est simple, et vous pouvez l'exiger : demandez qu'on descende deux tuiles "
+              "du toit et qu'on les manipule devant vous. Si elles se cassent, l'hydrofuge n'est "
+              "pas la réponse à votre problème."]),
+            ("Combien de temps ça tient",
+             ["Les fabricants annoncent généralement huit à dix ans pour un hydrofuge de qualité "
+              "correctement appliqué. Dans les faits, l'exposition décide : un versant plein sud "
+              "perd son film plus vite qu'un versant abrité.",
+              "Le traitement ne se renouvelle pas indéfiniment. À chaque application, il faut "
+              "nettoyer d'abord, et chaque nettoyage use un peu la tuile.",
+              "Un cycle raisonnable sur une couverture saine : démoussage tous les trois à cinq "
+              "ans, hydrofuge une fois sur deux ou trois. Pas à chaque passage.",
+              "Si l'on vous propose un hydrofuge chaque année, ou un hydrofuge sans démoussage "
+              "préalable, la prestation n'est pas dimensionnée pour votre toit."]),
+        ],
+        faq=[("L'hydrofuge coloré, c'est de la peinture ?",
+              "Non. Une peinture forme un film opaque qui empêche la tuile de respirer et finit par "
+              "s'écailler. Un hydrofuge coloré est une résine microporeuse teintée : la vapeur "
+              "sort, l'eau n'entre pas. La différence de longévité est considérable."),
+             ("Peut-on l'appliquer soi-même ?",
+              "Techniquement oui, mais le produit s'applique sur un toit, ce qui reste l'endroit "
+              "d'où l'on tombe. Et une application irrégulière laisse des zones non protégées "
+              "invisibles depuis le sol."),
+             ("Ça change quelque chose pour l'eau de pluie récupérée ?",
+              "Oui, et c'est à signaler. La plupart des fabricants déconseillent la récupération "
+              "d'eau de pluie pour un usage alimentaire ou potager dans les mois qui suivent "
+              "l'application. Demandez la fiche technique du produit posé."),
+             ("Mon toit a 45 ans, l'hydrofuge peut-il le sauver ?",
+              "Non. À cet âge, la question est de savoir combien d'années il reste à la couverture. "
+              "Un hydrofuge sur une tuile en fin de vie est une dépense qui repousse la décision "
+              "sans changer l'échéance.")],
+        cta=("Faire évaluer l'état de la tuile", "demoussage-toiture"),
+    ),
+    dict(
+        slug="prix-demoussage-toiture",
+        cle="On paie la surface, l'accès et l'état. Rarement le produit.",
+        img="avant-refection-toiture-longere-mousse.webp",
+        imgalt="Toiture de longère envahie par la mousse avant démoussage",
+        nav="Prix d'un démoussage",
+        title="Prix d'un démoussage de toiture au m2",
+        desc="Ce que coûte un démoussage de toiture selon les comparateurs, ce qui fait varier la "
+             "facture, et comment lire un devis de démoussage sans se faire surprendre.",
+        h1=("Prix d'un <em>démoussage</em>", "de toiture"),
+        court="Les comparateurs nationaux situent un démoussage de toiture entre <b>10 et 25 € le "
+              "mètre carré de rampant</b> en 2026, traitement anti-mousse compris, et jusqu'à 40 € "
+              "avec un hydrofuge. Comme pour une réfection, ce prix s'applique à la surface réelle "
+              "des pans du toit, pas à la surface au sol de la maison.",
+        estim=True,
+        sections=[
+            ("Ce qui fait vraiment varier le prix",
+             ["<b>L'accès, avant tout.</b> Une maison de plain-pied entourée de pelouse se traite "
+              "à l'échelle. Une maison de ville mitoyenne, sans recul et avec du stationnement "
+              "devant, demande un échafaudage ou une nacelle. C'est souvent le premier poste de "
+              "la facture, et il n'a rien à voir avec la toiture.",
+              "<b>La pente.</b> Au-delà d'une certaine inclinaison, on ne circule plus sur le toit "
+              "sans dispositif de sécurité. Cela change le temps passé et le matériel.",
+              "<b>L'épaisseur du tapis végétal.</b> Une fine pellicule verte se traite par "
+              "pulvérisation. Un tapis de mousse de plusieurs centimètres demande un passage "
+              "mécanique préalable, donc du temps et de l'évacuation.",
+              "<b>Le matériau.</b> Une tuile mécanique plate se nettoie vite. Une tuile canal, une "
+              "ardoise ou une petite tuile plate de pays demandent beaucoup plus de précaution : "
+              "on ne passe pas la même pression.",
+              "<b>Ce qu'on fait en plus.</b> Nettoyage des gouttières, évacuation des déchets, "
+              "reprise de quelques tuiles au passage. Ces postes doivent être écrits, pas sous-entendus."]),
+            ("Ce que doit contenir un devis de démoussage",
+             ["<b>La surface traitée, en rampant.</b> Avec le calcul, ou au moins les dimensions. "
+              "Un devis qui annonce un forfait sans surface ne se compare à rien.",
+              "<b>La méthode de nettoyage.</b> Basse pression, moyenne pression, brossage. La "
+              "haute pression sur de la tuile ancienne enlève la mousse <b>et</b> l'engobe qui "
+              "protège la tuile : le toit est propre et plus fragile qu'avant.",
+              "<b>Le produit de traitement, nommé.</b> Un anti-mousse curatif agit dans le temps, "
+              "sur plusieurs semaines. « Traitement anti-mousse » sans plus de précision ne dit "
+              "pas s'il s'agit d'un produit rémanent ou d'un rinçage.",
+              "<b>Le sort des déchets.</b> Une toiture démoussée produit des sacs de mousse. Qui "
+              "les évacue, et est-ce compris ?",
+              "<b>Les gouttières.</b> Elles se remplissent pendant l'opération. Si leur nettoyage "
+              "n'est pas au devis, elles resteront bouchées."]),
+            ("Les pièges de prix les plus fréquents",
+             ["<b>Le prix au mètre carré au sol.</b> Un toit à deux pans fait environ 1,3 à 1,5 fois "
+              "la surface au sol qu'il couvre. Annoncer un prix au sol permet d'afficher un tarif "
+              "attractif qui gonflera à la facture.",
+              "<b>Le forfait « maison ».</b> « Démoussage maison : 900 € ». Sans surface ni "
+              "méthode, ce chiffre ne veut rien dire et ne se compare à aucun autre devis.",
+              "<b>L'hydrofuge présenté comme inclus.</b> Vérifiez s'il s'agit d'un vrai hydrofuge "
+              "ou d'un simple rinçage. Et demandez-vous s'il est utile sur votre toiture : voir "
+              "notre page sur le sujet.",
+              "<b>Le supplément de dernière minute.</b> « On a trouvé douze tuiles cassées. » Cela "
+              "arrive vraiment, c'est même fréquent. Mais le devis doit prévoir un prix unitaire "
+              "de remplacement à l'avance, pas une négociation depuis l'échafaudage."]),
+            ("Est-ce que ça vaut le coup ?",
+             ["Un démoussage n'embellit pas seulement. La mousse retient l'eau contre la tuile, "
+              "l'empêche de sécher, et accélère la gélivité. Elle bouche aussi les gouttières et "
+              "finit par faire déborder l'eau contre la façade.",
+              "Sur une couverture saine, c'est l'entretien le moins cher rapporté à ce qu'il "
+              "préserve : quelques centaines d'euros tous les trois à cinq ans contre plusieurs "
+              "milliers pour une réfection anticipée.",
+              "Sur une couverture en fin de vie, en revanche, c'est de l'argent dépensé sur un toit "
+              "qu'il faudra refaire. Un couvreur honnête vous dira lequel des deux cas est le vôtre "
+              "avant de chiffrer.",
+              "Les prix cités ici viennent de comparateurs nationaux. Ils donnent un ordre de "
+              "grandeur pour lire un devis, pas un prix pour votre toit : seule une visite permet "
+              "de le chiffrer."]),
+        ],
+        faq=[("Tous les combien faut-il démousser ?",
+              "Un contrôle chaque année, un démoussage tous les trois à cinq ans selon "
+              "l'exposition. Les versants nord et les toits sous les arbres reverdissent plus vite."),
+             ("Le karcher abîme-t-il vraiment la tuile ?",
+              "Sur une tuile ancienne, oui. La haute pression enlève l'engobe, la couche de "
+              "surface qui limite la porosité. Le toit paraît plus propre et vieillit plus vite. "
+              "On adapte la pression au matériau et à son état."),
+             ("Peut-on démousser en hiver ?",
+              "Oui hors période de gel, mais le traitement agit moins vite quand il fait froid. "
+              "Le printemps et l'automne sont les meilleures périodes."),
+             ("Faut-il être présent pendant l'intervention ?",
+              "Non, mais c'est mieux au début et à la fin : pour voir l'état constaté avant, et "
+              "les photos après. Nous remettons systématiquement des photos avant et après.")],
+        cta=("Demander un devis de démoussage", "demoussage-toiture"),
+    ),
+    dict(
+        slug="gouttieres-quel-materiau",
+        cle="La gouttière tombe en panne avant le toit, et elle abîme la façade d'abord.",
+        img="zinguerie-souche-zinc-toiture.webp",
+        imgalt="Souche de cheminée habillée en zinc sur une toiture",
+        nav="Gouttières : quel matériau",
+        title="Gouttières : zinc, aluminium ou PVC ?",
+        desc="Les différences réelles entre gouttières en zinc, en aluminium et en PVC : durée de "
+             "vie, coût, entretien, et ce qui convient à une maison ancienne.",
+        h1=("Gouttières : <em>zinc</em>,", "aluminium ou PVC ?"),
+        court="Le zinc dure le plus longtemps et vieillit bien, l'aluminium ne rouille pas et se "
+              "pose en continu sans soudure, le PVC coûte le moins cher et se dilate le plus. "
+              "Sur une maison ancienne, <b>le zinc reste la référence</b>, et c'est souvent ce que "
+              "le PLU impose en secteur protégé.",
+        estim=False,
+        sections=[
+            ("Les trois matériaux, sans complaisance",
+             ["<b>Le zinc.</b> Cinquante à quatre-vingts ans. Il se soude, donc il se répare "
+              "localement sans tout changer. Il se patine en gris mat, ce qui va bien à la pierre "
+              "et à la brique. En contrepartie il coûte plus cher, demande un vrai savoir-faire de "
+              "zingueur, et il n'aime pas le contact avec le cuivre, qui le corrode.",
+              "<b>L'aluminium.</b> Trente à cinquante ans. Son gros avantage est la pose en "
+              "continu : la gouttière est profilée sur place, à la longueur exacte, sans joint ni "
+              "soudure sur toute la façade. Donc rien qui fuit aux raccords. Il se laque dans "
+              "toutes les teintes. Il se déforme en revanche sous un choc, et une réparation "
+              "locale est plus difficile.",
+              "<b>Le PVC.</b> Quinze à trente ans. Peu cher, léger, facile à poser. Mais il se "
+              "dilate fortement avec la chaleur, ce qui fatigue les joints, et il devient cassant "
+              "avec les UV : au bout de vingt ans, il se fend au moindre coup. Il convient à une "
+              "dépendance, un garage, un abri. Sur une maison, c'est un choix de court terme."]),
+            ("Ce qui compte autant que le matériau",
+             ["<b>La pente.</b> Une gouttière n'est pas horizontale : elle descend vers la "
+              "descente, de quelques millimètres par mètre. Trop peu, l'eau stagne et les feuilles "
+              "s'accumulent. Trop, elle déborde au débit fort. C'est un réglage, et c'est là que "
+              "se voit le travail.",
+              "<b>Le dimensionnement.</b> Une gouttière trop petite pour la surface de toit "
+              "qu'elle reçoit débordera à chaque gros orage, quel que soit son matériau. Le calcul "
+              "se fait sur la surface en projection et la pluviométrie locale.",
+              "<b>Les crochets.</b> Leur espacement et leur fixation décident de la tenue dans le "
+              "temps. Des crochets trop espacés laissent la gouttière se déformer sous le poids de "
+              "l'eau et de la neige.",
+              "<b>La descente.</b> Son diamètre et son nombre comptent autant que la gouttière. "
+              "Une seule descente pour une longue façade crée un point de saturation."]),
+            ("Les signes qu'il faut intervenir",
+             ["<b>Une trace verte ou noire sur la façade, sous la gouttière.</b> C'est de l'eau qui "
+              "passe en continu par une fissure ou un joint. La façade s'abîme avant que vous ne "
+              "voyiez la gouttière fuir.",
+              "<b>De l'eau qui déborde par l'arrière.</b> Signe d'un engorgement ou d'une pente "
+              "inversée. L'eau part alors sous la première rangée de tuiles et mouille le bas de "
+              "charpente : c'est le cas le plus sournois.",
+              "<b>Des végétaux qui poussent dedans.</b> Il y a assez de terre accumulée pour "
+              "germer, donc assez pour bloquer l'écoulement.",
+              "<b>Un affaissement visible.</b> Regardez la ligne depuis la rue. Un ventre au milieu "
+              "signale des crochets qui lâchent.",
+              "<b>Des gouttes qui gèlent en stalactites.</b> Joli, et mauvais signe : l'eau stagne "
+              "au lieu de s'écouler."]),
+            ("Réparer ou remplacer",
+             ["Sur du zinc, la réparation locale a du sens : une soudure sur une fissure ou un "
+              "raccord reprend proprement, et le reste de la gouttière a encore des décennies "
+              "devant lui.",
+              "Sur du PVC vieilli, non. Un élément qui casse signifie que les autres sont au même "
+              "stade de fragilisation. Réparer revient à revenir tous les six mois.",
+              "Sur de l'aluminium en continu, une déformation ponctuelle peut se redresser, mais "
+              "une perforation demande généralement de reprendre la longueur.",
+              "Dans tous les cas, si la gouttière doit être déposée et que la couverture arrive en "
+              "fin de vie, il vaut mieux attendre et faire les deux ensemble : on ne monte qu'une "
+              "fois l'échafaudage."]),
+        ],
+        faq=[("Peut-on mettre du zinc sur une maison récente ?",
+              "Bien sûr. Le zinc n'est pas réservé à l'ancien. Il se pose sur tout, et sa longévité "
+              "en fait souvent le choix le plus économique sur la durée de vie de la maison."),
+             ("Les protections anti-feuilles, ça marche ?",
+              "Partiellement. Elles réduisent les gros débris mais laissent passer les aiguilles de "
+              "résineux et les particules fines, qui finissent par former un tapis sous la grille, "
+              "plus difficile à retirer. Sous des arbres, elles aident ; ailleurs, elles servent peu."),
+             ("Tous les combien nettoyer ses gouttières ?",
+              "Une fois par an, à l'automne après la chute des feuilles. Deux fois si la maison est "
+              "sous des arbres. C'est l'entretien le moins cher et le plus rentable du bâtiment."),
+             ("Le PLU peut-il imposer un matériau ?",
+              "Oui, en secteur protégé ou en périmètre de monument historique. Le zinc est alors "
+              "souvent exigé, le PVC blanc généralement refusé. Cela se vérifie avant de commander.")],
+        cta=("Faire chiffrer des gouttières", "zinguerie-gouttieres"),
+    ),
+    dict(
+        slug="charpente-signes-faiblesse",
+        cle="La charpente ne fuit pas. Elle plie, et on ne la regarde jamais.",
+        img="charpente-ancienne-sous-toiture.webp",
+        imgalt="Charpente ancienne en bois vue depuis les combles",
+        nav="Charpente : les signes de faiblesse",
+        title="Charpente : reconnaître les signes de faiblesse",
+        desc="Comment contrôler soi-même l'état d'une charpente depuis les combles, quels signes "
+             "imposent un avis professionnel, et ce que coûte l'attente.",
+        h1=("Charpente : les <em>signes</em>", "qui doivent alerter"),
+        court="Une charpente se contrôle depuis les combles, pas depuis le toit, et vous pouvez "
+              "faire le premier examen vous-même avec une lampe et un tournevis. Les trois signes "
+              "à chercher : <b>du bois qui se creuse à la pointe, de la sciure fraîche au sol, et "
+              "une ligne de toit qui n'est plus droite vue de la rue</b>.",
+        estim=False,
+        sections=[
+            ("Le contrôle que vous pouvez faire vous-même",
+             ["Montez dans les combles par temps sec, avec une lampe puissante et un tournevis fin. "
+              "Comptez vingt minutes.",
+              "<b>Le test du tournevis.</b> Appuyez la pointe sur le bois, sans forcer, à plusieurs "
+              "endroits : pieds de chevrons, abouts de pannes, zones sous les cheminées. Un bois "
+              "sain résiste. Un bois attaqué s'enfonce comme du carton et se creuse.",
+              "<b>Cherchez la sciure.</b> De petits tas de sciure fine au sol ou sur les entraits "
+              "signalent une activité d'insectes en cours. De la sciure ancienne, tassée et grise, "
+              "signale une attaque passée, éventuellement arrêtée.",
+              "<b>Repérez les trous.</b> Des trous de sortie ronds de deux à trois millimètres "
+              "indiquent des vrillettes ou des capricornes. Frais, ils sont clairs à l'intérieur.",
+              "<b>Touchez.</b> Un bois humide au toucher, ou noirci, ou qui sent le champignon, "
+              "signale une infiltration active ou récente. C'est le signe le plus urgent."]),
+            ("Ce qui se voit depuis la rue",
+             ["Reculez de vingt mètres et regardez la ligne de faîtage, puis les versants, de "
+              "préférence en lumière rasante le matin ou le soir.",
+              "<b>Un faîtage qui ondule ou qui se creuse en son milieu</b> signale des pannes qui "
+              "fléchissent. C'est structurel, et ça ne se corrige pas en changeant des tuiles.",
+              "<b>Un versant bombé ou creusé par endroits</b> indique des chevrons qui ont perdu "
+              "leur rectitude, souvent parce qu'ils ont été mouillés durablement.",
+              "<b>Un débord de toit qui plonge</b> à une extrémité signale des abouts de chevrons "
+              "pourris : c'est la zone la plus exposée, au contact de la gouttière.",
+              "Attention à ne pas confondre : beaucoup de charpentes anciennes ont toujours eu un "
+              "léger mouvement, pris il y a un siècle et parfaitement stable depuis. Ce qui "
+              "inquiète, c'est une déformation qui évolue."]),
+            ("Les trois causes, par ordre de gravité",
+             ["<b>L'eau.</b> De loin la première. Une infiltration qui dure quelques semaines ne "
+              "fait rien. La même sur des années fait pourrir le bois et installe des champignons "
+              "lignivores, dont la mérule, qui se propage sans lumière et attaque très vite. Une "
+              "fuite réparée à temps protège la charpente.",
+              "<b>Les insectes à larves xylophages.</b> Capricornes et vrillettes creusent "
+              "l'intérieur du bois en laissant la surface intacte. C'est pour ça que le test du "
+              "tournevis compte plus que l'aspect. Un traitement curatif existe et fonctionne s'il "
+              "est fait par un professionnel, avec injection.",
+              "<b>La surcharge.</b> Plus rare, mais réelle : une couverture lourde posée sur une "
+              "charpente dimensionnée pour un matériau léger, ou une isolation ajoutée sans "
+              "vérification. Une charpente de fermettes industrielles ne se modifie jamais sans "
+              "calcul : couper un seul élément peut déséquilibrer tout l'ensemble."]),
+            ("Ce que coûte l'attente",
+             ["Une charpente prise à temps se répare par greffe : on remplace la partie abîmée, on "
+              "renforce, on traite. Le chantier reste circonscrit et l'ossature d'origine est "
+              "conservée.",
+              "La même charpente laissée deux hivers de plus avec de l'eau qui entre demande la "
+              "dépose de la couverture, le remplacement de pièces maîtresses, parfois un étaiement. "
+              "L'écart de coût se compte en multiples, pas en pourcentages.",
+              "Et le point qui change tout : <b>tant que la couverture est encore bonne, on ne "
+              "touche pas au toit pour reprendre la charpente</b>. Une fois qu'il faut déposer, on "
+              "additionne deux chantiers.",
+              "C'est la raison pour laquelle nous regardons systématiquement les combles quand nous "
+              "venons pour autre chose. C'est vingt minutes, et c'est souvent là que se joue le "
+              "vrai sujet."]),
+        ],
+        faq=[("Un traitement de charpente en bombe, ça sert à quelque chose ?",
+              "Sur une attaque superficielle et limitée, un peu. Sur une infestation installée, non : "
+              "le produit doit être injecté en profondeur après sondage et bûchage des parties "
+              "attaquées. Méfiez-vous de qui propose un traitement sans avoir sondé."),
+             ("Comment savoir si l'attaque est encore active ?",
+              "La sciure fraîche, claire et fine, est le meilleur indice. Vous pouvez aussi nettoyer "
+              "une zone, la marquer, et revenir voir quelques semaines plus tard s'il y a de "
+              "nouveaux dépôts."),
+             ("La mérule, c'est vraiment si grave ?",
+              "Oui. C'est un champignon qui se développe dans l'obscurité et l'humidité, traverse "
+              "les maçonneries et dégrade le bois très rapidement. Sa présence doit être traitée "
+              "par une entreprise spécialisée, et elle est déclarable dans certains départements."),
+             ("Peut-on isoler une charpente attaquée ?",
+              "Non, et c'est une erreur fréquente. Isoler enferme le bois, supprime la ventilation "
+              "et masque l'évolution. On traite, on vérifie que c'est arrêté, puis on isole.")],
+        cta=("Faire contrôler la charpente", "charpente"),
+    ),
+    dict(
+        slug="ecran-sous-toiture",
+        cle="C'est la deuxième peau. On ne la voit jamais, et c'est elle qui sauve les combles.",
+        img="couvreur-nonancourt-pose-ecran-sous-toiture.webp",
+        imgalt="Pose d'un écran de sous-toiture sur une charpente avant la couverture",
+        nav="L'écran de sous-toiture",
+        title="Écran de sous-toiture : à quoi ça sert",
+        desc="Ce que fait un écran de sous-toiture, pourquoi les toits anciens n'en ont pas, et "
+             "s'il est possible d'en poser un sans déposer toute la couverture.",
+        h1=("L'écran de <em>sous-toiture</em>,", "la deuxième peau du toit"),
+        court="Une couverture n'est pas étanche : elle est <b>imperméable au ruissellement, pas au "
+              "vent</b>. Sous une pluie battante poussée par le vent, de l'eau passe entre les "
+              "tuiles. L'écran de sous-toiture est la membrane posée sous les tuiles qui récupère "
+              "cette eau et la conduit jusqu'à la gouttière. La plupart des toits d'avant 1980 "
+              "n'en ont pas.",
+        estim=False,
+        sections=[
+            ("Ce qu'il fait, et ce qu'il ne fait pas",
+             ["<b>Il évacue l'eau qui passe.</b> Neige poudreuse soufflée sous les tuiles, pluie "
+              "horizontale, tuile légèrement déplacée : l'eau tombe sur l'écran, glisse le long de "
+              "la pente et rejoint la gouttière sans jamais toucher l'isolant ni la charpente.",
+              "<b>Il arrête les poussières et les insectes.</b> Une couverture sans écran laisse "
+              "passer de la poussière, des feuilles, des insectes et parfois des rongeurs dans les "
+              "combles.",
+              "<b>Il sécurise pendant le chantier.</b> Une toiture déposée et re-couverte en "
+              "plusieurs jours reste protégée la nuit.",
+              "<b>Il ne remplace pas la couverture.</b> Un écran exposé au soleil se dégrade en "
+              "quelques mois. Ce n'est pas une solution de secours durable.",
+              "<b>Il ne règle pas une fuite ponctuelle.</b> Une noue percée ou un solin ouvert "
+              "laissent entrer bien plus d'eau qu'un écran ne peut en évacuer."]),
+            ("Respirant ou non : le choix qui compte",
+             ["<b>L'écran HPV, hautement perméable à la vapeur</b>, laisse la vapeur d'eau sortir "
+              "des combles tout en bloquant l'eau liquide. Il se pose directement sur l'isolant, "
+              "sans lame d'air au-dessus. C'est le standard actuel en rénovation isolée.",
+              "<b>L'écran non respirant</b>, moins cher, impose une lame d'air ventilée de deux "
+              "centimètres entre lui et l'isolant. Sans cette lame d'air, la vapeur qui monte des "
+              "pièces se condense sous l'écran et mouille l'isolant en permanence. C'est l'erreur "
+              "la plus coûteuse qu'on voit en rénovation.",
+              "Le point à retenir : <b>un écran non respirant posé au contact de l'isolant crée "
+              "exactement le dégât qu'il était censé éviter</b>. Si votre devis mentionne un écran, "
+              "demandez lequel et comment il est posé.",
+              "Les entrées d'air en bas de toit et les sorties en faîtage font partie du système. "
+              "Un écran posé sans ventilation correcte ne fonctionne pas."]),
+            ("Peut-on en poser un sans tout déposer ?",
+             ["<b>Par l'extérieur : c'est la seule méthode propre.</b> L'écran se pose sur les "
+              "chevrons, sous les liteaux. Il faut donc déposer les tuiles et les liteaux. "
+              "Autrement dit, cela se fait au moment d'une réfection, pas isolément.",
+              "<b>Par l'intérieur : possible, avec des réserves.</b> On agrafe des bandes entre "
+              "les chevrons depuis les combles. C'est moins continu, les recouvrements sont "
+              "moins fiables, et le travail est pénible. Cela dépanne, ce n'est pas équivalent.",
+              "<b>Ce qui ne marche pas :</b> glisser un film sous les tuiles sans déposer. Les "
+              "recouvrements ne sont pas tenus, l'eau passe aux jonctions, et on ne peut pas "
+              "raccorder correctement en bas de pente.",
+              "Concrètement : si votre couverture tient encore dix ans, attendez la réfection. Si "
+              "elle est en fin de vie, l'écran est compris dans le chantier et ne représente qu'un "
+              "faible pourcentage du total."]),
+            ("Est-ce obligatoire ?",
+             ["Il n'existe pas d'obligation générale de poser un écran de sous-toiture en "
+              "rénovation. Les règles de l'art, elles, le recommandent systématiquement en neuf et "
+              "en réfection complète, et certains documents techniques l'imposent selon la zone "
+              "climatique, la pente et le matériau.",
+              "En pratique, aucun couvreur sérieux ne refait une couverture sans écran aujourd'hui. "
+              "Le surcoût est modeste rapporté au chantier, et l'absence d'écran est ce qui "
+              "transforme une tuile déplacée en dégât des eaux.",
+              "<b>Un point qui a des conséquences :</b> si un sinistre survient et que la pose "
+              "s'écarte des règles de l'art, la garantie décennale peut être discutée. Un devis de "
+              "réfection sans écran devrait vous faire poser des questions.",
+              "Sur les maisons anciennes de la vallée de l'Avre, l'absence d'écran est la règle et "
+              "non l'exception. C'est le premier point que nous regardons quand nous montons."]),
+        ],
+        faq=[("Mon toit n'a pas d'écran et ne fuit pas. Faut-il s'inquiéter ?",
+              "Non. Des millions de toits fonctionnent ainsi depuis un siècle. L'écran est une "
+              "sécurité supplémentaire, pas une condition d'étanchéité. Il devient important dès "
+              "qu'on isole les combles, parce qu'un isolant mouillé ne sèche plus."),
+             ("Est-ce qu'un écran remplace une isolation ?",
+              "Pas du tout, ce sont deux fonctions différentes. L'écran gère l'eau, l'isolant gère "
+              "la chaleur. Ils travaillent ensemble, et l'écran protège l'isolant."),
+             ("Combien de temps dure un écran de sous-toiture ?",
+              "Un écran de qualité, protégé du soleil par la couverture, dure aussi longtemps que "
+              "la couverture elle-même. On le remplace au chantier suivant."),
+             ("Peut-on poser un écran sur une couverture en ardoise ?",
+              "Oui, le principe est le même. Sur ardoise clouée sur voligeage plein, la question de "
+              "la ventilation se pose différemment et demande une étude au cas par cas.")],
+        cta=("Parler de la réfection du toit", "renovation-toiture"),
+    ),
+    dict(
+        slug="nettoyer-toiture-soi-meme",
+        cle="Chaque année, des gens meurent en tombant d'un toit qu'ils nettoyaient.",
+        img="couvreur-wm-couverture-sur-le-toit.webp",
+        imgalt="Couvreur travaillant en sécurité sur le faîtage d'un pavillon",
+        nav="Nettoyer sa toiture soi-même",
+        title="Nettoyer sa toiture soi-même : les risques",
+        desc="Ce qu'on peut raisonnablement faire soi-même sur une toiture, ce qu'il ne faut pas "
+             "tenter, et les erreurs de nettoyage qui abîment durablement la tuile.",
+        h1=("Nettoyer sa toiture <em>soi-même</em> :", "ce qu'il faut savoir"),
+        court="Certaines choses se font sans risque depuis le sol ou une échelle stable : vider une "
+              "gouttière accessible, dégager des feuilles, observer. <b>Monter sur les pans du toit "
+              "n'en fait pas partie.</b> Une tuile humide ou moussue est une patinoire, et la chute "
+              "de hauteur reste la première cause d'accident grave dans le bâtiment.",
+        estim=False,
+        sections=[
+            ("Ce que vous pouvez faire sans danger",
+             ["<b>Observer, régulièrement.</b> Depuis le sol, avec des jumelles si besoin, en "
+              "lumière rasante. Vous repérerez une tuile déplacée, une ligne qui bouge, une zone "
+              "qui verdit plus que les autres. C'est l'entretien le plus utile et il ne coûte rien.",
+              "<b>Vider une gouttière accessible</b> depuis une échelle stable, posée sur sol "
+              "plat, avec quelqu'un qui la tient, et sans jamais se pencher au-delà de la largeur "
+              "de l'échelle. Si vous devez vous étirer, descendez et déplacez l'échelle.",
+              "<b>Dégager les abords.</b> Couper une branche qui frotte la couverture ou qui "
+              "déverse ses feuilles dans la gouttière évite une grande partie du problème.",
+              "<b>Contrôler les combles.</b> C'est là que le vrai diagnostic se fait, au sec et de "
+              "plain-pied. Une lampe suffit.",
+              "<b>Photographier après une tempête.</b> Depuis le sol, sous plusieurs angles. Ces "
+              "photos serviront à l'assurance et au couvreur."]),
+            ("Ce qu'il ne faut pas tenter",
+             ["<b>Marcher sur les tuiles.</b> Outre le risque de chute, on casse ce sur quoi on "
+              "marche, et les fissures ne se voient pas tout de suite. On répare ensuite des dégâts "
+              "qu'on a soi-même créés.",
+              "<b>Le nettoyeur haute pression.</b> C'est l'erreur la plus répandue. La pression "
+              "enlève la mousse et, avec elle, l'engobe : la couche de surface cuite qui limite la "
+              "porosité de la tuile. Le toit est éclatant pendant un an, puis il se remousse plus "
+              "vite qu'avant et devient gélif. Sur une tuile ancienne, c'est irréversible.",
+              "<b>Pulvériser sous la pluie ou par grand vent.</b> Le produit part avant d'agir, et "
+              "il se disperse dans le jardin et le potager.",
+              "<b>La javel.</b> Elle blanchit la mousse sans la tuer en profondeur, elle attaque "
+              "les joints et le zinc des gouttières, et elle finit dans le sol.",
+              "<b>Monter seul.</b> Si quelque chose arrive, personne ne le sait."]),
+            ("Les erreurs de produit et de méthode",
+             ["<b>Rincer un anti-mousse curatif.</b> Un produit rémanent est fait pour rester et "
+              "agir plusieurs semaines : la mousse noircit, meurt et part avec la pluie. Le rincer "
+              "le lendemain, c'est payer un produit et le jeter.",
+              "<b>Traiter sans avoir enlevé le gros.</b> Sur un tapis de mousse épais, le produit "
+              "n'atteint jamais la tuile. Il faut d'abord retirer mécaniquement, puis traiter.",
+              "<b>Travailler du bas vers le haut.</b> On descend toujours : sinon on repasse sur ce "
+              "qui est déjà traité et on le lessive.",
+              "<b>Oublier les gouttières.</b> Tout ce qui est décroché du toit y finit. Une "
+              "gouttière bouchée après nettoyage déborde vers l'arrière et mouille le bas de "
+              "charpente : on a créé un problème en en réglant un autre."]),
+            ("Le vrai calcul",
+             ["Un démoussage professionnel sur une maison de taille courante représente quelques "
+              "centaines d'euros, tous les trois à cinq ans. Rapporté à l'année, c'est peu.",
+              "En face : le coût d'un échafaudage ou d'une nacelle loués, le produit, une journée "
+              "de travail, et un risque de chute que rien ne compense.",
+              "Sans compter ce qui ne se voit pas tout de suite : une tuile décapée au karcher "
+              "perd des années de durée de vie, et quelques tuiles fissurées sous les pas se "
+              "révèlent au premier gros orage.",
+              "Nous ne disons pas ça pour vendre un démoussage. Nous le disons parce que nous "
+              "sommes régulièrement appelés pour réparer des toits abîmés par un nettoyage bien "
+              "intentionné, et que la réparation coûte plus cher que le démoussage évité."]),
+        ],
+        faq=[("Existe-t-il des produits anti-mousse à pulvériser depuis le sol ?",
+              "Oui, avec une lance télescopique, et ils fonctionnent sur une mousse naissante. Sur "
+              "un tapis installé, la pulvérisation seule ne suffit pas : il faut un passage "
+              "mécanique préalable."),
+             ("Et si je loue une nacelle ?",
+              "Cela règle le risque de chute mais pas le reste : le choix de la pression, la "
+              "connaissance du matériau, la gestion des tuiles fragiles. Et une nacelle louée coûte "
+              "une part importante du prix d'un démoussage complet."),
+             ("Quand faut-il le faire ?",
+              "Printemps ou automne, hors gel et hors forte chaleur. Un traitement appliqué juste "
+              "avant une période pluvieuse modérée agit bien."),
+             ("Le démoussage abîme-t-il la toiture ?",
+              "Mal fait, oui, beaucoup. Bien fait, non : on adapte la pression au matériau, on ne "
+              "décape pas, et on remplace les tuiles fragilisées au passage.")],
+        cta=("Faire démousser par un professionnel", "demoussage-toiture"),
+    ),
+    dict(
+        slug="toiture-copropriete",
+        cle="Le toit est commun. La décision aussi, et c'est là que tout se joue.",
+        img="couvreur-dreux-maison-de-ville-toiture.webp",
+        imgalt="Toiture de maison de ville mitoyenne à Dreux",
+        nav="Toiture en copropriété",
+        title="Toiture en copropriété : qui paie quoi",
+        desc="Comment se décide et se répartit une réfection de toiture en copropriété, ce qui "
+             "relève des parties communes, et ce qu'il faut préparer avant l'assemblée générale.",
+        h1=("Toiture en <em>copropriété</em> :", "qui décide, qui paie"),
+        court="La toiture est une <b>partie commune</b> : sa réfection se vote en assemblée "
+              "générale et se répartit entre tous les copropriétaires selon les tantièmes, y "
+              "compris ceux du rez-de-chaussée. Les fenêtres de toit privatives et l'intérieur des "
+              "combles aménagés font exception et restent à la charge de leur propriétaire.",
+        estim=False,
+        sections=[
+            ("Ce qui est commun, ce qui ne l'est pas",
+             ["<b>Commun :</b> la charpente, la couverture, l'écran de sous-toiture, la zinguerie, "
+              "les gouttières et descentes, les souches de cheminée dans leur partie extérieure, "
+              "l'étanchéité des terrasses.",
+              "<b>Privatif :</b> l'intérieur d'un comble aménagé, le revêtement de plafond, "
+              "l'isolation posée par un copropriétaire dans son lot, et le plus souvent les "
+              "fenêtres de toit qui n'éclairent qu'un lot.",
+              "<b>La zone grise :</b> une fenêtre de toit est privative pour son entretien courant, "
+              "mais son raccordement à la couverture touche une partie commune. En pratique, c'est "
+              "le règlement de copropriété qui tranche, et il faut le lire avant de débattre.",
+              "Le point qui surprend le plus : <b>un copropriétaire du rez-de-chaussée participe "
+              "au financement du toit</b>, au prorata de ses tantièmes, exactement comme celui du "
+              "dernier étage. C'est la règle des parties communes."]),
+            ("Comment la décision se prend",
+             ["<b>Les travaux d'entretien et de réparation</b> — reprendre un solin, remplacer des "
+              "tuiles, nettoyer les gouttières — se votent à la majorité simple des "
+              "copropriétaires présents ou représentés.",
+              "<b>Les travaux d'amélioration</b> — ajouter une isolation, changer de matériau de "
+              "couverture, transformer l'aspect — relèvent d'une majorité renforcée, celle de tous "
+              "les copropriétaires.",
+              "<b>L'urgence fait exception.</b> Le syndic peut engager seul les travaux nécessaires "
+              "à la sauvegarde de l'immeuble, comme une mise hors d'eau après une tempête, et il "
+              "en rend compte à l'assemblée suivante. Il ne peut pas, en revanche, lancer une "
+              "réfection complète sous couvert d'urgence.",
+              "En pratique, une réfection de toiture se prépare un an à l'avance : diagnostic, "
+              "devis multiples, inscription à l'ordre du jour, vote, puis appels de fonds."]),
+            ("Ce qu'il faut préparer avant l'assemblée",
+             ["<b>Un diagnostic écrit et indépendant du devis.</b> L'état réel de la couverture et "
+              "de la charpente, avec des photos. C'est ce qui évite le débat entre « on peut encore "
+              "attendre » et « c'est urgent ».",
+              "<b>Trois devis comparables.</b> Comparables veut dire : même surface annoncée, même "
+              "matériau, mêmes postes. Trois devis qui ne décrivent pas le même chantier ne se "
+              "comparent pas, et c'est la source principale des reports de vote.",
+              "<b>Le plan de financement.</b> Fonds de travaux disponible, échéancier des appels, "
+              "et éventuels dispositifs d'aide mobilisables par la copropriété.",
+              "<b>Les contraintes d'urbanisme.</b> En centre ancien ou en périmètre protégé, "
+              "l'avis des services du patrimoine peut imposer un matériau et rallonger le délai de "
+              "plusieurs mois. Le savoir avant le vote évite de revoter."]),
+            ("Les points qui font perdre du temps",
+             ["<b>Le désaccord sur l'urgence.</b> Il se règle avec un diagnostic, pas avec des "
+              "arguments. Faites monter un professionnel et demandez un écrit.",
+              "<b>Les devis incomparables.</b> Imposez la même trame à tous : surface en rampant, "
+              "matériau, écran, zinguerie, échafaudage, évacuation. Chaque poste chiffré à part.",
+              "<b>L'échafaudage et les accès.</b> Sur une maison de ville, le stationnement, "
+              "l'emprise sur le trottoir et l'autorisation de voirie sont des sujets à part "
+              "entière, à anticiper et à chiffrer.",
+              "<b>Les lots du dernier étage.</b> Ce sont eux qui subissent les infiltrations, et "
+              "eux qui poussent au vote. Documenter les dégâts avec des dates aide plus qu'insister.",
+              "Nous chiffrons les copropriétés avec un devis décomposé poste par poste, "
+              "précisément pour qu'il puisse être lu en assemblée par des gens qui ne sont pas du "
+              "métier."]),
+        ],
+        faq=[("Un copropriétaire peut-il refuser de payer ?",
+              "Non. Une fois les travaux votés régulièrement, la dépense s'impose à tous selon les "
+              "tantièmes, y compris à ceux qui ont voté contre."),
+             ("Qui paie si une fuite abîme un appartement ?",
+              "La réparation du toit relève de la copropriété. Les dégâts intérieurs relèvent de "
+              "l'assurance du copropriétaire, avec un recours possible vers celle de l'immeuble."),
+             ("Peut-on faire poser une fenêtre de toit seul ?",
+              "Non, pas sans autorisation de l'assemblée : percer la couverture touche une partie "
+              "commune et modifie l'aspect extérieur. Le vote est nécessaire même si le lot est privatif."),
+             ("Le syndic peut-il choisir l'entreprise seul ?",
+              "Il propose, l'assemblée choisit. Le vote porte en général sur une entreprise "
+              "identifiée et un montant, pas sur un blanc-seing.")],
+        cta=("Faire chiffrer une toiture d'immeuble", "renovation-toiture"),
+    ),
+    dict(
+        slug="duree-chantier-toiture",
+        cle="Ce qui prend du temps, ce n'est presque jamais la pose.",
+        img="renovation-toiture-charpente-liteaux-neufs.webp",
+        imgalt="Charpente et liteaux neufs posés sur une toiture en cours de rénovation",
+        nav="Combien de temps dure le chantier",
+        title="Combien de temps dure une réfection de toiture",
+        desc="Les durées réelles d'un chantier de toiture selon son ampleur, ce qui les allonge, "
+             "et comment se passe le déroulement au quotidien pour les habitants.",
+        h1=("Combien de <em>temps</em>", "dure un chantier de toiture"),
+        court="Sur une maison de taille courante, une réfection complète demande en général "
+              "<b>une à deux semaines de présence sur le chantier</b>, hors intempéries. Mais entre "
+              "la signature et la fin, comptez plutôt deux à quatre mois : le délai vient de "
+              "l'autorisation d'urbanisme, de l'approvisionnement et du planning, pas de la pose.",
+        estim=False,
+        sections=[
+            ("Les durées réelles, par type de chantier",
+             ["<b>Remplacement de quelques tuiles, reprise d'un solin :</b> une demi-journée à une "
+              "journée. Souvent sans échafaudage si l'accès le permet.",
+              "<b>Démoussage complet :</b> une à deux journées selon la surface et l'accès, plus "
+              "le temps d'action du traitement, qui se fait tout seul ensuite.",
+              "<b>Reprise de zinguerie, gouttières d'une façade :</b> une à deux journées.",
+              "<b>Réfection d'un versant :</b> trois à cinq jours de présence.",
+              "<b>Réfection complète d'une maison courante :</b> une à deux semaines. Avec "
+              "isolation par l'extérieur, comptez une semaine de plus.",
+              "<b>Reprise de charpente :</b> variable, de deux jours pour une greffe à plusieurs "
+              "semaines si l'ossature est largement touchée.",
+              "Ces durées s'entendent hors intempéries. Une toiture ouverte ne se travaille ni sous "
+              "la pluie ni par vent fort : c'est une question de sécurité, pas de confort."]),
+            ("Ce qui allonge vraiment les délais",
+             ["<b>L'autorisation d'urbanisme.</b> Une déclaration préalable prend un mois "
+              "d'instruction, deux si le bien est en périmètre de monument historique. C'est "
+              "souvent le premier poste de délai, et il court avant tout le reste.",
+              "<b>L'approvisionnement.</b> Une tuile courante est disponible. Une tuile de pays, un "
+              "modèle imposé par le PLU ou un coloris particulier peuvent demander plusieurs "
+              "semaines de fabrication.",
+              "<b>L'échafaudage.</b> Sa location, son montage et l'éventuelle autorisation de "
+              "voirie en ville ajoutent des jours à chaque extrémité du chantier.",
+              "<b>La saison.</b> Le printemps et l'été sont pleins. Un chantier signé en février "
+              "démarre souvent plus vite qu'un chantier signé en juin.",
+              "<b>Les surprises de dépose.</b> On découvre l'état réel de la charpente en enlevant "
+              "la couverture. C'est pour cela qu'un devis sérieux prévoit une ligne pour les "
+              "reprises éventuelles, avec un prix unitaire convenu à l'avance."]),
+            ("Comment ça se passe pour vous, au quotidien",
+             ["<b>Le bruit.</b> La dépose est la phase la plus bruyante, et c'est la première. Elle "
+              "dure un à deux jours. Ensuite, c'est le bruit d'un chantier normal.",
+              "<b>La poussière.</b> Beaucoup, à la dépose, surtout si les combles sont ouverts. "
+              "Protéger ce qui s'y trouve et fermer la trappe change tout.",
+              "<b>L'accès.</b> L'échafaudage occupe le pourtour. Prévoyez de dégager les abords et "
+              "de déplacer les véhicules pour toute la durée.",
+              "<b>Habiter sur place.</b> C'est la règle : on ne déménage pas pour une réfection de "
+              "toiture. Le logement reste hors d'eau chaque soir, c'est la responsabilité de "
+              "l'entreprise.",
+              "<b>Les horaires.</b> Une journée de couvreur commence tôt, surtout l'été. Prévenir "
+              "les voisins avant le démarrage évite bien des tensions."]),
+            ("Ce qui doit figurer au planning",
+             ["<b>Une date de démarrage, pas une saison.</b> « Courant printemps » n'engage "
+              "personne. Une semaine de démarrage, oui.",
+              "<b>La durée prévisionnelle de présence</b>, distincte du délai global.",
+              "<b>Le moment de l'échafaudage :</b> montage et démontage, avec les dates.",
+              "<b>Les points d'arrêt :</b> les moments où vous pouvez constater avant que la suite "
+              "recouvre. Le contrôle de charpente avant pose de l'écran, par exemple.",
+              "<b>Le nettoyage et l'évacuation.</b> Une réfection produit des tonnes de gravats. Qui "
+              "les évacue, quand, et est-ce compris ?",
+              "Nous donnons une semaine de démarrage et une durée de présence, et nous prévenons "
+              "s'il y a du retard. Un chantier reporté parce qu'il pleut, cela arrive à tout le "
+              "monde ; ne pas prévenir, non."]),
+        ],
+        faq=[("Peut-on faire refaire un toit en hiver ?",
+              "Oui, hors gel et hors vent fort. Les journées sont plus courtes, donc le chantier "
+              "s'étale, mais le travail est le même. Les plannings sont souvent plus disponibles."),
+             ("Et s'il pleut pendant le chantier ?",
+              "On ne laisse jamais un toit ouvert le soir : la zone en cours est bâchée ou "
+              "l'écran est posé. La pluie décale la pose, elle ne met pas la maison en danger."),
+             ("Faut-il être présent tous les jours ?",
+              "Non. Il est utile d'être là au démarrage, aux points d'arrêt convenus et à la "
+              "réception. Le reste du temps, l'accès au terrain suffit."),
+             ("Le délai annoncé est-il contractuel ?",
+              "La date de démarrage et la durée figurent au devis et engagent. Les intempéries "
+              "constituent une cause de suspension reconnue, à condition d'être signalées.")],
+        cta=("Parler du planning d'un chantier", "renovation-toiture"),
+    ),
+    dict(
+        slug="assurance-decennale-couvreur",
+        cle="Ce n'est pas une garantie sur les tuiles. C'est une garantie sur l'étanchéité.",
+        img="refection-toiture-pavillon-terminee.webp",
+        imgalt="Réfection de toiture de pavillon terminée",
+        nav="La garantie décennale",
+        title="Garantie décennale : ce qu'elle couvre vraiment",
+        desc="Ce que couvre et ne couvre pas la garantie décennale d'un couvreur, comment vérifier "
+             "l'attestation, et ce qu'il faut conserver pour pouvoir l'actionner.",
+        h1=("Garantie <em>décennale</em> :", "ce qu'elle couvre vraiment"),
+        court="La décennale couvre pendant dix ans les dommages qui <b>compromettent la solidité de "
+              "l'ouvrage ou le rendent impropre à sa destination</b>. Sur un toit, cela veut dire "
+              "concrètement : l'eau qui entre. Elle ne couvre ni l'usure, ni l'esthétique, ni ce "
+              "qui n'a pas été fait faute d'avoir été prévu au devis.",
+        estim=False,
+        sections=[
+            ("Les trois garanties, qui ne durent pas pareil",
+             ["<b>La garantie de parfait achèvement : un an.</b> Elle couvre toutes les réserves "
+              "signalées à la réception, et tous les désordres apparus dans l'année, quels qu'ils "
+              "soient. C'est la plus large, et la plus courte.",
+              "<b>La garantie de bon fonctionnement : deux ans.</b> Elle porte sur les éléments "
+              "d'équipement dissociables, c'est-à-dire ce qui peut s'enlever sans abîmer "
+              "l'ouvrage : une fenêtre de toit, un conduit, un élément de ventilation.",
+              "<b>La garantie décennale : dix ans.</b> Elle porte sur les désordres qui touchent la "
+              "solidité ou rendent le bien impropre à son usage. Une infiltration en fait partie, "
+              "par définition.",
+              "Les trois courent <b>à compter de la réception des travaux</b>, pas de la facture ni "
+              "de la fin du chantier. C'est pourquoi le procès-verbal de réception, daté et signé, "
+              "est le document le plus important du dossier."]),
+            ("Ce qui est couvert, ce qui ne l'est pas",
+             ["<b>Couvert :</b> une infiltration due à un défaut de pose, un écran mal raccordé, "
+              "un solin mal exécuté, une couverture qui se soulève au vent parce qu'elle n'était "
+              "pas correctement fixée, une charpente qui fléchit après une reprise mal calculée.",
+              "<b>Non couvert :</b> l'usure normale, un événement climatique exceptionnel, un "
+              "défaut d'entretien, des travaux réalisés ensuite par quelqu'un d'autre, et les "
+              "désordres purement esthétiques comme une différence de teinte entre deux lots de "
+              "tuiles.",
+              "<b>La zone discutée :</b> ce qui n'était pas au devis. Si l'écran de sous-toiture "
+              "n'a pas été posé parce qu'il n'était pas prévu, ce n'est pas un défaut d'exécution. "
+              "D'où l'importance d'un devis détaillé : il définit ce à quoi l'entreprise s'engage.",
+              "<b>Un point souvent ignoré :</b> la décennale suit l'ouvrage, pas le propriétaire. "
+              "Si vous vendez, l'acheteur bénéficie du reliquat. Les factures et le procès-verbal "
+              "de réception font partie des documents à transmettre."]),
+            ("Vérifier l'attestation en trois minutes",
+             ["<b>L'année en cours.</b> Une attestation est annuelle. Celle de l'an dernier ne "
+              "prouve rien sur aujourd'hui. Demandez celle de l'exercice en cours, avant le "
+              "démarrage.",
+              "<b>L'activité déclarée.</b> Elle doit mentionner explicitement la couverture, et la "
+              "charpente si le chantier en comporte. Une décennale « maçonnerie » ne couvre pas un "
+              "toit.",
+              "<b>Le nom et le SIRET.</b> Ils doivent correspondre exactement à ceux du devis. Une "
+              "attestation au nom d'une autre société est un signal d'alerte.",
+              "<b>Les montants et les exclusions.</b> Elles sont au dos, et elles se lisent. "
+              "Certains contrats plafonnent par chantier.",
+              "<b>En cas de doute :</b> l'assureur figure sur l'attestation. Un appel suffit à "
+              "confirmer qu'un contrat est bien en cours. C'est rare, et c'est légitime."]),
+            ("Ce qu'il faut garder pour pouvoir l'actionner",
+             ["<b>Le devis signé</b>, avec le détail des postes. C'est lui qui définit ce qui "
+              "devait être fait.",
+              "<b>Le procès-verbal de réception</b>, daté et signé des deux parties, avec les "
+              "réserves éventuelles. C'est le point de départ des trois garanties.",
+              "<b>La facture acquittée.</b>",
+              "<b>L'attestation d'assurance</b> de l'année du chantier, pas celle d'après.",
+              "<b>Les photos.</b> Avant, pendant, après. Nous en remettons systématiquement, et "
+              "elles servent bien plus souvent qu'on ne le croit : pour l'assurance, pour une "
+              "vente, ou simplement pour savoir ce qu'il y a sous les tuiles dans dix ans.",
+              "Rangez l'ensemble au même endroit. Le jour où cela sert, c'est en général plusieurs "
+              "années plus tard et par quelqu'un d'autre que vous."]),
+        ],
+        faq=[("L'entreprise a disparu. La décennale joue-t-elle encore ?",
+              "Oui, elle est portée par l'assureur, pas par l'entreprise. C'est précisément à ça "
+              "qu'elle sert. Il faut l'attestation de l'année du chantier pour identifier l'assureur, "
+              "d'où l'importance de la conserver."),
+             ("Faut-il une assurance dommages-ouvrage ?",
+              "Elle est légalement obligatoire pour le maître d'ouvrage, même particulier. En "
+              "pratique elle est peu souscrite en rénovation. Son intérêt : elle indemnise vite, "
+              "sans attendre la recherche de responsabilité."),
+             ("Un devis sans mention d'assurance est-il valable ?",
+              "Le devis reste valable, mais l'assurance décennale doit figurer sur les devis et "
+              "factures avec l'assureur et la zone couverte. Son absence est une irrégularité."),
+             ("Une réparation ponctuelle est-elle couverte dix ans ?",
+              "Si elle relève de l'étanchéité, oui, dans les mêmes conditions. Une reprise de solin "
+              "qui refuit deux ans après relève de la décennale.")],
+        cta=("Demander un devis détaillé", "renovation-toiture"),
+    ),
+    dict(
+        slug="isolation-combles-perdus",
+        cle="C'est le mètre carré isolé le moins cher de toute la maison.",
+        img="combles-avant-isolation-sous-rampants.webp",
+        imgalt="Combles non isolés vus sous les rampants avant travaux",
+        nav="Isoler des combles perdus",
+        title="Isolation des combles perdus : quelle méthode",
+        desc="Souffler, dérouler ou insuffler : les méthodes d'isolation des combles perdus, leurs "
+             "épaisseurs, et les points de vigilance qui décident du résultat.",
+        h1=("Isoler des <em>combles perdus</em> :", "quelle méthode choisir"),
+        court="Un tiers environ des déperditions d'une maison mal isolée part par le toit, et les "
+              "combles perdus sont l'endroit le plus simple et le moins cher à traiter. Deux "
+              "méthodes dominent : <b>le soufflage de flocons</b>, rapide et adapté aux combles "
+              "difficiles d'accès, et <b>le déroulage de rouleaux</b>, plus régulier quand le "
+              "plancher est accessible.",
+        estim=False,
+        sections=[
+            ("Les trois méthodes, et quand les choisir",
+             ["<b>Le soufflage.</b> Des flocons — laine de verre, laine de roche, ouate de "
+              "cellulose — projetés à la machine sur le plancher des combles. C'est rapide, cela "
+              "atteint tous les recoins, et c'est la seule solution praticable quand les combles "
+              "sont encombrés de fermettes serrées. L'épaisseur doit être repérée par des piges "
+              "graduées laissées en place.",
+              "<b>Le déroulage.</b> Des rouleaux posés en deux couches croisées, la seconde "
+              "perpendiculaire à la première pour supprimer les ponts thermiques aux jonctions. "
+              "Cela demande un accès correct et un plancher praticable. Le résultat est très "
+              "régulier et il reste visitable.",
+              "<b>L'insufflation.</b> Des flocons injectés sous pression dans un volume fermé. "
+              "Elle sert surtout pour les rampants ou les caissons, rarement pour des combles "
+              "perdus classiques.",
+              "Sur des combles perdus accessibles, le déroulage est souvent préférable. Sur des "
+              "fermettes industrielles serrées, le soufflage s'impose."]),
+            ("Les épaisseurs, et ce qu'elles valent",
+             ["La performance se mesure en résistance thermique, notée R : plus elle est élevée, "
+              "mieux c'est. Les dispositifs d'aide exigent généralement <b>R ≥ 7 m²·K/W</b> en "
+              "combles perdus.",
+              "Concrètement, cela représente environ <b>30 à 40 cm</b> de laine, selon le matériau "
+              "et sa conductivité. Une isolation ancienne de 10 cm, courante dans les maisons des "
+              "années soixante-dix, est très loin du compte.",
+              "Attention à la confusion entre épaisseur posée et épaisseur finale : les flocons "
+              "soufflés se tassent. Un isolant soufflé doit être posé avec une surépaisseur qui "
+              "tient compte de ce tassement, et les piges permettent de le contrôler plus tard.",
+              "Surisoler par-dessus un ancien isolant est possible et souvent pertinent, à "
+              "condition que l'ancien soit sec, sain et non tassé en croûte. S'il a été mouillé, il "
+              "faut le retirer."]),
+            ("Les points qui décident du résultat",
+             ["<b>La trappe d'accès.</b> Une trappe non isolée dans un plafond isolé à 35 cm, c'est "
+              "un trou dans la couverture thermique. Elle doit être isolée et étanche à l'air.",
+              "<b>Les spots encastrés.</b> Chaque spot perce le plafond et la barrière d'étanchéité "
+              "à l'air. Ils doivent être protégés par des capots adaptés, sous peine de risque "
+              "d'échauffement et de fuite d'air chaud humide dans l'isolant.",
+              "<b>La ventilation.</b> Isoler sans ventiler crée de la condensation. Les entrées "
+              "d'air en bas de pente ne doivent jamais être bouchées par l'isolant : on pose des "
+              "déflecteurs pour garder le passage libre.",
+              "<b>Le pare-vapeur.</b> Côté chauffé, il empêche la vapeur d'eau des pièces de migrer "
+              "dans l'isolant. Son absence ou sa pose du mauvais côté est l'erreur classique, et "
+              "elle se paie en isolant mouillé.",
+              "<b>L'état de la couverture.</b> Isoler sous une toiture qui fuit revient à poser une "
+              "éponge. On vérifie le toit avant, systématiquement."]),
+            ("Combles perdus ou aménageables : la distinction qui change tout",
+             ["<b>Combles perdus :</b> le volume sous toiture n'est pas habitable, souvent à cause "
+              "d'une hauteur insuffisante ou de fermettes en W. On isole <b>le plancher</b>, donc "
+              "le plafond de l'étage en dessous. C'est peu cher, très efficace, et rapide.",
+              "<b>Combles aménagés ou aménageables :</b> le volume est habitable. Il faut isoler "
+              "<b>les rampants</b>, c'est-à-dire sous la pente, ce qui est plus complexe, plus cher "
+              "et prend de la hauteur sous plafond.",
+              "La confusion coûte cher : isoler les rampants d'un comble qu'on n'habitera jamais "
+              "revient à chauffer un volume inutile, pour un prix bien supérieur.",
+              "Si la couverture doit de toute façon être refaite, la question se repose : isoler "
+              "par l'extérieur devient possible, et c'est le seul moment où cela se fait sans "
+              "surcoût de dépose.",
+              "Nous regardons systématiquement les combles quand nous intervenons sur un toit. "
+              "C'est souvent là que se trouve le gisement d'économie le plus simple."]),
+        ],
+        faq=[("Peut-on isoler soi-même des combles perdus ?",
+              "Le déroulage est techniquement accessible. Les points délicats sont la trappe, les "
+              "spots, la ventilation en bas de pente et le pare-vapeur — et ce sont eux qui "
+              "décident du résultat. Le soufflage demande une machine."),
+             ("Faut-il retirer l'ancien isolant ?",
+              "Pas s'il est sec, sain et non tassé : on surisole par-dessus. S'il a été mouillé, "
+              "s'il est en vrac tassé ou s'il abrite des rongeurs, on retire."),
+             ("L'isolation peut-elle abîmer la charpente ?",
+              "Indirectement, oui, si elle bloque la ventilation ou si la vapeur d'eau s'y condense. "
+              "Une charpente saine et ventilée ne craint rien ; une charpente enfermée dans un "
+              "isolant humide travaille."),
+             ("Combien de temps ça prend ?",
+              "Une journée pour une maison courante en soufflage, un peu plus en déroulage. C'est "
+              "le chantier le plus court et le plus rentable du bâtiment.")],
+        cta=("Faire chiffrer l'isolation", "isolation-toiture"),
+    ),
 ]
 
 # Seconde image de chaque prestation, pour couper le mur de texte a mi-page.
