@@ -3710,7 +3710,7 @@ def reperes_bloc(ville, nom_ville):
     <p class="reperes__p reveal" data-d="2">{trajet} {bati}</p>
     <p class="reperes__p reveal" data-d="3">{admin} Nous montons le dossier avec
       vous, et nous le disons avant de commencer, pas après : voir le
-      <a href="{{PRE}}guides/declaration-prealable-toiture/">guide des autorisations</a>.</p>
+      <a href="{PRE}guides/declaration-prealable-toiture/">guide des autorisations</a>.</p>
   </div>
 </section>"""
 
